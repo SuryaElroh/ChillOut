@@ -1,0 +1,41 @@
+<div class="container">
+    <h3 class="text-center">Différentes vues</h3>
+    <ul class="list-unstyled">
+        <li class="btn btn-block btn-default" id="choix">Connexion</li>
+        <li class="btn btn-block btn-default" id="choix2">Inscription Participant</li>
+        <li class="btn btn-block btn-default" id="choix3">Inscription Organisateur</li>
+        <li class="btn btn-block btn-default" id="choix4">Compte Participant</li>
+        <li class="btn btn-block btn-default" id="choix5">Filtres</li>
+        <li class="btn btn-block btn-default" id="choix6">Compte Organisateur</li>
+        <li class="btn btn-block btn-default" id="choix7">Création évènement</li>
+        <li class="btn btn-block btn-default" id="choix8">Accueil</li>
+    </ul>
+</div>
+
+
+<script>
+    $("#choix").click(function () {
+        $("#global").load("vues/connexion.html");
+    });
+    $("#choix2").click(function () {
+        $("#global").load("vues/inscription-participant.html");
+    });
+    $("#choix3").click(function () {
+        $("#global").load("vues/inscription-orga.html");
+    });
+    $("#choix4").click(function () {
+        $("#global").load("vues/compte-participant.html");
+    });
+    $("#choix5").click(function () {
+        $("#global").load("vues/filtres.html");
+    });
+    $("#choix6").click(function () {
+        $("#global").load("vues/compte-orga.html");
+    });
+    $("#choix7").click(function () {
+        $("#global").load("vues/creation-evenement.html");
+    });
+    $("#choix8").click(function () {
+        $("#global").load("vues/accueil.html");
+    });
+</script>

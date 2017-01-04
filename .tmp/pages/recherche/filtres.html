@@ -1,0 +1,71 @@
+<div id="filtres" class="container">
+
+    <div class="row nav navbar header">
+        <a class="retourSommaire text-left btn"><i class="glyphicon glyphicon-chevron-left"></i> Retour</a>
+        <h3 class="text-center">Filtres</h3>
+    </div>
+
+    <div class="">
+
+        <div class="text-center input-group">
+            <input type="text" class="form-control rounded" id="champRechercheTop" placeholder="Rechercher"/>
+            <a class="input-group-addon rounded-right" id="btnRechercher"><i class="fa fa-search"></i></a>
+        </div>
+
+        <hr/>
+
+        <h3 class="text-center"><a id="btnFiltreDate">Date</a></h3>
+        <div class="filtresEvenements center-block" id="filtreDate">
+            <input type="date" class="form-control rounded" id="filtreDateSelectionne" placeholder="Date"/>
+        </div>
+        <div class="filtreSelectionne" id="filtreSelectionneDate"></div>
+
+        <hr/>
+
+        <h3 class="text-center"><a id="btnFiltreHoraires">Horaires</a></h3>
+        <div class="filtresEvenements" id="filtreHoraires">
+            <input type="time" class="form-control rounded" id="filtreHoraireSelectionne" placeholder="Heure"/>
+        </div>
+        <div class="filtreSelectionne" id="filtreSelectionneHoraire"></div>
+
+        <hr/>
+
+        <h3 class="text-center"><a id="btnFiltreCategories">Catégories</a></h3>
+        <div class="filtresEvenements" id="filtreCategories">
+            <ul class="text-center list-unstyled">
+                <li class="btn" id="btnCinema">Cinéma</li>
+                <li class="btn" id="btnConcert">Concert</li>
+                <li class="btn" id="btnDecouverte">Découverte</li>
+                <li class="btn" id="btnExposition">Exposition</li>
+                <li class="btn" id="btnGastronomie">Gastronomie</li>
+                <li class="btn" id="btnSalon">Salon</li>
+                <li class="btn" id="btnSoiree">Soirée</li>
+                <li class="btn" id="btnSpectacle">Spectacle</li>
+                <li class="btn" id="btnSport">Sport</li>
+                <li class="btn" id="btnAutre">Autre</li>
+            </ul>
+        </div>
+        <div class="filtreSelectionne" id="filtreSelectionneCategorie"></div>
+
+        <hr/>
+
+        <h3 class="text-center"><a id="btnFiltreLieux">Lieux</a></h3>
+        <div class="filtresEvenements" id="filtreLieux">
+            <div class="input-group">
+                <input type="text" class="form-control rounded" id="filtreLieuxSelectionne" placeholder="Ville"/>
+                <a id="ajouterLieux" class="input-group-addon rounded-right"><i class="glyphicon glyphicon-plus"></i></a>
+            </div>
+        </div>
+        <div class="filtreSelectionne" id="filtreSelectionneLieux"></div>
+
+        <hr/>
+
+        <div class="text-center">
+            <div class="col-xs-6"><a class="btn boutonsValidation" id="supprimerSelections"><i class="fa fa-remove"></i></a></div>
+            <div class="col-xs-6"><a class="btn boutonsValidation" id="appliquerFiltres"><i class="fa fa-check"></i></a></div>
+        </div>
+
+    </div>
+
+</div>
+

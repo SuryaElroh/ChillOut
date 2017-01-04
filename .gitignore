@@ -12,7 +12,6 @@ log.txt
 npm-debug.log*
 
 .sass-cache/
-.tmp/
 .versions/
 coverage/
 dist/
