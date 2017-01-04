@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>ChillOut</ion-title>
+    <button ion-button>
+      <ion-icon name="power"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <h4 text-center>Profile</h4>
+
+  <ion-avatar>
+    <img src="https://image.freepik.com/free-icon/user-male-shape-in-a-circle--ios-7-interface-symbol_318-35357.png" alt="Photo profile">
+  </ion-avatar>
+
+  <ion-item *ngFor=" let info of infos">
+    <ion-label stacked>{{info.libelle}}</ion-label>
+    <ion-input type="text" value="{{info.value}}" disabled></ion-input>
+  </ion-item>
+
+  <button ion-button color="light" block (click)="modalModifierInfo()">Modifier mes informations</button>
+  <button ion-button color="light" block (click)="modalModifierMdp()">Changer mon mot de passe</button>
+
+</ion-content>
+
+<ion-footer>
+  <ion-navbar>
+    <ion-grid>
+      <ion-row baseline>
+        <ion-col width-33>
+          <button ion-button clear large (click)="recherche()">
+            <ion-icon name="search"></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col width-33>
+          <button ion-button clear large>
+            <ion-icon name="home"></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col width-33>
+          <button ion-button clear large (click)="profile()">
+            <ion-icon name="person"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-navbar>
+</ion-footer>

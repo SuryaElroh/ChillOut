@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>ChillOut</ion-title>
+    <button ion-button>
+      <ion-icon name="power"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <h4 text-center>Profile</h4>
+
+  <ion-avatar>
+  <img src="https://image.freepik.com/free-icon/user-male-shape-in-a-circle--ios-7-interface-symbol_318-35357.png" alt="Photo profile">
+  </ion-avatar>
+
+  <hr>
+  <div text-center>
+    <button ion-button icon-left clear (click)="nouvelEvenement()">
+      <ion-icon name="add"></ion-icon>Créer un évènement
+    </button>
+    <button ion-button icon-left clear>
+      <ion-icon name="albums"></ion-icon>Mes évènements
+    </button>
+  </div>
+
+  <hr>
+
+  <ion-list>
+    <ion-item>
+      <ion-label stacked>Dénomination sociale</ion-label>
+      <ion-input type="text" disabled></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Adresse</ion-label>
+      <ion-input type="text" disabled></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>E-mail</ion-label>
+      <ion-input type="email" disabled></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Téléphone</ion-label>
+      <ion-input type="text" disabled></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Site web</ion-label>
+      <ion-input type="text" disabled></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button color="light" block>Modifier mes informations</button>
+  <button ion-button color="light" block>Changer mon mot de passe</button>
+
+</ion-content>
+
+<ion-footer>
+  <ion-navbar>
+    <ion-grid>
+      <ion-row baseline>
+        <ion-col width-33>
+          <button ion-button clear large>
+            <ion-icon name="search"></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col width-33>
+          <button ion-button clear large>
+            <ion-icon name="home"></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col width-33>
+          <button ion-button clear large>
+            <ion-icon name="person"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-navbar>
+</ion-footer>

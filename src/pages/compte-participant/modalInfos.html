@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons start>
+      <button ion-button (click)="valider()">
+        <span color="primary" showWhen="ios">Valider</span>
+        <ion-icon name="md-checkmark" showWhen="android,windows"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      Informations personnelles
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="annuler()">
+        <span showWhen="ios">Annuler</span>
+        <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item *ngFor=" let info of infos">
+    <ion-label stacked>{{info.libelle}}</ion-label>
+    <ion-input type="text" value="{{info.value}}"></ion-input>
+  </ion-item>
+</ion-content>

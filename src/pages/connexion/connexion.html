@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle> <!-- A retirer ensuite car on ne doit pas voir le menu sur l''accueil de connexion -->
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>ChillOut</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <button ion-button color="primary" round block>Se connecter avec Facebook</button>
+  <button ion-button color="danger" round block>Se connecter avec Google+</button>
+
+
+  <h5> Se connecter avec un compte ChillOut </h5>
+  <p>
+    <ion-list>
+
+      <ion-item>
+        <ion-label floating>Username</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input type="password"></ion-input>
+      </ion-item>
+
+    </ion-list>
+
+    <button ion-button color="secondary" round block>Se connecter</button>
+  </p>
+
+
+  <h5> pas encore inscrit ? </h5>
+  <button ion-button icon-left clear small (click)="nouveauParticipant()">
+    <ion-icon name="person"></ion-icon>Nouveau participant
+  </button>
+  <button ion-button icon-left clear small (click)="nouvelOrganisateur()">
+    <ion-icon name="briefcase"></ion-icon>Nouvel organisateur
+  </button>
+
+
+</ion-content>
