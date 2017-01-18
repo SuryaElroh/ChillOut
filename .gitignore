@@ -18,6 +18,7 @@ coverage/
 dist/
 tmp/
 temp/
+www/
 hooks/
 plugins/android.json
 plugins/ios.json
