@@ -32,8 +32,7 @@ export class MyApp {
       { title : 'Recherche', component: RecherchePage },
       { title : 'Accueil participant', component: AccueilParticipantPage },
       { title : 'Profile participant', component: CompteParticipantPage },
-      { title : 'Profile organisateur', component: CompteOrganisateurPage },
-      { title : 'evenement perso', component: EvenementPersoPage }
+      { title : 'Profile organisateur', component: CompteOrganisateurPage }
     ];
   }
 

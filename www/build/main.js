@@ -81199,7 +81199,7 @@ var CompteParticipantPage = (function () {
         modal.present();
     };
     CompteParticipantPage = __decorate$111([
-        Component({template:/*ion-inline-start:"D:\Surya\GitHub\ChillOut\src\pages\compte-participant\compte-participant.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>ChillOut</ion-title>\n    <button ion-button>\n      <ion-icon name="power"></ion-icon>\n    </button>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n  <h4 text-center>Profile</h4>\n\n  <ion-avatar>\n    <img src="https://image.freepik.com/free-icon/user-male-shape-in-a-circle--ios-7-interface-symbol_318-35357.png" alt="Photo profile">\n  </ion-avatar>\n\n  <ion-item *ngFor=" let info of infos">\n    <ion-label stacked>{{info.libelle}}</ion-label>\n    <ion-input type="text" value="{{info.value}}" disabled></ion-input>\n  </ion-item>\n\n  <button ion-button color="light" block (click)="modalModifierInfo()">Modifier mes informations</button>\n  <button ion-button color="light" block (click)="modalModifierMdp()">Changer mon mot de passe</button>\n\n</ion-content>\n\n<ion-footer>\n  <ion-navbar>\n    <ion-grid>\n      <ion-row baseline>\n        <ion-col width-33>\n          <button ion-button clear large (click)="recherche()">\n            <ion-icon name="search"></ion-icon>\n          </button>\n        </ion-col>\n        <ion-col width-33>\n          <button ion-button clear large>\n            <ion-icon name="home"></ion-icon>\n          </button>\n        </ion-col>\n        <ion-col width-33>\n          <button ion-button clear large (click)="profile()">\n            <ion-icon name="person"></ion-icon>\n          </button>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </ion-navbar>\n</ion-footer>\n'/*ion-inline-end:"D:\Surya\GitHub\ChillOut\src\pages\compte-participant\compte-participant.html"*/
+        Component({template:/*ion-inline-start:"D:\Surya\GitHub\ChillOut\src\pages\compte-participant\compte-participant.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>ChillOut</ion-title>\n    <button ion-button>\n      <ion-icon name="power"></ion-icon>\n    </button>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n  <h4 text-center>Profile</h4>\n\n  <ion-avatar>\n    <img src="https://image.freepik.com/free-icon/user-male-shape-in-a-circle--ios-7-interface-symbol_318-35357.png" alt="Photo profile">\n  </ion-avatar>\n\n  <ion-item *ngFor=" let info of infos">\n    <ion-label stacked>{{info.libelle}}</ion-label>\n    <ion-input type="text" value="{{info.value}}" disabled></ion-input>\n  </ion-item>\n\n  <button ion-button color="light" block (click)="modalModifierInfo()">Modifier mes informations</button>\n  <button ion-button color="light" block (click)="modalModifierMdp()">Changer mon mot de passe</button>\n\n</ion-content>\n\n'/*ion-inline-end:"D:\Surya\GitHub\ChillOut\src\pages\compte-participant\compte-participant.html"*/
         }), 
         __metadata$5('design:paramtypes', [NavController, ModalController])
     ], CompteParticipantPage);
@@ -81273,6 +81273,28 @@ var CreationEvenementPage = (function () {
     return CreationEvenementPage;
 }());
 
+var __decorate$115 = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata$9 = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var EvenementPersoPage = (function () {
+    function EvenementPersoPage(navCtrl) {
+        this.navCtrl = navCtrl;
+        this.navCtrl = navCtrl;
+    }
+    EvenementPersoPage = __decorate$115([
+        Component({template:/*ion-inline-start:"D:\Surya\GitHub\ChillOut\src\pages\evenement-perso\evenement-perso.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>ChillOut</ion-title>\n    <button ion-button>\n      <ion-icon name="power"></ion-icon>\n    </button>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n  <div padding>\n    <ion-segment [(ngModel)]="event">\n      <ion-segment-button value="aVenir">\n        A VENIR\n      </ion-segment-button>\n      <ion-segment-button value="passe">\n        PASSE\n      </ion-segment-button>\n    </ion-segment>\n  </div>\n\n  <div [ngSwitch]="event">\n    <ion-list *ngSwitchCase="\'aVenir\'">\n      <ion-item>\n        <ion-thumbnail item-left>\n          <img src="../assets/img/categories/autre.jpg"/>\n        </ion-thumbnail>\n        <h2>Evenement quelconque</h2>\n        <p>Ceci est une description !!!! Ceci est une description !!!! Ceci est une description !!!! Ceci est une description !!!! Ceci est une description !!!! Ceci est une description !!!!</p>\n       </ion-item>\n    </ion-list>\n\n    <ion-list *ngSwitchCase="\'passe\'">\n      <ion-item>\n        <ion-thumbnail item-left>\n          <img src="../assets/img/categories/concert.jpg"/>\n        </ion-thumbnail>\n        <h2>Concert de Beyonce</h2>\n      </ion-item>\n    </ion-list>\n  </div>\n\n</ion-content>\n'/*ion-inline-end:"D:\Surya\GitHub\ChillOut\src\pages\evenement-perso\evenement-perso.html"*/
+        }), 
+        __metadata$9('design:paramtypes', [NavController])
+    ], EvenementPersoPage);
+    return EvenementPersoPage;
+}());
+
 var __decorate$113 = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -81287,62 +81309,18 @@ var CompteOrganisateurPage = (function () {
         this.navCtrl = navCtrl;
         this.navCtrl = navCtrl;
     }
+    CompteOrganisateurPage.prototype.mesEvenements = function () {
+        this.navCtrl.push(EvenementPersoPage);
+    };
     CompteOrganisateurPage.prototype.nouvelEvenement = function () {
         this.navCtrl.push(CreationEvenementPage);
     };
     CompteOrganisateurPage = __decorate$113([
-        Component({template:/*ion-inline-start:"D:\Surya\GitHub\ChillOut\src\pages\compte-organisateur\compte-organisateur.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>ChillOut</ion-title>\n    <button ion-button>\n      <ion-icon name="power"></ion-icon>\n    </button>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n  <h4 text-center>Profile</h4>\n\n  <ion-avatar>\n  <img src="https://image.freepik.com/free-icon/user-male-shape-in-a-circle--ios-7-interface-symbol_318-35357.png" alt="Photo profile">\n  </ion-avatar>\n\n  <hr>\n  <div text-center>\n    <button ion-button icon-left clear (click)="nouvelEvenement()">\n      <ion-icon name="add"></ion-icon>Créer un évènement\n    </button>\n    <button ion-button icon-left clear>\n      <ion-icon name="albums"></ion-icon>Mes évènements\n    </button>\n  </div>\n\n  <hr>\n\n  <ion-list>\n    <ion-item>\n      <ion-label stacked>Dénomination sociale</ion-label>\n      <ion-input type="text" disabled></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label stacked>Adresse</ion-label>\n      <ion-input type="text" disabled></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label stacked>E-mail</ion-label>\n      <ion-input type="email" disabled></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label stacked>Téléphone</ion-label>\n      <ion-input type="text" disabled></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label stacked>Site web</ion-label>\n      <ion-input type="text" disabled></ion-input>\n    </ion-item>\n  </ion-list>\n\n  <button ion-button color="light" block>Modifier mes informations</button>\n  <button ion-button color="light" block>Changer mon mot de passe</button>\n\n</ion-content>\n\n<ion-footer>\n  <ion-navbar>\n    <ion-grid>\n      <ion-row baseline>\n        <ion-col width-33>\n          <button ion-button clear large>\n            <ion-icon name="search"></ion-icon>\n          </button>\n        </ion-col>\n        <ion-col width-33>\n          <button ion-button clear large>\n            <ion-icon name="home"></ion-icon>\n          </button>\n        </ion-col>\n        <ion-col width-33>\n          <button ion-button clear large>\n            <ion-icon name="person"></ion-icon>\n          </button>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </ion-navbar>\n</ion-footer>\n'/*ion-inline-end:"D:\Surya\GitHub\ChillOut\src\pages\compte-organisateur\compte-organisateur.html"*/
+        Component({template:/*ion-inline-start:"D:\Surya\GitHub\ChillOut\src\pages\compte-organisateur\compte-organisateur.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>ChillOut</ion-title>\n    <button ion-button>\n      <ion-icon name="power"></ion-icon>\n    </button>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n  <h4 text-center>Profile</h4>\n\n  <ion-avatar>\n  <img src="https://image.freepik.com/free-icon/user-male-shape-in-a-circle--ios-7-interface-symbol_318-35357.png" alt="Photo profile">\n  </ion-avatar>\n\n  <hr>\n  <div text-center>\n    <button ion-button icon-left clear (click)="nouvelEvenement()">\n      <ion-icon name="add"></ion-icon>Créer un évènement\n    </button>\n    <button ion-button icon-left clear (click)="mesEvenements()">\n      <ion-icon name="albums"></ion-icon>Mes évènements\n    </button>\n  </div>\n\n  <hr>\n\n  <ion-list>\n    <ion-item>\n      <ion-label stacked>Dénomination sociale</ion-label>\n      <ion-input type="text" disabled></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label stacked>Adresse</ion-label>\n      <ion-input type="text" disabled></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label stacked>E-mail</ion-label>\n      <ion-input type="email" disabled></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label stacked>Téléphone</ion-label>\n      <ion-input type="text" disabled></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label stacked>Site web</ion-label>\n      <ion-input type="text" disabled></ion-input>\n    </ion-item>\n  </ion-list>\n\n  <button ion-button color="light" block>Modifier mes informations</button>\n  <button ion-button color="light" block>Changer mon mot de passe</button>\n\n</ion-content>\n\n'/*ion-inline-end:"D:\Surya\GitHub\ChillOut\src\pages\compte-organisateur\compte-organisateur.html"*/
         }), 
         __metadata$7('design:paramtypes', [NavController])
     ], CompteOrganisateurPage);
     return CompteOrganisateurPage;
-}());
-
-var __decorate$116 = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata$10 = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var EvenementPage = (function () {
-    function EvenementPage() {
-        this.dateDebut = "2016-12-15T13:47";
-        this.dateFin = "2016-12-16T19:30";
-    }
-    EvenementPage = __decorate$116([
-        Component({template:/*ion-inline-start:"D:\Surya\GitHub\ChillOut\src\pages\evenement\evenement.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Nouvel événement</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n\n  <ion-title>Concert</ion-title>\n\n  <ion-item>\n    <ion-avatar item-left>\n      <img src="../../assets/img/avatarTest.png"/>\n    </ion-avatar>\n    <h2>Pavillon Noir</h2>\n  </ion-item>\n\n  <p>Carmen</p>\n\n  <img src="../../assets/img/categories/concert.jpg"/>\n\n  <p>30 €</p>\n\n  <ion-item>\n    <ion-label stacked>Début de l\'évènement</ion-label>\n    <ion-datetime displayFormat="DD MMM YYYY HH:mm" [(ngModel)]="dateDebut" disabled></ion-datetime>\n  </ion-item>\n\n  <ion-item>\n    <ion-label stacked>Fin de l\'évènement</ion-label>\n    <ion-datetime displayFormat="DD MMM YYYY HH:mm" [(ngModel)]="dateFin" disabled></ion-datetime>\n  </ion-item>\n\n  <p>12 rue du pain, 13100 Aix-en-Provence</p>\n\n  <p>Voici quelques informations supplémentaires par rapport à cet événement</p>\n\n</ion-content>\n'/*ion-inline-end:"D:\Surya\GitHub\ChillOut\src\pages\evenement\evenement.html"*/
-        }), 
-        __metadata$10('design:paramtypes', [])
-    ], EvenementPage);
-    return EvenementPage;
-}());
-
-var __decorate$115 = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata$9 = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var AccueilParticipantPage = (function () {
-    function AccueilParticipantPage(navCtrl) {
-        this.navCtrl = navCtrl;
-        this.navCtrl = navCtrl;
-    }
-    AccueilParticipantPage.prototype.evenementPage = function () {
-        this.navCtrl.push(EvenementPage);
-    };
-    AccueilParticipantPage = __decorate$115([
-        Component({template:/*ion-inline-start:"D:\Surya\GitHub\ChillOut\src\pages\accueil-participant\accueil-participant.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>ChillOut</ion-title>\n    <button ion-button>\n      <ion-icon name="power"></ion-icon>\n    </button>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n  <h1>Un carousel est à venir ici !</h1>\n  <ion-list>\n\n    <ion-card >\n      <button ion-item (click)="evenementPage()">\n        <ion-card-title>\n          Spectacle\n        </ion-card-title>\n\n        <img src="../../assets/img/categories/Spectacle.jpg"/>\n\n        <ion-card-content>\n          <p>Ceci est un court descriptif du spectacle.</p>\n        </ion-card-content>\n      </button>\n    </ion-card>\n\n    <ion-card>\n      <button ion-item (click)="evenementPage()">\n        <ion-card-title>\n          Cinéma\n        </ion-card-title>\n\n        <img src="../../assets/img/categories/cinema.jpg"/>\n\n        <ion-card-content>\n          <p>Ceci est un court descriptif du film.</p>\n        </ion-card-content>\n      </button>\n    </ion-card>\n\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"D:\Surya\GitHub\ChillOut\src\pages\accueil-participant\accueil-participant.html"*/
-        }), 
-        __metadata$9('design:paramtypes', [NavController])
-    ], AccueilParticipantPage);
-    return AccueilParticipantPage;
 }());
 
 var __decorate$117 = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
@@ -81354,17 +81332,42 @@ var __decorate$117 = (undefined && undefined.__decorate) || function (decorators
 var __metadata$11 = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var EvenementPersoPage = (function () {
-    function EvenementPersoPage(navCtrl) {
+var EvenementPage = (function () {
+    function EvenementPage() {
+        this.dateDebut = "2016-12-15T13:47";
+        this.dateFin = "2016-12-16T19:30";
+    }
+    EvenementPage = __decorate$117([
+        Component({template:/*ion-inline-start:"D:\Surya\GitHub\ChillOut\src\pages\evenement\evenement.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Nouvel événement</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n\n  <ion-title>Concert</ion-title>\n\n  <ion-item>\n    <ion-avatar item-left>\n      <img src="../../assets/img/avatarTest.png"/>\n    </ion-avatar>\n    <h2>Pavillon Noir</h2>\n  </ion-item>\n\n  <p>Carmen</p>\n\n  <img src="../../assets/img/categories/concert.jpg"/>\n\n  <p>30 €</p>\n\n  <ion-item>\n    <ion-label stacked>Début de l\'évènement</ion-label>\n    <ion-datetime displayFormat="DD MMM YYYY HH:mm" [(ngModel)]="dateDebut" disabled></ion-datetime>\n  </ion-item>\n\n  <ion-item>\n    <ion-label stacked>Fin de l\'évènement</ion-label>\n    <ion-datetime displayFormat="DD MMM YYYY HH:mm" [(ngModel)]="dateFin" disabled></ion-datetime>\n  </ion-item>\n\n  <p>12 rue du pain, 13100 Aix-en-Provence</p>\n\n  <p>Voici quelques informations supplémentaires par rapport à cet événement</p>\n\n</ion-content>\n'/*ion-inline-end:"D:\Surya\GitHub\ChillOut\src\pages\evenement\evenement.html"*/
+        }), 
+        __metadata$11('design:paramtypes', [])
+    ], EvenementPage);
+    return EvenementPage;
+}());
+
+var __decorate$116 = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata$10 = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var AccueilParticipantPage = (function () {
+    function AccueilParticipantPage(navCtrl) {
         this.navCtrl = navCtrl;
         this.navCtrl = navCtrl;
     }
-    EvenementPersoPage = __decorate$117([
-        Component({template:/*ion-inline-start:"D:\Surya\GitHub\ChillOut\src\pages\evenement-perso\evenement-perso.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>ChillOut</ion-title>\n    <button ion-button>\n      <ion-icon name="power"></ion-icon>\n    </button>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n  <div padding>\n    <ion-segment [(ngModel)]="event">\n      <ion-segment-button value="aVenir">\n        A VENIR\n      </ion-segment-button>\n      <ion-segment-button value="passe">\n        PASSE\n      </ion-segment-button>\n    </ion-segment>\n  </div>\n\n  <div [ngSwitch]="event">\n    <ion-list *ngSwitchCase="\'aVenir\'">\n      <ion-item>\n        <ion-thumbnail item-left>\n          <img src="../assets/img/categories/autre.jpg"/>\n        </ion-thumbnail>\n        <h2>Evenement quelconque</h2>\n        <p>Ceci est une description !!!! Ceci est une description !!!! Ceci est une description !!!! Ceci est une description !!!! Ceci est une description !!!! Ceci est une description !!!!</p>\n       </ion-item>\n    </ion-list>\n\n    <ion-list *ngSwitchCase="\'passe\'">\n      <ion-item>\n        <ion-thumbnail item-left>\n          <img src="../assets/img/categories/concert.jpg"/>\n        </ion-thumbnail>\n        <h2>Concert de Beyonce</h2>\n      </ion-item>\n    </ion-list>\n  </div>\n\n</ion-content>\n'/*ion-inline-end:"D:\Surya\GitHub\ChillOut\src\pages\evenement-perso\evenement-perso.html"*/
+    AccueilParticipantPage.prototype.evenementPage = function () {
+        this.navCtrl.push(EvenementPage);
+    };
+    AccueilParticipantPage = __decorate$116([
+        Component({template:/*ion-inline-start:"D:\Surya\GitHub\ChillOut\src\pages\accueil-participant\accueil-participant.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>ChillOut</ion-title>\n    <button ion-button>\n      <ion-icon name="power"></ion-icon>\n    </button>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n  <h1>Un carousel est à venir ici !</h1>\n  <ion-list>\n\n    <ion-card >\n      <button ion-item (click)="evenementPage()">\n        <ion-card-title>\n          Spectacle\n        </ion-card-title>\n\n        <img src="../../assets/img/categories/Spectacle.jpg"/>\n\n        <ion-card-content>\n          <p>Ceci est un court descriptif du spectacle.</p>\n        </ion-card-content>\n      </button>\n    </ion-card>\n\n    <ion-card>\n      <button ion-item (click)="evenementPage()">\n        <ion-card-title>\n          Cinéma\n        </ion-card-title>\n\n        <img src="../../assets/img/categories/cinema.jpg"/>\n\n        <ion-card-content>\n          <p>Ceci est un court descriptif du film.</p>\n        </ion-card-content>\n      </button>\n    </ion-card>\n\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"D:\Surya\GitHub\ChillOut\src\pages\accueil-participant\accueil-participant.html"*/
         }), 
-        __metadata$11('design:paramtypes', [NavController])
-    ], EvenementPersoPage);
-    return EvenementPersoPage;
+        __metadata$10('design:paramtypes', [NavController])
+    ], AccueilParticipantPage);
+    return AccueilParticipantPage;
 }());
 
 var __decorate$1 = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
@@ -81388,8 +81391,7 @@ var MyApp = (function () {
             { title: 'Recherche', component: RecherchePage },
             { title: 'Accueil participant', component: AccueilParticipantPage },
             { title: 'Profile participant', component: CompteParticipantPage },
-            { title: 'Profile organisateur', component: CompteOrganisateurPage },
-            { title: 'evenement perso', component: EvenementPersoPage }
+            { title: 'Profile organisateur', component: CompteOrganisateurPage }
         ];
     }
     MyApp.prototype.initializeApp = function () {
