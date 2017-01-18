@@ -10,6 +10,7 @@ log.txt
 *.sublime-workspace
 .vscode/
 npm-debug.log*
+node_modules/
 
 .sass-cache/
 .versions/
