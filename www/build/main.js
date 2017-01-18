@@ -81048,15 +81048,31 @@ var __metadata$2 = (undefined && undefined.__metadata) || function (k, v) {
 var InscriptionParticipantPage = (function () {
     function InscriptionParticipantPage(navCtrl) {
         this.navCtrl = navCtrl;
+        this.form = {
+            "email": "",
+            "password": "",
+            "passwordComfirm": "",
+            "lastName": "",
+            "firstName": "",
+            "birthday": ""
+        };
         this.navCtrl = navCtrl;
     }
     InscriptionParticipantPage.prototype.nouveauCompte = function () {
-        this.navCtrl.push(ConnexionPage);
+        var chillout = new Chillout();
+        chillout.ajax({
+            type: "post",
+            data: this.form
+        })
+            .then(function (res) {
+            console.log(res);
+            alert("wouhouuuu !!");
+        });
     };
     return InscriptionParticipantPage;
 }());
 InscriptionParticipantPage = __decorate$109([
-    Component({template:/*ion-inline-start:"/melvin/program/app/ChillOut/src/pages/inscription-participant/inscription-participant.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-grid>\n      <ion-row>\n        <ion-col width-25>\n          <button ion-button menuToggle>\n            <ion-icon name="menu"></ion-icon>\n          </button>\n        </ion-col>\n        <ion-col width-50>\n          <ion-title>ChillOut</ion-title>\n        </ion-col>\n        <ion-col width-25>\n          <button ion-button>\n            <ion-icon name="power"></ion-icon>\n          </button>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n  <h4 text-center>Inscription participant</h4>\n  <ion-list>\n    <ion-item>\n      <ion-label stacked>Adresse e-mail</ion-label>\n      <ion-input type="email" value=""></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label stacked>Mot de passe</ion-label>\n      <ion-input type="password"></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label stacked>Confirmer votre mot de passe</ion-label>\n      <ion-input type="password"></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label stacked>Nom</ion-label>\n      <ion-input type="text" value=""></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label stacked>Prénom</ion-label>\n      <ion-input type="text" value=""></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label stacked>Date de naissance</ion-label>\n      <ion-datetime displayFormat="DD MMM, YYYY" [(ngModel)]="myDate"></ion-datetime>\n    </ion-item>\n  </ion-list>\n\n  <button ion-button color="secondary" round block (click)="nouveauCompte()">Créer mon compte</button>\n</ion-content>\n'/*ion-inline-end:"/melvin/program/app/ChillOut/src/pages/inscription-participant/inscription-participant.html"*/
+    Component({template:/*ion-inline-start:"/melvin/program/app/ChillOut/src/pages/inscription-participant/inscription-participant.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-grid>\n      <ion-row>\n        <ion-col width-25>\n          <button ion-button menuToggle>\n            <ion-icon name="menu"></ion-icon>\n          </button>\n        </ion-col>\n        <ion-col width-50>\n          <ion-title>ChillOut</ion-title>\n        </ion-col>\n        <ion-col width-25>\n          <button ion-button>\n            <ion-icon name="power"></ion-icon>\n          </button>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n  <h4 text-center>Inscription participant</h4>\n  <ion-list>\n    <ion-item>\n      <ion-label stacked>Adresse e-mail</ion-label>\n      <ion-input type="email" [(ngModel)]="form.email"></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label stacked>Mot de passe</ion-label>\n      <ion-input type="password" [(ngModel)]="form.password"></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label stacked>Confirmer votre mot de passe</ion-label>\n      <ion-input type="password" [(ngModel)]="form.passwordComfirm"></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label stacked>Nom</ion-label>\n      <ion-input type="text" [(ngModel)]="form.lastName"></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label stacked>Prénom</ion-label>\n      <ion-input type="text" [(ngModel)]="form.firstName"></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label stacked>Date de naissance</ion-label>\n      <ion-datetime displayFormat="DD MMM, YYYY" [(ngModel)]="form.birthday"></ion-datetime>\n    </ion-item>\n  </ion-list>\n\n  <button ion-button color="secondary" round block (click)="nouveauCompte()">Créer mon compte</button>\n</ion-content>\n'/*ion-inline-end:"/melvin/program/app/ChillOut/src/pages/inscription-participant/inscription-participant.html"*/
     }),
     __metadata$2("design:paramtypes", [NavController])
 ], InscriptionParticipantPage);

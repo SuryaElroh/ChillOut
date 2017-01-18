@@ -26,32 +26,32 @@
   <ion-list>
     <ion-item>
       <ion-label stacked>Adresse e-mail</ion-label>
-      <ion-input type="email" value=""></ion-input>
+      <ion-input type="email" [(ngModel)]="form.email"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Mot de passe</ion-label>
-      <ion-input type="password"></ion-input>
+      <ion-input type="password" [(ngModel)]="form.password"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Confirmer votre mot de passe</ion-label>
-      <ion-input type="password"></ion-input>
+      <ion-input type="password" [(ngModel)]="form.passwordComfirm"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Nom</ion-label>
-      <ion-input type="text" value=""></ion-input>
+      <ion-input type="text" [(ngModel)]="form.lastName"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Prénom</ion-label>
-      <ion-input type="text" value=""></ion-input>
+      <ion-input type="text" [(ngModel)]="form.firstName"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Date de naissance</ion-label>
-      <ion-datetime displayFormat="DD MMM, YYYY" [(ngModel)]="myDate"></ion-datetime>
+      <ion-datetime displayFormat="DD MMM, YYYY" [(ngModel)]="form.birthday"></ion-datetime>
     </ion-item>
   </ion-list>
 
