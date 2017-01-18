@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import {NavController} from "ionic-angular";
-import {CompteParticipantPage} from "../compte-participant/compte-participant";
-import {RecherchePage} from "../recherche/recherche";
+import {EvenementPage} from "../evenement/evenement";
 
 
 @Component({
@@ -12,12 +11,8 @@ export class AccueilParticipantPage {
     this.navCtrl=navCtrl;
   }
 
-  recherche(){
-    this.navCtrl.push(RecherchePage)
-  }
-
-  profile(){
-    this.navCtrl.push(CompteParticipantPage);
+  evenementPage(){
+    this.navCtrl.push(EvenementPage);
   }
 
 }

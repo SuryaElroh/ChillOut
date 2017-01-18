@@ -1,3 +1,4 @@
+// Déclaration de toutes les pages contenues dans l'app
 import { NgModule } from '@angular/core';
 import { IonicApp, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
