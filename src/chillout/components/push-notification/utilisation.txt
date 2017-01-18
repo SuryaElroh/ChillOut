@@ -1,0 +1,5 @@
+var chillout = new Chillout();
+chillout.pushNotification({
+    titre : "News Chillout",
+    message : "Une nouvelle destination disponible !"
+});

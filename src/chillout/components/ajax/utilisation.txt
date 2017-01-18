@@ -1,0 +1,8 @@
+var chillout = new Chillout();
+chillout.ajax({
+    url : "http://localhost",
+    data : { text : "exemple de donnée qui ira sur le server" },
+    next : function(data){
+        console.log(data);
+    }
+});

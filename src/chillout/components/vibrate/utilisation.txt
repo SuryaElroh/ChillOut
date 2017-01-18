@@ -1,0 +1,5 @@
+
+var chillout = new Chillout();
+chillout.vibrate({
+    time : 1000,
+});

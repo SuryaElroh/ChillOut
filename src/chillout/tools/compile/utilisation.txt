@@ -1,0 +1,1 @@
+node /melvin/program/app/ChillOut/src/chillout/tools/compile/compile.js /melvin/program/app/ChillOut/src/chillout/components /melvin/program/app/ChillOut/www/chillout

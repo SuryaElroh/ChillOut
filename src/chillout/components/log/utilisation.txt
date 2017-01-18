@@ -1,0 +1,2 @@
+var chillout = new Chillout();
+chillout.log("coucou");
