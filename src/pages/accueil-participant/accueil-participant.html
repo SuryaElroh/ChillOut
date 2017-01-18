@@ -12,7 +12,18 @@
 
 
 <ion-content padding>
-  <h1>Un carousel est à venir ici !</h1>
+    <ion-slides pager
+                [options]="mySlideOptions">
+        <ion-slide>
+            <img src="/assets/accueil/carrousel/1.jpeg">
+        </ion-slide>
+        <ion-slide>
+            <img src="/assets/accueil/carrousel/2.jpeg">
+        </ion-slide>
+        <ion-slide>
+            <img src="/assets/accueil/carrousel/3.jpeg">
+        </ion-slide>
+    </ion-slides>
   <ion-list>
 
     <ion-card >
