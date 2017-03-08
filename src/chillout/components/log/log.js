@@ -8,7 +8,7 @@
  * * * * * * * * * * * * * * * * * * * * * * * * * *
  *
  */
-Chillout.prototype.log = function(parameters) {
+Chillout.log = function(parameters) {
     var warn;
     warn = "\n----------[ ERROR START ]----------\n\n";
     for (var i in parameters) {
@@ -24,4 +24,5 @@ Chillout.prototype.log = function(parameters) {
     }
     warn += "-----------[ ERROR END ]-----------\n";
     console.warn (warn);
+    return parameters;
 };

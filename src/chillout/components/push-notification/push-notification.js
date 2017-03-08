@@ -10,10 +10,8 @@
  *
  */
 Chillout.prototype.pushNotification = function(parameters){
-    // parameters
     var titre = parameters.titre;
     var message = parameters.message;
-    // cordova
     cordova.plugins.notification.local.schedule ({
         id : 1 ,
         title : titre ,

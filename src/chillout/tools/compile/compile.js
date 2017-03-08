@@ -25,6 +25,7 @@ Watch.prototype.files = [];
 Watch.prototype.source = "";
 Watch.prototype.destination = "";
 Watch.prototype.file_name = "";
+Watch.prototype.folder_separator = "/";
 /*
  *
  * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -44,7 +45,7 @@ Watch.prototype.getFiles = function (dir , files_) {
         if (i >= files_length) {
             break;
         }
-        var name = dir + '/' + files[i];
+        var name = dir + this.folder_separator + files[i];
         var last_modified_time = new Date (fs.statSync (name).mtime);
         var date = [
             this.numberLength (last_modified_time.getFullYear ()) ,
@@ -100,7 +101,7 @@ Watch.prototype.setDestination = function (value) {
  *
  */
 Watch.prototype.setFileName = function (value) {
-    this.file_name = value.split ("/")
+    this.file_name = value.split (this.folder_separator)
     .pop ();
 };
 /*
@@ -156,10 +157,7 @@ Watch.prototype.arrayDiff = function (new_tabb , old_tabb) {
  *
  */
 Watch.prototype.start = function () {
-    // control
-    if (!this.controlStart ()) {
-        return false;
-    }
+    if (!this.controlStart ()) return false;
     var that = this;
     var interval = setInterval (function () {
         that.last_date = [];
@@ -192,13 +190,10 @@ Watch.prototype.log = function (value) {
  *
  */
 Watch.prototype.controlStart = function () {
-    // defualt
     var control = false;
-    // control
     if (this.source && this.destination) {
         control = true;
     }
-    // return
     return control;
 };
 /*
@@ -215,11 +210,6 @@ Watch.prototype.action = function () {
     console.log ('component [' + this.file_name + '] has changed : ' + date);
     var files = this.files;
     var files_length = files.length;
-    /*
-     |-------------------------
-     | Action | Style
-     |-------------------------
-     */
     var app_css = "";
     var i = 0;
     for (; ;) {
@@ -231,12 +221,7 @@ Watch.prototype.action = function () {
         }
         i++;
     }
-    fs.writeFile (this.destination + "/" + this.file_name + ".css" , app_css);
-    /*
-     |-------------------------
-     | Action | Scypt
-     |-------------------------
-     */
+    fs.writeFile (this.destination + this.folder_separator + this.file_name + ".css" , app_css);
     var app_js = "";
     var i = 0;
     for (; ;) {
@@ -248,7 +233,7 @@ Watch.prototype.action = function () {
         }
         i++;
     }
-    fs.writeFile (this.destination + "/" + this.file_name + ".js" , app_js);
+    fs.writeFile (this.destination + this.folder_separator + this.file_name + ".js" , app_js);
 };
 /*
  *

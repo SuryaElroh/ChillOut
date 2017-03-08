@@ -8,48 +8,83 @@
  * * * * * * * * * * * * * * * * * * * * * * * * * *
  *
  */
-Chillout.prototype.ajax = function (parameters) {
-    var that = this;
-    return new Promise (function (resolve , reject) {
-        // default
-        var url = "https://chillout.goto4ever.com:10443/";
-        var data = function () {return {}} ();
-        var type = "get";
-        var route = "";
-        // parameters
-        if (parameters && parameters.hasOwnProperty ("type")) {
-            type = parameters.type;
+Chillout.ajax = function (parameters) {
+    // default
+    var url = this.config.url;
+    var data = function () {return {}} ();
+    var error = this.modelError;
+    var success = this.modelSuccess;
+    var variables = [];
+    var type = "get";
+    var route = "";
+    var form_data = null;
+    // parameters
+    if (parameters && parameters.hasOwnProperty ("type")) {
+        type = parameters.type;
+    }
+    if (parameters && parameters.hasOwnProperty ("route")) {
+        route = parameters.route;
+    }
+    if (parameters && parameters.hasOwnProperty ("url")) {
+        url = parameters.url;
+    }
+    if (parameters && parameters.hasOwnProperty ("data")) {
+        data = parameters.data;
+    }
+    if (parameters && parameters.hasOwnProperty ("success")) {
+        success = parameters.success;
+    }
+    if (parameters && parameters.hasOwnProperty ("error")) {
+        error = parameters.error;
+    }
+    // on ajoute le token au data
+    var token = Chillout.authGetToken();
+    if (token) data.token = token;
+    // si on a le type get
+    if (type === "get" || type === "put" || type === "delete") {
+        for (var i in data) {
+            variables.push( i + "=" + data[i]);
         }
-        // parameters
-        if (parameters && parameters.hasOwnProperty ("route")) {
-          route = parameters.route;
-        }
-        // parameters
-        if (parameters && parameters.hasOwnProperty ("url")) {
-            url = parameters.url;
-        }
-        // option
-        if (parameters && parameters.hasOwnProperty ("data")) {
-            data = parameters.data;
-        }
-        console.log(url + route);
-        // xhr
-        var xhr = new XMLHttpRequest ();
-        xhr.open (type.toUpperCase () , url + route);
-        xhr.setRequestHeader ("Content-type" , "application/json");
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState == 4) {
-                if (xhr.status == 200) {
-                    resolve (JSON.parse (xhr.responseText));
-                }
-                else {
-                    reject (xhr);
+    }
+    // si on des type post
+    if(type === "post" || type === "put" || type === "delete") {
+        form_data = JSON.stringify (data);
+    }
+    var xhr = new XMLHttpRequest ();
+    xhr.open (type.toUpperCase () , url + route + "?" + variables.join("&"));
+    xhr.setRequestHeader ("Content-type" , "application/json");
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4) {
+            if (xhr.status == 200) {
+                try { success (JSON.parse (xhr.responseText)); }
+                catch (e) {
+                    Chillout.log ({
+                        "class" : "Chillout" ,
+                        "method" : "ajax" ,
+                        "result" : xhr.responseText,
+                        "msg" : "in success :: the json is badely formated"
+                    });
                 }
             }
             else {
-                reject ();
+                try {
+                    var results = xhr.responseText;
+                    var results = JSON.parse (results);
+                    if (results.status_code == 401) {
+                        Chillout.authDisconnectUser();
+                    }
+                    error (results);
+                }
+                catch (e) {
+                    Chillout.log ({
+                        "class" : "Chillout" ,
+                        "result" : xhr.responseText,
+                        "method" : "ajax" ,
+                        "msg" : "in error :: the json is badely formated"
+                    });
+                }
             }
-        };
-        xhr.send (JSON.stringify (data));
-    });
+        }
+    };
+    xhr.send (form_data);
 };

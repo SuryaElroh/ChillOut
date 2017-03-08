@@ -9,15 +9,7 @@
  *
  */
 Chillout.prototype.vibrate = function (parameters) {
-    // default
     var time = 1000;
-    // parameters
-    if (parameters) {
-        // option
-        if (parameters.hasOwnProperty ("time")) {
-            time = parameters.time;
-        }
-    }
-    // native - vibration
+    if (parameters && parameters.hasOwnProperty ("time")) time = parameters.time;
     navigator.vibrate(time);
 };

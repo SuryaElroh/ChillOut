@@ -1,5 +1,3 @@
-
-var chillout = new Chillout();
-chillout.vibrate({
+Chillout.vibrate({
     time : 1000,
 });
