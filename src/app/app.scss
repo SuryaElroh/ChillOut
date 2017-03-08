@@ -14,3 +14,51 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+.fontwhite {
+  color: #FFFFFF !important;
+}
+
+// For Inscription Pages
+// --------------------------------------------------
+.btnicp {
+  background: transparent;
+  border: solid #FFFFFF;
+}
+.centrage {
+  width: 80%;
+  margin: auto;
+}
+.bkimgicp {
+  background-image: url("../assets/img/fond.png");
+  background-size: contain;
+}
+.blitemicp {
+  background: transparent;
+  border: none !important;
+}
+.blitemicp *{
+  border: none !important;
+}
+.inputicp {
+  background: white;
+  border-radius: 64px;
+}
+
+// For Research Page
+// --------------------------------------------------
+.bkrs {
+  background-color: #ACAEAD;
+}
+.srbar {
+  background-color: transparent !important;
+  border: none !important;
+}
+.srbar .searchbar-input {
+  background-color: #7F8182;
+  color: #FFFFFF !important;
+}
+// ! a changé à ne plus mettre pour mozilla mais pour webkit
+.srbar .searchbar-input::-moz-placeholder{
+  color: #FFFFFF !important;
+}

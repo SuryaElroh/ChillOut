@@ -12,13 +12,17 @@ Chillout.prototype.ajax = function (parameters) {
     var that = this;
     return new Promise (function (resolve , reject) {
         // default
-        var url = "https://chillout.goto4ever.com:10443/participants";
+        var url = "https://chillout.goto4ever.com:10443/";
         var data = function () {return {}} ();
-        var next = function (data) {console.log (data);};
         var type = "get";
+        var route = "";
         // parameters
         if (parameters && parameters.hasOwnProperty ("type")) {
             type = parameters.type;
+        }
+        // parameters
+        if (parameters && parameters.hasOwnProperty ("route")) {
+          route = parameters.route;
         }
         // parameters
         if (parameters && parameters.hasOwnProperty ("url")) {
@@ -28,13 +32,10 @@ Chillout.prototype.ajax = function (parameters) {
         if (parameters && parameters.hasOwnProperty ("data")) {
             data = parameters.data;
         }
-        // option
-        if (parameters && parameters.hasOwnProperty ("next")) {
-            next = parameters.next;
-        }
+        console.log(url + route);
         // xhr
         var xhr = new XMLHttpRequest ();
-        xhr.open (type.toUpperCase () , url);
+        xhr.open (type.toUpperCase () , url + route);
         xhr.setRequestHeader ("Content-type" , "application/json");
         xhr.onreadystatechange = function () {
             if (xhr.readyState == 4) {

@@ -8,7 +8,7 @@
           </button>
         </ion-col>
         <ion-col width-50>
-          <ion-title>ChillOut</ion-title>
+          <ion-title>Inscription Organisateur</ion-title>
         </ion-col>
         <ion-col width-25>
           <button ion-button>
@@ -20,45 +20,46 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content class="bkimgicp" padding>
+  <ion-col class="centrage" >
+    <ion-list>
+      <ion-item class="blitemicp">
+        <ion-label class="fontwhite" stacked text-center>Dénomination sociale</ion-label>
+        <ion-input class="inputicp" type="text" value="" text-center></ion-input>
+      </ion-item>
 
-  <h4 text-center>Inscription organisateur</h4>
-  <ion-list>
-    <ion-item>
-      <ion-label stacked>Adresse e-mail</ion-label>
-      <ion-input type="email" value=""></ion-input>
-    </ion-item>
+      <ion-item class="blitemicp">
+        <ion-label class="fontwhite" stacked text-center>Adresse</ion-label>
+        <ion-input class="inputicp" type="text" value="" text-center></ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-label stacked>Mot de passe</ion-label>
-      <ion-input type="password"></ion-input>
-    </ion-item>
+      <ion-item class="blitemicp">
+        <ion-label class="fontwhite" stacked text-center>Téléphone</ion-label>
+        <ion-input class="inputicp" type="text" value="" text-center></ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-label stacked>Confirmer votre mot de passe</ion-label>
-      <ion-input type="password"></ion-input>
-    </ion-item>
+      <ion-item class="blitemicp">
+        <ion-label class="fontwhite" stacked text-center>Site web</ion-label>
+        <ion-input class="inputicp" type="text" value="http://" text-center></ion-input>
+      </ion-item>
+      <br>
+      <ion-item class="blitemicp">
+        <ion-label class="fontwhite" stacked text-center>E-mail</ion-label>
+        <ion-input class="inputicp" type="email" value="" text-center></ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-label stacked>Dénomination sociale</ion-label>
-      <ion-input type="text" value=""></ion-input>
-    </ion-item>
+      <ion-item class="blitemicp">
+        <ion-label class="fontwhite" stacked text-center>Mot de passe</ion-label>
+        <ion-input class="inputicp" type="password" text-center></ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-label stacked>Adresse</ion-label>
-      <ion-input type="text" value=""></ion-input>
-    </ion-item>
+      <ion-item class="blitemicp">
+        <ion-label class="fontwhite" stacked text-center>Confirmation mot de passe</ion-label>
+        <ion-input class="inputicp" type="password" text-center></ion-input>
+      </ion-item>
+    </ion-list>
 
-    <ion-item>
-      <ion-label stacked>Numéro de téléphone</ion-label>
-      <ion-input type="text" value=""></ion-input>
-    </ion-item>
+    <button class="btnicp" ion-button color="secondary" round block (click)="nouveauCompte()">S'inscrire</button>
 
-    <ion-item>
-      <ion-label stacked>Site web</ion-label>
-      <ion-input type="text" value="http://"></ion-input>
-    </ion-item>
-  </ion-list>
-
-  <button ion-button color="secondary" round block (click)="nouveauCompte()">Créer mon compte</button>
+  </ion-col>
 </ion-content>

@@ -2,58 +2,53 @@
   <ion-navbar>
     <ion-grid>
       <ion-row>
-        <ion-col width-25>
+        <ion-col width-20>
           <button ion-button menuToggle>
             <ion-icon name="menu"></ion-icon>
           </button>
         </ion-col>
         <ion-col width-50>
-          <ion-title>ChillOut</ion-title>
-        </ion-col>
-        <ion-col width-25>
-          <button ion-button>
-            <ion-icon name="power"></ion-icon>
-          </button>
+          <ion-title>Inscription participant</ion-title>
         </ion-col>
       </ion-row>
     </ion-grid>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content class="bkimgicp" padding>
+  <ion-col class="centrage" >
+    <ion-list>
+      <ion-item class="blitemicp">
+        <ion-label class="fontwhite" stacked text-center>Adresse e-mail</ion-label>
+        <ion-input class="inputicp" type="email" value="" text-center></ion-input>
+      </ion-item>
 
-  <h4 text-center>Inscription participant</h4>
-  <ion-list>
-    <ion-item>
-      <ion-label stacked>Adresse e-mail</ion-label>
-      <ion-input type="email" value=""></ion-input>
-    </ion-item>
+      <ion-item class="blitemicp">
+        <ion-label class="fontwhite" stacked text-center>Mot de passe</ion-label>
+        <ion-input class="inputicp" type="password" text-center></ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-label stacked>Mot de passe</ion-label>
-      <ion-input type="password"></ion-input>
-    </ion-item>
+      <ion-item class="blitemicp">
+        <ion-label class="fontwhite" stacked text-center>Confirmer votre mot de passe</ion-label>
+        <ion-input class="inputicp" type="password" text-center></ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-label stacked>Confirmer votre mot de passe</ion-label>
-      <ion-input type="password"></ion-input>
-    </ion-item>
+      <ion-item class="blitemicp">
+        <ion-label class="fontwhite" stacked text-center>Nom</ion-label>
+        <ion-input class="inputicp" type="text" value="" text-center></ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-label stacked>Nom</ion-label>
-      <ion-input type="text" value=""></ion-input>
-    </ion-item>
+      <ion-item class="blitemicp">
+        <ion-label class="fontwhite" stacked text-center>Prénom</ion-label>
+        <ion-input class="inputicp" type="text" value="" text-center></ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-label stacked>Prénom</ion-label>
-      <ion-input type="text" value=""></ion-input>
-    </ion-item>
+      <ion-item class="blitemicp">
+        <ion-label class="fontwhite" stacked text-center>Date de naissance</ion-label>
+        <ion-datetime class="inputicp" displayFormat="DD MMM, YYYY" [(ngModel)]="myDate" text-center></ion-datetime>
+      </ion-item>
+    </ion-list>
 
-    <ion-item>
-      <ion-label stacked>Date de naissance</ion-label>
-      <ion-datetime displayFormat="DD MMM, YYYY" [(ngModel)]="myDate"></ion-datetime>
-    </ion-item>
-  </ion-list>
-
-  <button ion-button color="secondary" round block (click)="nouveauCompte()">Créer mon compte</button>
+    <button class="btnicp" ion-button round block (click)="nouveauCompte()">S'inscrire</button>
+   </ion-col>
 </ion-content>

@@ -10,7 +10,8 @@
  */
 window.Chillout = function(){
 
-};/*
+};
+/*
  *
  * * * * * * * * * * * * * * * * * * * * * * * * * *
  *
@@ -21,48 +22,49 @@ window.Chillout = function(){
  *
  */
 Chillout.prototype.ajax = function (parameters) {
-    var that = this;
-    return new Promise (function (resolve , reject) {
-        // default
-        var url = "https://chillout.goto4ever.com:10443/participants";
-        var data = function () {return {}} ();
-        var next = function (data) {console.log (data);};
-        var type = "get";
-        // parameters
-        if (parameters && parameters.hasOwnProperty ("type")) {
-            type = parameters.type;
-        }
-        // parameters
-        if (parameters && parameters.hasOwnProperty ("url")) {
-            url = parameters.url;
-        }
-        // option
-        if (parameters && parameters.hasOwnProperty ("data")) {
-            data = parameters.data;
-        }
-        // option
-        if (parameters && parameters.hasOwnProperty ("next")) {
-            next = parameters.next;
-        }
-        // xhr
-        var xhr = new XMLHttpRequest ();
-        xhr.open (type.toUpperCase () , url);
-        xhr.setRequestHeader ("Content-type" , "application/json");
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState == 4) {
-                if (xhr.status == 200) {
-                    resolve (JSON.parse (xhr.responseText));
-                }
-                else {
-                    reject (xhr);
-                }
-            }
-            else {
-                reject ();
-            }
-        };
-        xhr.send (JSON.stringify (data));
-    });
+  var that = this;
+    // default
+    // var url = "https://chillout.goto4ever.com:10443/";
+    var url = "https://melvinclarks.com/";
+    var data = function () {return {}} ();
+    var error = function () {};
+    var success = function () {};
+    var type = "get";
+    var route = "";
+    // parameters
+    if (parameters && parameters.hasOwnProperty ("type")) {
+      type = parameters.type;
+    }
+    // parameters
+    if (parameters && parameters.hasOwnProperty ("route")) {
+      route = parameters.route;
+    }
+    // parameters
+    if (parameters && parameters.hasOwnProperty ("url")) {
+      url = parameters.url;
+    }
+    // option
+    if (parameters && parameters.hasOwnProperty ("data")) {
+      data = parameters.data;
+    }
+    // option
+    if (parameters && parameters.hasOwnProperty ("success")) {
+      success = parameters.success;
+    }
+    // option
+    if (parameters && parameters.hasOwnProperty ("error")) {
+      error = parameters.error;
+    }
+    // xhr
+    var xhr = new XMLHttpRequest ();
+    xhr.open (type.toUpperCase () , url + route);
+    // xhr.setRequestHeader ("Content-type" , "application/json");
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState == 4) {
+          success (JSON.stringify(xhr.responseText));
+      }
+    };
+    xhr.send (JSON.stringify (data));
 };/*
  *
  * * * * * * * * * * * * * * * * * * * * * * * * * *

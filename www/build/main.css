@@ -21106,6 +21106,57 @@ sub {
   }
 }
 
+.fontwhite {
+  color: #FFFFFF !important;
+}
+
+.btnicp {
+  background: transparent;
+  border: solid #FFFFFF;
+}
+
+.centrage {
+  width: 80%;
+  margin: auto;
+}
+
+.bkimgicp {
+  background-image: url("../assets/img/fond.png");
+  background-size: contain;
+}
+
+.blitemicp {
+  background: transparent;
+  border: none !important;
+}
+
+.blitemicp * {
+  border: none !important;
+}
+
+.inputicp {
+  background: white;
+  border-radius: 64px;
+}
+
+.bkrs {
+  background-color: #ACAEAD;
+}
+
+.srbar {
+  background-color: transparent !important;
+  border: none !important;
+}
+
+.srbar .searchbar-input {
+  background-color: #7F8182;
+  color: #FFFFFF !important;
+}
+
+.srbar .searchbar-input::-moz-placeholder {
+  color: #FFFFFF !important;
+}
+
 .list .item.item-accordion {
   line-height: 38px;
   padding-top: 0;
