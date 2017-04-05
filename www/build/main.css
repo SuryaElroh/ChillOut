@@ -21140,7 +21140,7 @@ sub {
 }
 
 .bkrs {
-  background-color: #ACAEAD;
+  background-color: #2F3841;
 }
 
 .srbar {
@@ -21151,6 +21151,10 @@ sub {
 .srbar .searchbar-input {
   background-color: #7F8182;
   color: #FFFFFF !important;
+}
+
+.bordure {
+  border: solid;
 }
 
 .srbar .searchbar-input::-moz-placeholder {

@@ -13,24 +13,39 @@
 <ion-content class="bkrs" padding>
   <ion-searchbar class="srbar fontwhite" (ionInput)="getItems($event)"></ion-searchbar>
 
-  <ion-list>
-    <ion-title>Période</ion-title>
-    <ion-item>
-      <ion-label stacked>Du</ion-label>
-      <ion-datetime displayFormat="DD MMM YYYY" [(ngModel)]="dateDebut"></ion-datetime>
+  <button class="btn btn-success">Bonjour</button>
+
+    <ion-item class="blitemicp">
+      <ion-label class="fontwhite">Spectacle</ion-label>
+      <ion-checkbox color="dark"></ion-checkbox>
     </ion-item>
-    <ion-item>
-      <ion-label stacked>Au</ion-label>
-      <ion-datetime displayFormat="DD MMM YYYY" [(ngModel)]="dateFin"></ion-datetime>
+
+    <ion-item class="blitemicp">
+      <ion-label  class="fontwhite">Concert</ion-label>
+      <ion-checkbox color="danger"></ion-checkbox>
     </ion-item>
-    <ion-title>Plage horaire</ion-title>
-    <ion-item>
-      <ion-label stacked>De</ion-label>
-      <ion-datetime displayFormat="HH:m" [(ngModel)]="horaireDebut"></ion-datetime>
+
+    <ion-item class="blitemicp">
+      <ion-label class="fontwhite">Cinéma</ion-label>
+      <ion-checkbox color="danger"></ion-checkbox>
     </ion-item>
-    <ion-item>
-      <ion-label stacked>A</ion-label>
-      <ion-datetime displayFormat="HH:m" [(ngModel)]="horaireFin"></ion-datetime>
+
+  <ion-list class="bordure">
+    <ion-item class="blitemicp">
+      <ion-label class="fontwhite">Du</ion-label>
+      <ion-datetime displayFormat="DD MMM YYYY" [(ngModel)]="dateDebut" class="fontwhite"></ion-datetime>
+    </ion-item>
+    <ion-item class="blitemicp">
+      <ion-label class="fontwhite">Au</ion-label>
+      <ion-datetime displayFormat="DD MMM YYYY" [(ngModel)]="dateFin" class="fontwhite"></ion-datetime>
+    </ion-item>
+    <ion-item class="blitemicp">
+      <ion-label class="fontwhite">De</ion-label>
+      <ion-datetime displayFormat="HH:m" [(ngModel)]="horaireDebut" class="fontwhite"></ion-datetime>
+    </ion-item>
+    <ion-item class="blitemicp">
+      <ion-label class="fontwhite">A</ion-label>
+      <ion-datetime displayFormat="HH:m" [(ngModel)]="horaireFin" class="fontwhite"></ion-datetime>
     </ion-item>
     <ion-title>Catégorie(s)</ion-title>
     <ion-item>

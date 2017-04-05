@@ -48,7 +48,7 @@
 // For Research Page
 // --------------------------------------------------
 .bkrs {
-  background-color: #ACAEAD;
+  background-color: #2F3841;
 }
 .srbar {
   background-color: transparent !important;
@@ -58,7 +58,12 @@
   background-color: #7F8182;
   color: #FFFFFF !important;
 }
+
+.bordure {
+  border: solid;
+}
 // ! a changé à ne plus mettre pour mozilla mais pour webkit
 .srbar .searchbar-input::-moz-placeholder{
   color: #FFFFFF !important;
 }
+

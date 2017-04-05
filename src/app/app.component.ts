@@ -31,8 +31,8 @@ export class MyApp {
     this.pages = [
       { title : 'Recherche', component: RecherchePage },
       { title : 'Accueil participant', component: AccueilParticipantPage },
-      { title : 'Profile participant', component: CompteParticipantPage },
-      { title : 'Profile organisateur', component: CompteOrganisateurPage }
+      { title : 'Profil participant', component: CompteParticipantPage },
+      { title : 'Profil organisateur', component: CompteOrganisateurPage }
     ];
   }
 
