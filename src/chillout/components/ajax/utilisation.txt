@@ -1,9 +1,7 @@
-Chillout.ajax({
-    route : "participants",
-    success : function(data){
-        console.log(data);
-    },
-    error : function(error){
-        console.log(error);
-    }
+var chillout = new Chillout();
+chillout.ajax({
+    url : "http://localhost",
+    data : { text : "exemple de donnée qui ira sur le server" }
+}).then(function(res){
+      console.log(res);
 });
