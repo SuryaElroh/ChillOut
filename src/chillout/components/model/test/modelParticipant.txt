@@ -1,0 +1,16 @@
+Chillout.modelPostParticipant({
+    email: "melvinfelixpons@hotmail.com",
+    password: "23041992",
+    firstName : "Melvin",
+    lastName : "Felix",
+    birthday : "1992-04-23"
+});
+Chillout.modelGetParticipants();
+Chillout.modelPutParticipant({
+    id : "3",
+    firstName : "Melvin",
+    lastName : "Felix",
+    birthday : "1990-04-23"
+});
+Chillout.modelGetParticipant({id:3});
+Chillout.modelDeleteParticipant({id:3});

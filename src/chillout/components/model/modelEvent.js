@@ -1,0 +1,88 @@
+/**
+ * @description récupère tout les events
+ */
+Chillout.modelGetEvents = function () {
+    var error = this.modelError;
+    var success = this.modelSuccess;
+    this.ajax ({
+        route : "events" ,
+        success : function (data) {
+            success (data);
+        } ,
+        error : function (data) {
+            error (data);
+        }
+    });
+};
+/**
+ * @description récupère un event grace a sont id
+ */
+Chillout.modelGetEvent = function (p) {
+    var error = this.modelError;
+    var success = this.modelSuccess;
+    this.ajax ({
+        route : "events/" + p.id ,
+        success : function (data) {
+            success (data);
+        } ,
+        error : function (data) {
+            error (data);
+        }
+    });
+};
+/**
+ * @description supprime une event grace a son id
+ */
+Chillout.modelDeleteEvent = function (p) {
+    var error = this.modelError;
+    var success = this.modelSuccess;
+    this.ajax ({
+        type : "delete" ,
+        route : "events/" + p.id ,
+        data : {
+            id : p.id
+        } ,
+        success : function (data) {
+            success (data);
+        } ,
+        error : function (data) {
+            error (data);
+        }
+    });
+};
+/**
+ * @description créer un event
+ */
+Chillout.modelPostEvent = function (p) {
+    var error = this.modelError;
+    var success = this.modelSuccess;
+    this.ajax ({
+        type : "post" ,
+        route : "events" ,
+        data : {} ,
+        success : function (data) {
+            success (data);
+        } ,
+        error : function (data) {
+            error (data);
+        }
+    });
+};
+/**
+ * @description créer un event
+ */
+Chillout.modelPutEvent = function (p) {
+    var error = this.modelError;
+    var success = this.modelSuccess;
+    this.ajax ({
+        type : "put" ,
+        route : "events/" + p.id ,
+        data : {} ,
+        success : function (data) {
+            success (data);
+        } ,
+        error : function (data) {
+            error (data);
+        }
+    });
+};

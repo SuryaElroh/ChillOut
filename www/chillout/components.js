@@ -228,20 +228,535 @@ Chillout.modelError = function (error) {
 Chillout.modelSuccess = function (error) {
     console.log (error);
 };/**
- * @description récupère tout les participants
+ * @description récupère tout les categories
  */
-Chillout.modelGetParticipants = function (parameters) {
-    // default
+Chillout.modelGetCategories = function () {
     var error = this.modelError;
     var success = this.modelSuccess;
-    // parameters
-    if (parameters && parameters.hasOwnProperty ("success")) {
-        success = parameters.success;
-    }
-    if (parameters && parameters.hasOwnProperty ("error")) {
-        error = parameters.error;
-    }
+    this.ajax ({
+        route : "categories" ,
+        success : function (data) {
+            success (data);
+        } ,
+        error : function (data) {
+            error (data);
+        }
+    });
+};
+/**
+ * @description récupère un categorie grace a sont id
+ */
+Chillout.modelGetCategorie = function (p) {
+    var error = this.modelError;
+    var success = this.modelSuccess;
+    this.ajax ({
+        route : "categories/" + p.id ,
+        success : function (data) {
+            success (data);
+        } ,
+        error : function (data) {
+            error (data);
+        }
+    });
+};
+/**
+ * @description supprime une categorie grace a son id
+ */
+Chillout.modelDeleteCategorie = function (p) {
+    var error = this.modelError;
+    var success = this.modelSuccess;
+    this.ajax ({
+        type : "delete" ,
+        route : "categories/" + p.id ,
+        data : {
+            id : p.id
+        } ,
+        success : function (data) {
+            success (data);
+        } ,
+        error : function (data) {
+            error (data);
+        }
+    });
+};
+/**
+ * @description créer un categorie
+ */
+Chillout.modelPostCategorie = function (p) {
+    var error = this.modelError;
+    var success = this.modelSuccess;
+    this.ajax ({
+        type : "post" ,
+        route : "categories" ,
+        data : {} ,
+        success : function (data) {
+            success (data);
+        } ,
+        error : function (data) {
+            error (data);
+        }
+    });
+};
+/**
+ * @description créer un categorie
+ */
+Chillout.modelPutCategorie = function (p) {
+    var error = this.modelError;
+    var success = this.modelSuccess;
+    this.ajax ({
+        type : "put" ,
+        route : "categories/" + p.id ,
+        data : {} ,
+        success : function (data) {
+            success (data);
+        } ,
+        error : function (data) {
+            error (data);
+        }
+    });
+};/**
+ * @description récupère tout les chills
+ */
+Chillout.modelGetChills = function () {
+    var error = this.modelError;
+    var success = this.modelSuccess;
+    this.ajax ({
+        route : "chills" ,
+        success : function (data) {
+            success (data);
+        } ,
+        error : function (data) {
+            error (data);
+        }
+    });
+};
+/**
+ * @description récupère un chill grace a sont id
+ */
+Chillout.modelGetChill = function (p) {
+    var error = this.modelError;
+    var success = this.modelSuccess;
+    this.ajax ({
+        route : "chills/" + p.id ,
+        success : function (data) {
+            success (data);
+        } ,
+        error : function (data) {
+            error (data);
+        }
+    });
+};
+/**
+ * @description supprime une chill grace a son id
+ */
+Chillout.modelDeleteChill = function (p) {
+    var error = this.modelError;
+    var success = this.modelSuccess;
+    this.ajax ({
+        type : "delete" ,
+        route : "chills/" + p.id ,
+        data : {
+            id : p.id
+        } ,
+        success : function (data) {
+            success (data);
+        } ,
+        error : function (data) {
+            error (data);
+        }
+    });
+};
+/**
+ * @description créer un chill
+ */
+Chillout.modelPostChill = function (p) {
+    var error = this.modelError;
+    var success = this.modelSuccess;
+    this.ajax ({
+        type : "post" ,
+        route : "chills" ,
+        data : {} ,
+        success : function (data) {
+            success (data);
+        } ,
+        error : function (data) {
+            error (data);
+        }
+    });
+};
+/**
+ * @description créer un chill
+ */
+Chillout.modelPutChill = function (p) {
+    var error = this.modelError;
+    var success = this.modelSuccess;
+    this.ajax ({
+        type : "put" ,
+        route : "chills/" + p.id ,
+        data : {} ,
+        success : function (data) {
+            success (data);
+        } ,
+        error : function (data) {
+            error (data);
+        }
+    });
+};/**
+ * @description récupère tout les comments
+ */
+Chillout.modelGetComments = function () {
+    var error = this.modelError;
+    var success = this.modelSuccess;
+    this.ajax ({
+        route : "comments" ,
+        success : function (data) {
+            success (data);
+        } ,
+        error : function (data) {
+            error (data);
+        }
+    });
+};
+/**
+ * @description récupère un comment grace a sont id
+ */
+Chillout.modelGetComment = function (p) {
+    var error = this.modelError;
+    var success = this.modelSuccess;
+    this.ajax ({
+        route : "comments/" + p.id ,
+        success : function (data) {
+            success (data);
+        } ,
+        error : function (data) {
+            error (data);
+        }
+    });
+};
+/**
+ * @description supprime une comment grace a son id
+ */
+Chillout.modelDeleteComment = function (p) {
+    var error = this.modelError;
+    var success = this.modelSuccess;
+    this.ajax ({
+        type : "delete" ,
+        route : "comments/" + p.id ,
+        data : {
+            id : p.id
+        } ,
+        success : function (data) {
+            success (data);
+        } ,
+        error : function (data) {
+            error (data);
+        }
+    });
+};
+/**
+ * @description créer un comment
+ */
+Chillout.modelPostComment = function (p) {
+    var error = this.modelError;
+    var success = this.modelSuccess;
+    this.ajax ({
+        type : "post" ,
+        route : "comments" ,
+        data : {} ,
+        success : function (data) {
+            success (data);
+        } ,
+        error : function (data) {
+            error (data);
+        }
+    });
+};
+/**
+ * @description créer un comment
+ */
+Chillout.modelPutComment = function (p) {
+    var error = this.modelError;
+    var success = this.modelSuccess;
+    this.ajax ({
+        type : "put" ,
+        route : "comments/" + p.id ,
+        data : {} ,
+        success : function (data) {
+            success (data);
+        } ,
+        error : function (data) {
+            error (data);
+        }
+    });
+};/**
+ * @description récupère tout les events
+ */
+Chillout.modelGetEvents = function () {
+    var error = this.modelError;
+    var success = this.modelSuccess;
+    this.ajax ({
+        route : "events" ,
+        success : function (data) {
+            success (data);
+        } ,
+        error : function (data) {
+            error (data);
+        }
+    });
+};
+/**
+ * @description récupère un event grace a sont id
+ */
+Chillout.modelGetEvent = function (p) {
+    var error = this.modelError;
+    var success = this.modelSuccess;
+    this.ajax ({
+        route : "events/" + p.id ,
+        success : function (data) {
+            success (data);
+        } ,
+        error : function (data) {
+            error (data);
+        }
+    });
+};
+/**
+ * @description supprime une event grace a son id
+ */
+Chillout.modelDeleteEvent = function (p) {
+    var error = this.modelError;
+    var success = this.modelSuccess;
+    this.ajax ({
+        type : "delete" ,
+        route : "events/" + p.id ,
+        data : {
+            id : p.id
+        } ,
+        success : function (data) {
+            success (data);
+        } ,
+        error : function (data) {
+            error (data);
+        }
+    });
+};
+/**
+ * @description créer un event
+ */
+Chillout.modelPostEvent = function (p) {
+    var error = this.modelError;
+    var success = this.modelSuccess;
+    this.ajax ({
+        type : "post" ,
+        route : "events" ,
+        data : {} ,
+        success : function (data) {
+            success (data);
+        } ,
+        error : function (data) {
+            error (data);
+        }
+    });
+};
+/**
+ * @description créer un event
+ */
+Chillout.modelPutEvent = function (p) {
+    var error = this.modelError;
+    var success = this.modelSuccess;
+    this.ajax ({
+        type : "put" ,
+        route : "events/" + p.id ,
+        data : {} ,
+        success : function (data) {
+            success (data);
+        } ,
+        error : function (data) {
+            error (data);
+        }
+    });
+};/**
+ * @description récupère tout les images
+ */
+Chillout.modelGetImages = function () {
+    var error = this.modelError;
+    var success = this.modelSuccess;
+    this.ajax ({
+        route : "images" ,
+        success : function (data) {
+            success (data);
+        } ,
+        error : function (data) {
+            error (data);
+        }
+    });
+};
+/**
+ * @description récupère un image grace a sont id
+ */
+Chillout.modelGetImage = function (p) {
+    var error = this.modelError;
+    var success = this.modelSuccess;
     // action
+    this.ajax ({
+        route : "images/" + p.id ,
+        success : function (data) {
+            success (data);
+        } ,
+        error : function (data) {
+            error (data);
+        }
+    });
+};
+/**
+ * @description supprime une image grace a son id
+ */
+Chillout.modelDeleteImage = function (p) {
+    var error = this.modelError;
+    var success = this.modelSuccess;
+    this.ajax ({
+        type : "delete" ,
+        route : "images/" + p.id ,
+        data : {
+            id : p.id
+        } ,
+        success : function (data) {
+            success (data);
+        } ,
+        error : function (data) {
+            error (data);
+        }
+    });
+};
+/**
+ * @description créer un image
+ */
+Chillout.modelPostImage = function (p) {
+    var error = this.modelError;
+    var success = this.modelSuccess;
+    this.ajax ({
+        type : "post" ,
+        route : "images" ,
+        data : {} ,
+        success : function (data) {
+            success (data);
+        } ,
+        error : function (data) {
+            error (data);
+        }
+    });
+};
+/**
+ * @description créer un image
+ */
+Chillout.modelPutImage = function (p) {
+    var error = this.modelError;
+    var success = this.modelSuccess;
+    this.ajax ({
+        type : "put" ,
+        route : "images/" + p.id ,
+        data : {} ,
+        success : function (data) {
+            success (data);
+        } ,
+        error : function (data) {
+            error (data);
+        }
+    });
+};/**
+ * @description récupère tout les organizers
+ */
+Chillout.modelGetOrganizers = function () {
+    var error = this.modelError;
+    var success = this.modelSuccess;
+    this.ajax ({
+        route : "organizers" ,
+        success : function (data) {
+            success (data);
+        } ,
+        error : function (data) {
+            error (data);
+        }
+    });
+};
+/**
+ * @description récupère un organizer grace a sont id
+ */
+Chillout.modelGetOrganizer = function (p) {
+    var error = this.modelError;
+    var success = this.modelSuccess;
+    // action
+    this.ajax ({
+        route : "organizers/" + p.id ,
+        success : function (data) {
+            success (data);
+        } ,
+        error : function (data) {
+            error (data);
+        }
+    });
+};
+/**
+ * @description supprime une organizer grace a son id
+ */
+Chillout.modelDeleteOrganizer = function (p) {
+    var error = this.modelError;
+    var success = this.modelSuccess;
+    this.ajax ({
+        type : "delete" ,
+        route : "organizers/" + p.id ,
+        data : {
+            id : p.id
+        } ,
+        success : function (data) {
+            success (data);
+        } ,
+        error : function (data) {
+            error (data);
+        }
+    });
+};
+/**
+ * @description créer un organizer
+ */
+Chillout.modelPostOrganizer = function (p) {
+    var error = this.modelError;
+    var success = this.modelSuccess;
+    this.ajax ({
+        type : "post" ,
+        route : "organizers" ,
+        data : {} ,
+        success : function (data) {
+            success (data);
+        } ,
+        error : function (data) {
+            error (data);
+        }
+    });
+};
+/**
+ * @description créer un organizer
+ */
+Chillout.modelPutOrganizer = function (p) {
+    var error = this.modelError;
+    var success = this.modelSuccess;
+    this.ajax ({
+        type : "put" ,
+        route : "organizers/" + p.id ,
+        data : {} ,
+        success : function (data) {
+            success (data);
+        } ,
+        error : function (data) {
+            error (data);
+        }
+    });
+};/**
+ * @description récupère tout les participants
+ */
+Chillout.modelGetParticipants = function () {
+    var error = this.modelError;
+    var success = this.modelSuccess;
     this.ajax ({
         route : "participants" ,
         success : function (data) {
@@ -255,32 +770,11 @@ Chillout.modelGetParticipants = function (parameters) {
 /**
  * @description récupère un participant grace a sont id
  */
-Chillout.modelGetParticipant = function (parameters) {
-    // default
+Chillout.modelGetParticipant = function (p) {
     var error = this.modelError;
     var success = this.modelSuccess;
-    var id = "__REQUIRED__";
-    // parameters
-    if (parameters && parameters.hasOwnProperty ("success")) {
-        success = parameters.success;
-    }
-    if (parameters && parameters.hasOwnProperty ("error")) {
-        error = parameters.error;
-    }
-    if (parameters && parameters.hasOwnProperty ("id")) {
-        id = parameters.id;
-    }
-    // control
-    if (id === "__REQUIRED__") {
-        return error (this.log ({
-            "class" : "Chillout" ,
-            "method" : "modelGetParticipantById" ,
-            "msg" : "le paramètre id est obligatoire"
-        }));
-    }
-    // action
     this.ajax ({
-        route : "participants/" + id ,
+        route : "participants/" + p.id ,
         success : function (data) {
             success (data);
         } ,
@@ -292,35 +786,14 @@ Chillout.modelGetParticipant = function (parameters) {
 /**
  * @description supprime une participant grace a son id
  */
-Chillout.modelDeleteParticipant = function (parameters) {
-    // default
+Chillout.modelDeleteParticipant = function (p) {
     var error = this.modelError;
     var success = this.modelSuccess;
-    var id = "__REQUIRED__";
-    // parameters
-    if (parameters && parameters.hasOwnProperty ("success")) {
-        success = parameters.success;
-    }
-    if (parameters && parameters.hasOwnProperty ("error")) {
-        error = parameters.error;
-    }
-    if (parameters && parameters.hasOwnProperty ("id")) {
-        id = parameters.id;
-    }
-    // control
-    if (id === "__REQUIRED__") {
-        return error (this.log ({
-            "class" : "Chillout" ,
-            "method" : "modelDeleteParticipantById" ,
-            "msg" : "le paramètre id est obligatoire"
-        }));
-    }
-    // action
     this.ajax ({
         type : "delete" ,
-        route : "participants/" + id ,
+        route : "participants/" + p.id ,
         data : {
-            id : id
+            id : p.id
         } ,
         success : function (data) {
             success (data);
@@ -333,83 +806,18 @@ Chillout.modelDeleteParticipant = function (parameters) {
 /**
  * @description créer un participant
  */
-Chillout.modelPostParticipant = function (parameters) {
-    // default
+Chillout.modelPostParticipant = function (p) {
     var error = this.modelError;
     var success = this.modelSuccess;
-    var email = "__REQUIRED__";
-    var password = "__REQUIRED__";
-    var firstName = "__REQUIRED__";
-    var lastName = "__REQUIRED__";
-    var birthday = "__REQUIRED__";
-    // parameters
-    if (parameters && parameters.hasOwnProperty ("success")) {
-        success = parameters.success;
-    }
-    if (parameters && parameters.hasOwnProperty ("error")) {
-        error = parameters.error;
-    }
-    if (parameters && parameters.hasOwnProperty ("email")) {
-        email = parameters.email;
-    }
-    if (parameters && parameters.hasOwnProperty ("password")) {
-        password = parameters.password;
-    }
-    if (parameters && parameters.hasOwnProperty ("firstName")) {
-        firstName = parameters.firstName;
-    }
-    if (parameters && parameters.hasOwnProperty ("lastName")) {
-        lastName = parameters.lastName;
-    }
-    if (parameters && parameters.hasOwnProperty ("birthday")) {
-        birthday = parameters.birthday;
-    }
-    // control
-    if (email === "__REQUIRED__") {
-        return error (this.log ({
-            "class" : "Chillout" ,
-            "method" : "modelCreateParticipant" ,
-            "msg" : "le paramètre [email] est obligatoire"
-        }));
-    }
-    if (password === "__REQUIRED__") {
-        return error (this.log ({
-            "class" : "Chillout" ,
-            "method" : "modelCreateParticipant" ,
-            "msg" : "le paramètre [password] est obligatoire"
-        }));
-    }
-    if (firstName === "__REQUIRED__") {
-        return error (this.log ({
-            "class" : "Chillout" ,
-            "method" : "modelCreateParticipant" ,
-            "msg" : "le paramètre [firstName] est obligatoire"
-        }));
-    }
-    if (lastName === "__REQUIRED__") {
-        return error (this.log ({
-            "class" : "Chillout" ,
-            "method" : "modelCreateParticipant" ,
-            "msg" : "le paramètre [lastName] est obligatoire"
-        }));
-    }
-    if (birthday === "__REQUIRED__") {
-        return error (this.log ({
-            "class" : "Chillout" ,
-            "method" : "modelCreateParticipant" ,
-            "msg" : "le paramètre [birthday] est obligatoire"
-        }));
-    }
-    // action
     this.ajax ({
         type : "post" ,
         route : "participants" ,
         data : {
-            email : email ,
-            password : password ,
-            firstName : firstName ,
-            lastName : lastName ,
-            birthday : birthday
+            email : p.email ,
+            password : p.password ,
+            firstName : p.firstName ,
+            lastName : p.lastName ,
+            birthday : p.birthday
         } ,
         success : function (data) {
             success (data);
@@ -422,70 +830,16 @@ Chillout.modelPostParticipant = function (parameters) {
 /**
  * @description créer un participant
  */
-Chillout.modelPutParticipant = function (parameters) {
-    // default
+Chillout.modelPutParticipant = function (p) {
     var error = this.modelError;
     var success = this.modelSuccess;
-    var id = "__REQUIRED__";
-    var firstName = "__REQUIRED__";
-    var lastName = "__REQUIRED__";
-    var birthday = "__REQUIRED__";
-    // parameters
-    if (parameters && parameters.hasOwnProperty ("success")) {
-        success = parameters.success;
-    }
-    if (parameters && parameters.hasOwnProperty ("error")) {
-        error = parameters.error;
-    }
-    if (parameters && parameters.hasOwnProperty ("id")) {
-        id = parameters.id;
-    }
-    if (parameters && parameters.hasOwnProperty ("firstName")) {
-        firstName = parameters.firstName;
-    }
-    if (parameters && parameters.hasOwnProperty ("lastName")) {
-        lastName = parameters.lastName;
-    }
-    if (parameters && parameters.hasOwnProperty ("birthday")) {
-        birthday = parameters.birthday;
-    }
-    // control
-    if (id === "__REQUIRED__") {
-        return error (this.log ({
-            "class" : "Chillout" ,
-            "method" : "modelCreateParticipant" ,
-            "msg" : "le paramètre [id] est obligatoire"
-        }));
-    }
-    if (firstName === "__REQUIRED__") {
-        return error (this.log ({
-            "class" : "Chillout" ,
-            "method" : "modelCreateParticipant" ,
-            "msg" : "le paramètre [firstName] est obligatoire"
-        }));
-    }
-    if (lastName === "__REQUIRED__") {
-        return error (this.log ({
-            "class" : "Chillout" ,
-            "method" : "modelCreateParticipant" ,
-            "msg" : "le paramètre [lastName] est obligatoire"
-        }));
-    }
-    if (birthday === "__REQUIRED__") {
-        return error (this.log ({
-            "class" : "Chillout" ,
-            "method" : "modelCreateParticipant" ,
-            "msg" : "le paramètre [birthday] est obligatoire"
-        }));
-    }
-    // action
     this.ajax ({
         type : "put" ,
-        route : "participants/" + id ,
+        route : "participants/" + p.id ,
         data : {
-            firstName : firstName ,
-            lastName : lastName ,
-            birthday : birthday
+            firstName : p.firstName ,
+            lastName : p.lastName ,
+            birthday : p.birthday
         } ,
         success : function (data) {
             success (data);
