@@ -1,9 +1,15 @@
 /**
  * @description récupère tout les chills
  */
-Chillout.modelGetChills = function () {
+Chillout.modelGetChills = function (p={}) {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     this.ajax ({
         route : "chills" ,
         success : function (data) {
@@ -17,9 +23,15 @@ Chillout.modelGetChills = function () {
 /**
  * @description récupère un chill grace a sont id
  */
-Chillout.modelGetChill = function (p) {
+Chillout.modelGetChill = function (p={}) {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     this.ajax ({
         route : "chills/" + p.id ,
         success : function (data) {
@@ -33,9 +45,15 @@ Chillout.modelGetChill = function (p) {
 /**
  * @description supprime une chill grace a son id
  */
-Chillout.modelDeleteChill = function (p) {
+Chillout.modelDeleteChill = function (p={}) {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     this.ajax ({
         type : "delete" ,
         route : "chills/" + p.id ,
@@ -53,9 +71,15 @@ Chillout.modelDeleteChill = function (p) {
 /**
  * @description créer un chill
  */
-Chillout.modelPostChill = function (p) {
+Chillout.modelPostChill = function (p={}) {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     this.ajax ({
         type : "post" ,
         route : "chills" ,
@@ -71,9 +95,15 @@ Chillout.modelPostChill = function (p) {
 /**
  * @description créer un chill
  */
-Chillout.modelPutChill = function (p) {
+Chillout.modelPutChill = function (p={}) {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     this.ajax ({
         type : "put" ,
         route : "chills/" + p.id ,

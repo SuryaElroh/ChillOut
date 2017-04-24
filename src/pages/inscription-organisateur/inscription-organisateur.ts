@@ -1,17 +1,45 @@
 import { Component } from '@angular/core';
-import {NavController} from "ionic-angular";
+import {NavController, AlertController} from "ionic-angular";
 import {ConnexionPage} from "../connexion/connexion";
-import {InscriptionParticipantPage} from "../inscription-participant/inscription-participant";
+
+declare var Chillout;
 
 @Component({
   templateUrl: 'inscription-organisateur.html'
 })
+
 export class InscriptionOrganisateurPage {
-  constructor(public navCtrl: NavController) {
-    this.navCtrl=navCtrl;
+  ds="";
+  adresse="";
+  tel="";
+  site="";
+  email="";
+  mdp="";
+  mdp2="";
+
+  constructor(public navCtrl: NavController,  public alertCtrl: AlertController) {
   }
 
   nouveauCompte(){
-    this.navCtrl.push(ConnexionPage);
+    Chillout.modelPostOrganizer({
+      name : this.ds,
+      adresse : this.adresse,
+      website : this.site,
+      email : this.email,
+      password : this.mdp,
+      success : data => {
+        let alert = this.alertCtrl.create({
+          title: 'Succès',
+          subTitle: 'Votre compte a bien été créé. \n Vous pouvez vous connectez !',
+          buttons: ['OK']
+        });
+        alert.present();
+        this.navCtrl.pop(ConnexionPage);
+
+      },
+      error : data => {
+        // TODO
+      }
+    })
   }
 }

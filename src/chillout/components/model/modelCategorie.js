@@ -1,9 +1,15 @@
 /**
  * @description récupère tout les categories
  */
-Chillout.modelGetCategories = function () {
+Chillout.modelGetCategories = function (p={}) {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     this.ajax ({
         route : "categories" ,
         success : function (data) {
@@ -17,9 +23,15 @@ Chillout.modelGetCategories = function () {
 /**
  * @description récupère un categorie grace a sont id
  */
-Chillout.modelGetCategorie = function (p) {
+Chillout.modelGetCategorie = function (p={}) {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     this.ajax ({
         route : "categories/" + p.id ,
         success : function (data) {
@@ -33,9 +45,15 @@ Chillout.modelGetCategorie = function (p) {
 /**
  * @description supprime une categorie grace a son id
  */
-Chillout.modelDeleteCategorie = function (p) {
+Chillout.modelDeleteCategorie = function (p={}) {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     this.ajax ({
         type : "delete" ,
         route : "categories/" + p.id ,
@@ -53,9 +71,15 @@ Chillout.modelDeleteCategorie = function (p) {
 /**
  * @description créer un categorie
  */
-Chillout.modelPostCategorie = function (p) {
+Chillout.modelPostCategorie = function (p={}) {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     this.ajax ({
         type : "post" ,
         route : "categories" ,
@@ -71,9 +95,15 @@ Chillout.modelPostCategorie = function (p) {
 /**
  * @description créer un categorie
  */
-Chillout.modelPutCategorie = function (p) {
+Chillout.modelPutCategorie = function (p={}) {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     this.ajax ({
         type : "put" ,
         route : "categories/" + p.id ,

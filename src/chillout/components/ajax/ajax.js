@@ -56,7 +56,8 @@ Chillout.ajax = function (parameters) {
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4) {
             if (xhr.status == 200) {
-                try { success (JSON.parse (xhr.responseText)); }
+              let successData = "nothing";
+                try {successData = JSON.parse (xhr.responseText); }
                 catch (e) {
                     Chillout.log ({
                         "class" : "Chillout" ,
@@ -64,7 +65,9 @@ Chillout.ajax = function (parameters) {
                         "result" : xhr.responseText,
                         "msg" : "in success :: the json is badely formated"
                     });
+                    console.log(e);
                 }
+              success(successData);
             }
             else {
                 try {
@@ -82,6 +85,7 @@ Chillout.ajax = function (parameters) {
                         "method" : "ajax" ,
                         "msg" : "in error :: the json is badely formated"
                     });
+                  console.log(e);
                 }
             }
         }

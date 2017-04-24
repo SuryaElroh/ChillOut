@@ -68,7 +68,8 @@ Chillout.ajax = function (parameters) {
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4) {
             if (xhr.status == 200) {
-                try { success (JSON.parse (xhr.responseText)); }
+              let successData = "nothing";
+                try {successData = JSON.parse (xhr.responseText); }
                 catch (e) {
                     Chillout.log ({
                         "class" : "Chillout" ,
@@ -76,7 +77,9 @@ Chillout.ajax = function (parameters) {
                         "result" : xhr.responseText,
                         "msg" : "in success :: the json is badely formated"
                     });
+                    console.log(e);
                 }
+              success(successData);
             }
             else {
                 try {
@@ -94,6 +97,7 @@ Chillout.ajax = function (parameters) {
                         "method" : "ajax" ,
                         "msg" : "in error :: the json is badely formated"
                     });
+                  console.log(e);
                 }
             }
         }
@@ -230,9 +234,15 @@ Chillout.modelSuccess = function (error) {
 };/**
  * @description récupère tout les categories
  */
-Chillout.modelGetCategories = function () {
+Chillout.modelGetCategories = function (p={}) {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     this.ajax ({
         route : "categories" ,
         success : function (data) {
@@ -246,9 +256,15 @@ Chillout.modelGetCategories = function () {
 /**
  * @description récupère un categorie grace a sont id
  */
-Chillout.modelGetCategorie = function (p) {
+Chillout.modelGetCategorie = function (p={}) {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     this.ajax ({
         route : "categories/" + p.id ,
         success : function (data) {
@@ -262,9 +278,15 @@ Chillout.modelGetCategorie = function (p) {
 /**
  * @description supprime une categorie grace a son id
  */
-Chillout.modelDeleteCategorie = function (p) {
+Chillout.modelDeleteCategorie = function (p={}) {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     this.ajax ({
         type : "delete" ,
         route : "categories/" + p.id ,
@@ -282,9 +304,15 @@ Chillout.modelDeleteCategorie = function (p) {
 /**
  * @description créer un categorie
  */
-Chillout.modelPostCategorie = function (p) {
+Chillout.modelPostCategorie = function (p={}) {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     this.ajax ({
         type : "post" ,
         route : "categories" ,
@@ -300,9 +328,15 @@ Chillout.modelPostCategorie = function (p) {
 /**
  * @description créer un categorie
  */
-Chillout.modelPutCategorie = function (p) {
+Chillout.modelPutCategorie = function (p={}) {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     this.ajax ({
         type : "put" ,
         route : "categories/" + p.id ,
@@ -314,12 +348,19 @@ Chillout.modelPutCategorie = function (p) {
             error (data);
         }
     });
-};/**
+};
+/**
  * @description récupère tout les chills
  */
-Chillout.modelGetChills = function () {
+Chillout.modelGetChills = function (p={}) {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     this.ajax ({
         route : "chills" ,
         success : function (data) {
@@ -333,9 +374,15 @@ Chillout.modelGetChills = function () {
 /**
  * @description récupère un chill grace a sont id
  */
-Chillout.modelGetChill = function (p) {
+Chillout.modelGetChill = function (p={}) {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     this.ajax ({
         route : "chills/" + p.id ,
         success : function (data) {
@@ -349,9 +396,15 @@ Chillout.modelGetChill = function (p) {
 /**
  * @description supprime une chill grace a son id
  */
-Chillout.modelDeleteChill = function (p) {
+Chillout.modelDeleteChill = function (p={}) {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     this.ajax ({
         type : "delete" ,
         route : "chills/" + p.id ,
@@ -369,9 +422,15 @@ Chillout.modelDeleteChill = function (p) {
 /**
  * @description créer un chill
  */
-Chillout.modelPostChill = function (p) {
+Chillout.modelPostChill = function (p={}) {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     this.ajax ({
         type : "post" ,
         route : "chills" ,
@@ -387,9 +446,15 @@ Chillout.modelPostChill = function (p) {
 /**
  * @description créer un chill
  */
-Chillout.modelPutChill = function (p) {
+Chillout.modelPutChill = function (p={}) {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     this.ajax ({
         type : "put" ,
         route : "chills/" + p.id ,
@@ -401,12 +466,19 @@ Chillout.modelPutChill = function (p) {
             error (data);
         }
     });
-};/**
+};
+/**
  * @description récupère tout les comments
  */
-Chillout.modelGetComments = function () {
+Chillout.modelGetComments = function (p={}) {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     this.ajax ({
         route : "comments" ,
         success : function (data) {
@@ -420,9 +492,15 @@ Chillout.modelGetComments = function () {
 /**
  * @description récupère un comment grace a sont id
  */
-Chillout.modelGetComment = function (p) {
+Chillout.modelGetComment = function (p={}) {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     this.ajax ({
         route : "comments/" + p.id ,
         success : function (data) {
@@ -436,9 +514,15 @@ Chillout.modelGetComment = function (p) {
 /**
  * @description supprime une comment grace a son id
  */
-Chillout.modelDeleteComment = function (p) {
+Chillout.modelDeleteComment = function (p={}) {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     this.ajax ({
         type : "delete" ,
         route : "comments/" + p.id ,
@@ -456,9 +540,15 @@ Chillout.modelDeleteComment = function (p) {
 /**
  * @description créer un comment
  */
-Chillout.modelPostComment = function (p) {
+Chillout.modelPostComment = function (p={}) {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     this.ajax ({
         type : "post" ,
         route : "comments" ,
@@ -474,9 +564,15 @@ Chillout.modelPostComment = function (p) {
 /**
  * @description créer un comment
  */
-Chillout.modelPutComment = function (p) {
+Chillout.modelPutComment = function (p={}) {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     this.ajax ({
         type : "put" ,
         route : "comments/" + p.id ,
@@ -488,12 +584,19 @@ Chillout.modelPutComment = function (p) {
             error (data);
         }
     });
-};/**
+};
+/**
  * @description récupère tout les events
  */
-Chillout.modelGetEvents = function () {
+Chillout.modelGetEvents = function (p={}) {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     this.ajax ({
         route : "events" ,
         success : function (data) {
@@ -507,9 +610,15 @@ Chillout.modelGetEvents = function () {
 /**
  * @description récupère un event grace a sont id
  */
-Chillout.modelGetEvent = function (p) {
+Chillout.modelGetEvent = function (p={}) {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     this.ajax ({
         route : "events/" + p.id ,
         success : function (data) {
@@ -523,9 +632,15 @@ Chillout.modelGetEvent = function (p) {
 /**
  * @description supprime une event grace a son id
  */
-Chillout.modelDeleteEvent = function (p) {
+Chillout.modelDeleteEvent = function (p={}) {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     this.ajax ({
         type : "delete" ,
         route : "events/" + p.id ,
@@ -543,9 +658,15 @@ Chillout.modelDeleteEvent = function (p) {
 /**
  * @description créer un event
  */
-Chillout.modelPostEvent = function (p) {
+Chillout.modelPostEvent = function (p={}) {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     this.ajax ({
         type : "post" ,
         route : "events" ,
@@ -561,9 +682,15 @@ Chillout.modelPostEvent = function (p) {
 /**
  * @description créer un event
  */
-Chillout.modelPutEvent = function (p) {
+Chillout.modelPutEvent = function (p={}) {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     this.ajax ({
         type : "put" ,
         route : "events/" + p.id ,
@@ -575,7 +702,8 @@ Chillout.modelPutEvent = function (p) {
             error (data);
         }
     });
-};/**
+};
+/**
  * @description récupère tout les images
  */
 Chillout.modelGetImages = function () {
@@ -594,9 +722,15 @@ Chillout.modelGetImages = function () {
 /**
  * @description récupère un image grace a sont id
  */
-Chillout.modelGetImage = function (p) {
+Chillout.modelGetImage = function (p={}) {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     // action
     this.ajax ({
         route : "images/" + p.id ,
@@ -611,9 +745,15 @@ Chillout.modelGetImage = function (p) {
 /**
  * @description supprime une image grace a son id
  */
-Chillout.modelDeleteImage = function (p) {
+Chillout.modelDeleteImage = function (p={}) {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     this.ajax ({
         type : "delete" ,
         route : "images/" + p.id ,
@@ -631,9 +771,15 @@ Chillout.modelDeleteImage = function (p) {
 /**
  * @description créer un image
  */
-Chillout.modelPostImage = function (p) {
+Chillout.modelPostImage = function (p={}) {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     this.ajax ({
         type : "post" ,
         route : "images" ,
@@ -649,9 +795,15 @@ Chillout.modelPostImage = function (p) {
 /**
  * @description créer un image
  */
-Chillout.modelPutImage = function (p) {
+Chillout.modelPutImage = function (p={}) {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     this.ajax ({
         type : "put" ,
         route : "images/" + p.id ,
@@ -663,12 +815,19 @@ Chillout.modelPutImage = function (p) {
             error (data);
         }
     });
-};/**
+};
+/**
  * @description récupère tout les organizers
  */
-Chillout.modelGetOrganizers = function () {
+Chillout.modelGetOrganizers = function (p={}) {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     this.ajax ({
         route : "organizers" ,
         success : function (data) {
@@ -682,9 +841,15 @@ Chillout.modelGetOrganizers = function () {
 /**
  * @description récupère un organizer grace a sont id
  */
-Chillout.modelGetOrganizer = function (p) {
+Chillout.modelGetOrganizer = function (p={}) {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     // action
     this.ajax ({
         route : "organizers/" + p.id ,
@@ -699,9 +864,15 @@ Chillout.modelGetOrganizer = function (p) {
 /**
  * @description supprime une organizer grace a son id
  */
-Chillout.modelDeleteOrganizer = function (p) {
+Chillout.modelDeleteOrganizer = function (p={}) {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     this.ajax ({
         type : "delete" ,
         route : "organizers/" + p.id ,
@@ -719,13 +890,27 @@ Chillout.modelDeleteOrganizer = function (p) {
 /**
  * @description créer un organizer
  */
-Chillout.modelPostOrganizer = function (p) {
+Chillout.modelPostOrganizer = function (p={}) {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     this.ajax ({
         type : "post" ,
         route : "organizers" ,
-        data : {} ,
+        data : {
+          // TODO voir avec quentin les noms des variables en back
+          name : p.name ,
+          adresse : p.adresse ,
+          phone : p.phone ,
+          website : p.website,
+          email : p.email,
+          password : p.password
+        } ,
         success : function (data) {
             success (data);
         } ,
@@ -737,9 +922,15 @@ Chillout.modelPostOrganizer = function (p) {
 /**
  * @description créer un organizer
  */
-Chillout.modelPutOrganizer = function (p) {
+Chillout.modelPutOrganizer = function (p={}) {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     this.ajax ({
         type : "put" ,
         route : "organizers/" + p.id ,
@@ -751,12 +942,19 @@ Chillout.modelPutOrganizer = function (p) {
             error (data);
         }
     });
-};/**
+};
+/**
  * @description récupère tout les participants
  */
-Chillout.modelGetParticipants = function () {
+Chillout.modelGetParticipants = function (p={}) {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     this.ajax ({
         route : "participants" ,
         success : function (data) {
@@ -770,9 +968,15 @@ Chillout.modelGetParticipants = function () {
 /**
  * @description récupère un participant grace a sont id
  */
-Chillout.modelGetParticipant = function (p) {
+Chillout.modelGetParticipant = function (p={}) {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     this.ajax ({
         route : "participants/" + p.id ,
         success : function (data) {
@@ -786,9 +990,15 @@ Chillout.modelGetParticipant = function (p) {
 /**
  * @description supprime une participant grace a son id
  */
-Chillout.modelDeleteParticipant = function (p) {
+Chillout.modelDeleteParticipant = function (p={}) {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     this.ajax ({
         type : "delete" ,
         route : "participants/" + p.id ,
@@ -806,9 +1016,15 @@ Chillout.modelDeleteParticipant = function (p) {
 /**
  * @description créer un participant
  */
-Chillout.modelPostParticipant = function (p) {
+Chillout.modelPostParticipant = function (p={})  {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     this.ajax ({
         type : "post" ,
         route : "participants" ,
@@ -830,9 +1046,15 @@ Chillout.modelPostParticipant = function (p) {
 /**
  * @description créer un participant
  */
-Chillout.modelPutParticipant = function (p) {
+Chillout.modelPutParticipant = function (p={}) {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     this.ajax ({
         type : "put" ,
         route : "participants/" + p.id ,
@@ -848,7 +1070,8 @@ Chillout.modelPutParticipant = function (p) {
             error (data);
         }
     });
-};/*
+};
+/*
  *
  * * * * * * * * * * * * * * * * * * * * * * * * * *
  *

@@ -1,9 +1,15 @@
 /**
  * @description récupère tout les participants
  */
-Chillout.modelGetParticipants = function () {
+Chillout.modelGetParticipants = function (p={}) {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     this.ajax ({
         route : "participants" ,
         success : function (data) {
@@ -17,9 +23,15 @@ Chillout.modelGetParticipants = function () {
 /**
  * @description récupère un participant grace a sont id
  */
-Chillout.modelGetParticipant = function (p) {
+Chillout.modelGetParticipant = function (p={}) {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     this.ajax ({
         route : "participants/" + p.id ,
         success : function (data) {
@@ -33,9 +45,15 @@ Chillout.modelGetParticipant = function (p) {
 /**
  * @description supprime une participant grace a son id
  */
-Chillout.modelDeleteParticipant = function (p) {
+Chillout.modelDeleteParticipant = function (p={}) {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     this.ajax ({
         type : "delete" ,
         route : "participants/" + p.id ,
@@ -53,9 +71,15 @@ Chillout.modelDeleteParticipant = function (p) {
 /**
  * @description créer un participant
  */
-Chillout.modelPostParticipant = function (p) {
+Chillout.modelPostParticipant = function (p={})  {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     this.ajax ({
         type : "post" ,
         route : "participants" ,
@@ -77,9 +101,15 @@ Chillout.modelPostParticipant = function (p) {
 /**
  * @description créer un participant
  */
-Chillout.modelPutParticipant = function (p) {
+Chillout.modelPutParticipant = function (p={}) {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     this.ajax ({
         type : "put" ,
         route : "participants/" + p.id ,

@@ -1,9 +1,15 @@
 /**
  * @description récupère tout les events
  */
-Chillout.modelGetEvents = function () {
+Chillout.modelGetEvents = function (p={}) {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     this.ajax ({
         route : "events" ,
         success : function (data) {
@@ -17,9 +23,15 @@ Chillout.modelGetEvents = function () {
 /**
  * @description récupère un event grace a sont id
  */
-Chillout.modelGetEvent = function (p) {
+Chillout.modelGetEvent = function (p={}) {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     this.ajax ({
         route : "events/" + p.id ,
         success : function (data) {
@@ -33,9 +45,15 @@ Chillout.modelGetEvent = function (p) {
 /**
  * @description supprime une event grace a son id
  */
-Chillout.modelDeleteEvent = function (p) {
+Chillout.modelDeleteEvent = function (p={}) {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     this.ajax ({
         type : "delete" ,
         route : "events/" + p.id ,
@@ -53,9 +71,15 @@ Chillout.modelDeleteEvent = function (p) {
 /**
  * @description créer un event
  */
-Chillout.modelPostEvent = function (p) {
+Chillout.modelPostEvent = function (p={}) {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     this.ajax ({
         type : "post" ,
         route : "events" ,
@@ -71,9 +95,15 @@ Chillout.modelPostEvent = function (p) {
 /**
  * @description créer un event
  */
-Chillout.modelPutEvent = function (p) {
+Chillout.modelPutEvent = function (p={}) {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     this.ajax ({
         type : "put" ,
         route : "events/" + p.id ,

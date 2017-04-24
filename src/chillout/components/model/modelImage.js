@@ -17,9 +17,15 @@ Chillout.modelGetImages = function () {
 /**
  * @description récupère un image grace a sont id
  */
-Chillout.modelGetImage = function (p) {
+Chillout.modelGetImage = function (p={}) {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     // action
     this.ajax ({
         route : "images/" + p.id ,
@@ -34,9 +40,15 @@ Chillout.modelGetImage = function (p) {
 /**
  * @description supprime une image grace a son id
  */
-Chillout.modelDeleteImage = function (p) {
+Chillout.modelDeleteImage = function (p={}) {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     this.ajax ({
         type : "delete" ,
         route : "images/" + p.id ,
@@ -54,9 +66,15 @@ Chillout.modelDeleteImage = function (p) {
 /**
  * @description créer un image
  */
-Chillout.modelPostImage = function (p) {
+Chillout.modelPostImage = function (p={}) {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     this.ajax ({
         type : "post" ,
         route : "images" ,
@@ -72,9 +90,15 @@ Chillout.modelPostImage = function (p) {
 /**
  * @description créer un image
  */
-Chillout.modelPutImage = function (p) {
+Chillout.modelPutImage = function (p={}) {
     var error = this.modelError;
     var success = this.modelSuccess;
+    if (p.hasOwnProperty ("success")) {
+      success = p.success;
+    }
+    if (p.hasOwnProperty ("error")) {
+      error = p.error;
+    }
     this.ajax ({
         type : "put" ,
         route : "images/" + p.id ,

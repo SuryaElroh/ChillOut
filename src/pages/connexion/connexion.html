@@ -16,21 +16,20 @@
 
   <h5> Se connecter avec un compte ChillOut </h5>
   <p>
-    <ion-list>
 
+    <ion-list>
       <ion-item>
         <ion-label floating>Username</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input type="text" [(ngModel)]="identifant"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label floating>Password</ion-label>
-        <ion-input type="password"></ion-input>
+        <ion-input type="password" [(ngModel)]="mdp"></ion-input>
       </ion-item>
-
     </ion-list>
 
-    <button ion-button color="secondary" round block>Se connecter</button>
+    <button ion-button color="secondary" (click)="connexion()" round block>Se connecter</button>
   </p>
 
 
