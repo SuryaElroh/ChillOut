@@ -9,13 +9,22 @@ declare var Chillout;
 })
 
 export class AccueilParticipantPage {
+  events = [];
+
   constructor(public navCtrl: NavController) {
     this.navCtrl = navCtrl;
     // this.connexionDB();
   }
 
+  allEvents() {
+    Chillout.modelGetEvents ({ success: (data) => {
+        this.events = data.data;
+      }, error: (data) => {
+        console.log('Erreur dans la récupération des évènements')
+      }
+    })
+}
 
-  events = [];
 
   // connexionDB(){
   //   var chillout = new Chillout();

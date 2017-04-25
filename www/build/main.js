@@ -81177,6 +81177,15 @@ var AccueilParticipantPage = (function () {
         this.navCtrl = navCtrl;
         // this.connexionDB();
     }
+    AccueilParticipantPage.prototype.allEvents = function () {
+        var _this = this;
+        Chillout.modelGetEvents({ success: function (data) {
+                _this.events = data.data;
+            }, error: function (data) {
+                console.log('Erreur dans la récupération des évènements');
+            }
+        });
+    };
     // connexionDB(){
     //   var chillout = new Chillout();
     //   chillout.ajax({
@@ -81191,7 +81200,7 @@ var AccueilParticipantPage = (function () {
         this.navCtrl.push(EvenementPage);
     };
     AccueilParticipantPage = __decorate$111([
-        Component({template:/*ion-inline-start:"D:\Surya\GitHub\ChillOut\src\pages\accueil-participant\accueil-participant.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>ChillOut</ion-title>\n    <button ion-button>\n      <ion-icon name="power"></ion-icon>\n    </button>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content class="bk" padding>\n  <ion-segment [(ngModel)]="evenement" color="light">\n    <ion-segment-button value="tout">\n      Tout\n    </ion-segment-button>\n    <ion-segment-button value="semaine">\n      Cette semaine\n    </ion-segment-button>\n    <ion-segment-button value="mois">\n      Ce mois-ci\n    </ion-segment-button>\n  </ion-segment>\n\n  <div [ngSwitch]="evenement">\n    <ion-list *ngSwitchCase="\'tout\'">\n      <ion-item>\n        <ion-thumbnail item-left>\n          <img src="img/thumbnail-puppy-1.jpg">\n        </ion-thumbnail>\n        <h2>Ruby</h2>\n      </ion-item>\n    </ion-list>\n\n    <ion-list *ngSwitchCase="\'semaine\'">\n      <ion-card *ngFor="let event of events" (click)="evenementPage(event.category_id)">\n        <ion-card-content>\n          <ion-card-title>\n            {{event.category_id}}\n          </ion-card-title>\n          <img src="../../assets/img/categories/cinema.jpg" height="1000" width="1000"/>\n          <p> {{ event.description }} </p>\n        </ion-card-content>\n      </ion-card>\n    </ion-list>\n\n    <ion-list *ngSwitchCase="\'mois\'">\n      <ion-item>\n        <ion-thumbnail item-left>\n          <img src="img/thumbnail-kitten-1.jpg">\n        </ion-thumbnail>\n        <h2>Luna</h2>\n      </ion-item>\n    </ion-list>\n  </div>\n\n</ion-content>\n'/*ion-inline-end:"D:\Surya\GitHub\ChillOut\src\pages\accueil-participant\accueil-participant.html"*/
+        Component({template:/*ion-inline-start:"D:\Surya\GitHub\ChillOut\src\pages\accueil-participant\accueil-participant.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>ChillOut</ion-title>\n    <button ion-button>\n      <ion-icon name="power"></ion-icon>\n    </button>\n  </ion-navbar>\n</ion-header>\n\n<ion-content class="bk" padding>\n  <ion-segment [(ngModel)]="evenement" color="light">\n    <ion-segment-button value="tout" (ionSelect)="allEvents()">\n      Tout\n    </ion-segment-button>\n    <ion-segment-button value="semaine">\n      Cette semaine\n    </ion-segment-button>\n    <ion-segment-button value="mois">\n      Ce mois-ci\n    </ion-segment-button>\n  </ion-segment>\n\n  <div [ngSwitch]="evenement">\n    <ion-list *ngSwitchCase="\'tout\'">\n      <ion-card *ngFor="let event of events" (click)="evenementPage(event.category_id)" style="background-image: url(\'../../assets/img/categories/gastronomie.jpg\'); background-size:100%;">\n        <ion-card-content>\n          <ion-card-title>\n            {{ event.title }}\n          </ion-card-title>\n          <p>{{ event.startTime }} au {{ event.endTime }}</p>\n        </ion-card-content>\n      </ion-card>\n    </ion-list>\n\n    <ion-list *ngSwitchCase="\'semaine\'">\n      <ion-item>\n        <ion-thumbnail item-left>\n          <img src="img/thumbnail-puppy-1.jpg">\n        </ion-thumbnail>\n        <h2>Ruby</h2>\n      </ion-item>\n    </ion-list>\n\n    <ion-list *ngSwitchCase="\'mois\'">\n      <ion-item>\n        <ion-thumbnail item-left>\n          <img src="img/thumbnail-kitten-1.jpg">\n        </ion-thumbnail>\n        <h2>Luna</h2>\n      </ion-item>\n    </ion-list>\n  </div>\n\n</ion-content>\n'/*ion-inline-end:"D:\Surya\GitHub\ChillOut\src\pages\accueil-participant\accueil-participant.html"*/
         }), 
         __metadata$5('design:paramtypes', [NavController])
     ], AccueilParticipantPage);
@@ -81216,8 +81225,6 @@ var ConnexionPage = (function () {
     }
     ConnexionPage.prototype.connexion = function () {
         var _this = this;
-        console.log(this.identifiant);
-        console.log(this.mdp);
         Chillout.authConnectUser({ login: this.identifiant, password: this.mdp, success: function (data) {
                 // TODO mettre en place la condition de redirection (accueil participant/organisateur)
                 _this.navCtrl.push(AccueilParticipantPage);

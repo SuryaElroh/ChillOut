@@ -10,10 +10,9 @@
   </ion-navbar>
 </ion-header>
 
-
 <ion-content class="bk" padding>
   <ion-segment [(ngModel)]="evenement" color="light">
-    <ion-segment-button value="tout">
+    <ion-segment-button value="tout" (ionSelect)="allEvents()">
       Tout
     </ion-segment-button>
     <ion-segment-button value="semaine">
@@ -26,24 +25,23 @@
 
   <div [ngSwitch]="evenement">
     <ion-list *ngSwitchCase="'tout'">
+      <ion-card *ngFor="let event of events" (click)="evenementPage(event.category_id)" style="background-image: url('../../assets/img/categories/gastronomie.jpg'); background-size:100%;">
+        <ion-card-content>
+          <ion-card-title>
+            {{ event.title }}
+          </ion-card-title>
+          <p>{{ event.startTime }} au {{ event.endTime }}</p>
+        </ion-card-content>
+      </ion-card>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'semaine'">
       <ion-item>
         <ion-thumbnail item-left>
           <img src="img/thumbnail-puppy-1.jpg">
         </ion-thumbnail>
         <h2>Ruby</h2>
       </ion-item>
-    </ion-list>
-
-    <ion-list *ngSwitchCase="'semaine'">
-      <ion-card *ngFor="let event of events" (click)="evenementPage(event.category_id)">
-        <ion-card-content>
-          <ion-card-title>
-            {{event.category_id}}
-          </ion-card-title>
-          <img src="../../assets/img/categories/cinema.jpg" height="1000" width="1000"/>
-          <p> {{ event.description }} </p>
-        </ion-card-content>
-      </ion-card>
     </ion-list>
 
     <ion-list *ngSwitchCase="'mois'">
