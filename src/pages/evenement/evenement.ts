@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {NavParams} from "ionic-angular";
 
 declare var Chillout;
 
@@ -7,9 +6,14 @@ declare var Chillout;
   templateUrl: 'evenement.html'
 })
 export class EvenementPage {
+  event;
 
-  constructor(public params: NavParams) {
-    this.params.get("event");
-    console.log(this.params.get("event"));
+  constructor() {
+    this.event = Chillout.sessionGet("event");
+  }
+
+  DateTimeToDate(dateTime) {
+    var newDate = Chillout.facadeLibraryMoment()(dateTime).format("DD MMM YYYY");
+    return newDate;
   }
 }

@@ -3,40 +3,22 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Nouvel événement</ion-title>
+    <ion-title>{{ event.category_id }}</ion-title>
   </ion-navbar>
 </ion-header>
 
 
-<ion-content padding>
+<ion-content class="bk fontwhite" padding>
 
-  <ion-title>Concert</ion-title>
+  <ion-title><span class="fontwhite">{{ event.title }}</span></ion-title>
+  <ion-title><small class="fontwhite">{{ DateTimeToDate(event.startTime) }} - {{ DateTimeToDate(event.endTime) }}</small></ion-title>
 
-  <ion-item>
-    <ion-avatar item-left>
-      <img src="../../assets/img/avatarTest.png"/>
-    </ion-avatar>
-    <h2>Pavillon Noir</h2>
-  </ion-item>
+  <img src="../../assets/img/categories/SpectacleBis.jpg"/>
 
-  <p>Carmen</p>
+  <p><strong>Prix :</strong> {{ event.price }} €</p>
 
-  <img src="../../assets/img/categories/concert.jpg"/>
+  <p><strong>Adresse :</strong> {{ event.address }}</p>
 
-  <p>30 €</p>
-
-  <ion-item>
-    <ion-label stacked>Début de l'évènement</ion-label>
-    <ion-datetime displayFormat="DD MMM YYYY HH:mm" [(ngModel)]="dateDebut" disabled></ion-datetime>
-  </ion-item>
-
-  <ion-item>
-    <ion-label stacked>Fin de l'évènement</ion-label>
-    <ion-datetime displayFormat="DD MMM YYYY HH:mm" [(ngModel)]="dateFin" disabled></ion-datetime>
-  </ion-item>
-
-  <p>{{ event.address }} - test</p>
-
-  <p>Voici quelques informations supplémentaires par rapport à cet événement</p>
+  <p><strong>Informations :</strong> {{ event.description }}</p>
 
 </ion-content>

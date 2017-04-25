@@ -11,8 +11,13 @@ declare var Chillout;
 export class AccueilParticipantPage {
   events = [];
 
-  constructor(public navCtrl: NavController, public eventPage : EvenementPage) {
+  constructor(public navCtrl : NavController ) {
     // this.connexionDB();
+  }
+
+  eventPage(event) {
+    Chillout.sessionPut("event", event);
+    this.navCtrl.push(EvenementPage);
   }
 
   DateTimeToDate(dateTime) {

@@ -25,7 +25,7 @@
 
   <div [ngSwitch]="evenement">
     <ion-list *ngSwitchCase="'tout'">
-      <ion-card *ngFor="let event of events" [navPush]="eventPage" [navParams]="event" style="background-image: url('../../assets/img/categories/gastronomie.jpg'); background-size:100%;">
+      <ion-card *ngFor="let event of events" (click)="eventPage(event)" style="background-image: url('../../assets/img/categories/gastronomie.jpg'); background-size:100%;">
         <ion-card-content>
           <ion-card-title class="fontwhite">
             {{ event.title }}
