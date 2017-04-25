@@ -20,7 +20,7 @@ Chillout.log = function(parameters) {
             }
         }
         warn += ":: " + i.toUpperCase () + " ::\n";
-        warn += parameters[i] + "\n\n";
+        warn += parameters[i] + "\n";
     }
     warn += "-----------[ ERROR END ]-----------\n";
     console.warn (warn);
