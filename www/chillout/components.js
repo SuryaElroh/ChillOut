@@ -200,6 +200,7 @@ Chillout.config = {
     token_attr : "token",
     url : "https://chillout.goto4ever.com/"
 };Chillout.facadeLibraryMoment = function(){
+    moment.locale('fr');
     return moment;
 };//! moment.js
 //! version : 2.18.1
