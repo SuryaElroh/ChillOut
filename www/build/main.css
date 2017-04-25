@@ -21161,6 +21161,10 @@ sub {
   background-color: #373E48;
 }
 
+.back-button-text-ios {
+  display: none !important;
+}
+
 .list .item.item-accordion {
   line-height: 38px;
   padding-top: 0;
