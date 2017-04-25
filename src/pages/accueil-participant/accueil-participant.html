@@ -12,29 +12,51 @@
 
 
 <ion-content padding>
-    <ion-slides pager
-                [options]="mySlideOptions">
-        <ion-slide>
-            <img src="/assets/accueil/carrousel/1.jpeg">
-        </ion-slide>
-        <ion-slide>
-            <img src="/assets/accueil/carrousel/2.jpeg">
-        </ion-slide>
-        <ion-slide>
-            <img src="/assets/accueil/carrousel/3.jpeg">
-        </ion-slide>
-    </ion-slides>
+  <ion-segment [(ngModel)]="evenement" color="primary">
+    <ion-segment-button value="tout" (ionSelect)="selectedAll()">
+      Tout
+    </ion-segment-button>
+    <ion-segment-button value="semaine" (ionSelect)="selectedWeek()">
+      Cette semaine
+    </ion-segment-button>
+    <ion-segment-button value="mois" (ionSelect)="selectedMonth()">
+      Ce mois-ci
+    </ion-segment-button>
+  </ion-segment>
 
-  <ion-list>
-    <ion-card *ngFor="let event of events" (click)="evenementPage(event.category_id)">
-      <ion-card-content>
-        <ion-card-title>
-          {{event.category_id}}
-        </ion-card-title>
-        <img src="../../assets/img/categories/cinema.jpg" height="1000" width="1000"/>
-        <p> {{ event.description }} </p>
-      </ion-card-content>
-    </ion-card>
-  </ion-list>
+  <div [ngSwitch]="evenement">
+    <ion-list *ngSwitchCase="'tout'">
+      coucou
+      <ion-item>
+        <ion-thumbnail item-left>
+          <img src="img/thumbnail-puppy-1.jpg">
+        </ion-thumbnail>
+        <h2>Ruby</h2>
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'semaine'">
+      smeaine
+      <ion-card *ngFor="let event of events" (click)="evenementPage(event.category_id)">
+        <ion-card-content>
+          <ion-card-title>
+            {{event.category_id}}
+          </ion-card-title>
+          <img src="../../assets/img/categories/cinema.jpg" height="1000" width="1000"/>
+          <p> {{ event.description }} </p>
+        </ion-card-content>
+      </ion-card>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'mois'">
+      mois
+      <ion-item>
+        <ion-thumbnail item-left>
+          <img src="img/thumbnail-kitten-1.jpg">
+        </ion-thumbnail>
+        <h2>Luna</h2>
+      </ion-item>
+    </ion-list>
+  </div>
 
 </ion-content>

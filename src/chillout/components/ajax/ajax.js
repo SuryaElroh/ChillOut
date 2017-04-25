@@ -70,13 +70,9 @@ Chillout.ajax = function (parameters) {
               success(successData);
             }
             else {
+              var results = xhr.responseText;
                 try {
-                    var results = xhr.responseText;
-                    var results = JSON.parse (results);
-                    if (results.status_code == 401) {
-                        Chillout.authDisconnectUser();
-                    }
-                    error (results);
+                    results = JSON.parse (results);
                 }
                 catch (e) {
                     Chillout.log ({
@@ -85,8 +81,11 @@ Chillout.ajax = function (parameters) {
                         "method" : "ajax" ,
                         "msg" : "in error :: the json is badely formated"
                     });
-                  console.log(e);
                 }
+                // if (results.status_code == 401) {
+                //   Chillout.authDisconnectUser();
+                // }
+                error (results);
             }
         }
     };

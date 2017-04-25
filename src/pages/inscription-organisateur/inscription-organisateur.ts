@@ -21,9 +21,11 @@ export class InscriptionOrganisateurPage {
   }
 
   nouveauCompte(){
+    console.log('je suis rentré');
     Chillout.modelPostOrganizer({
       name : this.ds,
-      adresse : this.adresse,
+      address : this.adresse,
+      phone : this.tel,
       website : this.site,
       email : this.email,
       password : this.mdp,

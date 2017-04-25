@@ -8,6 +8,7 @@ Chillout.authConnectUser = function (parameters) {
     var success = this.modelSuccess;
     var login = "__REQUIRED__";
     var password = "__REQUIRED__";
+    console.log(parameters);
     // parameters
     if (parameters && parameters.hasOwnProperty ("login")) {
         login = parameters.login;

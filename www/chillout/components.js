@@ -82,13 +82,9 @@ Chillout.ajax = function (parameters) {
               success(successData);
             }
             else {
+              var results = xhr.responseText;
                 try {
-                    var results = xhr.responseText;
-                    var results = JSON.parse (results);
-                    if (results.status_code == 401) {
-                        Chillout.authDisconnectUser();
-                    }
-                    error (results);
+                    results = JSON.parse (results);
                 }
                 catch (e) {
                     Chillout.log ({
@@ -97,8 +93,11 @@ Chillout.ajax = function (parameters) {
                         "method" : "ajax" ,
                         "msg" : "in error :: the json is badely formated"
                     });
-                  console.log(e);
                 }
+                // if (results.status_code == 401) {
+                //   Chillout.authDisconnectUser();
+                // }
+                error (results);
             }
         }
     };
@@ -114,6 +113,7 @@ Chillout.authConnectUser = function (parameters) {
     var success = this.modelSuccess;
     var login = "__REQUIRED__";
     var password = "__REQUIRED__";
+    console.log(parameters);
     // parameters
     if (parameters && parameters.hasOwnProperty ("login")) {
         login = parameters.login;
@@ -190,7 +190,8 @@ Chillout.authSetToken = function (value) {
  */
 Chillout.authRemoveToken = function () {
     localStorage.removeItem(this.config.token_attr);
-};Chillout.config = {
+};
+Chillout.config = {
     token_attr : "token",
     url : "https://chillout.goto4ever.com/"
 };/*
@@ -903,9 +904,8 @@ Chillout.modelPostOrganizer = function (p={}) {
         type : "post" ,
         route : "organizers" ,
         data : {
-          // TODO voir avec quentin les noms des variables en back
           name : p.name ,
-          adresse : p.adresse ,
+          address : p.adresse ,
           phone : p.phone ,
           website : p.website,
           email : p.email,
@@ -920,7 +920,7 @@ Chillout.modelPostOrganizer = function (p={}) {
     });
 };
 /**
- * @description créer un organizer
+ * @description modifier un organizer
  */
 Chillout.modelPutOrganizer = function (p={}) {
     var error = this.modelError;

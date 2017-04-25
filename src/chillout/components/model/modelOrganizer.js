@@ -85,9 +85,8 @@ Chillout.modelPostOrganizer = function (p={}) {
         type : "post" ,
         route : "organizers" ,
         data : {
-          // TODO voir avec quentin les noms des variables en back
           name : p.name ,
-          adresse : p.adresse ,
+          address : p.adresse ,
           phone : p.phone ,
           website : p.website,
           email : p.email,
@@ -102,7 +101,7 @@ Chillout.modelPostOrganizer = function (p={}) {
     });
 };
 /**
- * @description créer un organizer
+ * @description modifier un organizer
  */
 Chillout.modelPutOrganizer = function (p={}) {
     var error = this.modelError;

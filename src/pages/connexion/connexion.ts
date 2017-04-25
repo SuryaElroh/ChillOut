@@ -18,6 +18,8 @@ export class ConnexionPage {
   }
 
   connexion(){
+    console.log(this.identifiant);
+    console.log(this.mdp);
     Chillout.authConnectUser({login: this.identifiant, password: this.mdp, success: (data) => {
       // TODO mettre en place la condition de redirection (accueil participant/organisateur)
       this.navCtrl.push(AccueilParticipantPage);

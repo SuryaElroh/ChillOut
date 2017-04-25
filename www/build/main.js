@@ -81109,9 +81109,11 @@ var InscriptionOrganisateurPage = (function () {
     }
     InscriptionOrganisateurPage.prototype.nouveauCompte = function () {
         var _this = this;
+        console.log('je suis rentré');
         Chillout.modelPostOrganizer({
             name: this.ds,
-            adresse: this.adresse,
+            address: this.adresse,
+            phone: this.tel,
             website: this.site,
             email: this.email,
             password: this.mdp,
@@ -81189,7 +81191,7 @@ var AccueilParticipantPage = (function () {
         this.navCtrl.push(EvenementPage);
     };
     AccueilParticipantPage = __decorate$111([
-        Component({template:/*ion-inline-start:"D:\Surya\GitHub\ChillOut\src\pages\accueil-participant\accueil-participant.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>ChillOut</ion-title>\n    <button ion-button>\n      <ion-icon name="power"></ion-icon>\n    </button>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n    <ion-slides pager\n                [options]="mySlideOptions">\n        <ion-slide>\n            <img src="/assets/accueil/carrousel/1.jpeg">\n        </ion-slide>\n        <ion-slide>\n            <img src="/assets/accueil/carrousel/2.jpeg">\n        </ion-slide>\n        <ion-slide>\n            <img src="/assets/accueil/carrousel/3.jpeg">\n        </ion-slide>\n    </ion-slides>\n\n  <ion-list>\n    <ion-card *ngFor="let event of events" (click)="evenementPage(event.category_id)">\n      <ion-card-content>\n        <ion-card-title>\n          {{event.category_id}}\n        </ion-card-title>\n        <img src="../../assets/img/categories/cinema.jpg" height="1000" width="1000"/>\n        <p> {{ event.description }} </p>\n      </ion-card-content>\n    </ion-card>\n  </ion-list>\n\n</ion-content>\n'/*ion-inline-end:"D:\Surya\GitHub\ChillOut\src\pages\accueil-participant\accueil-participant.html"*/
+        Component({template:/*ion-inline-start:"D:\Surya\GitHub\ChillOut\src\pages\accueil-participant\accueil-participant.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>ChillOut</ion-title>\n    <button ion-button>\n      <ion-icon name="power"></ion-icon>\n    </button>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n  <ion-segment [(ngModel)]="evenement" color="primary">\n    <ion-segment-button value="tout" (ionSelect)="selectedAll()">\n      Tout\n    </ion-segment-button>\n    <ion-segment-button value="semaine" (ionSelect)="selectedWeek()">\n      Cette semaine\n    </ion-segment-button>\n    <ion-segment-button value="mois" (ionSelect)="selectedMonth()">\n      Ce mois-ci\n    </ion-segment-button>\n  </ion-segment>\n\n  <div [ngSwitch]="evenement">\n    <ion-list *ngSwitchCase="\'tout\'">\n      coucou\n      <ion-item>\n        <ion-thumbnail item-left>\n          <img src="img/thumbnail-puppy-1.jpg">\n        </ion-thumbnail>\n        <h2>Ruby</h2>\n      </ion-item>\n    </ion-list>\n\n    <ion-list *ngSwitchCase="\'semaine\'">\n      smeaine\n      <ion-card *ngFor="let event of events" (click)="evenementPage(event.category_id)">\n        <ion-card-content>\n          <ion-card-title>\n            {{event.category_id}}\n          </ion-card-title>\n          <img src="../../assets/img/categories/cinema.jpg" height="1000" width="1000"/>\n          <p> {{ event.description }} </p>\n        </ion-card-content>\n      </ion-card>\n    </ion-list>\n\n    <ion-list *ngSwitchCase="\'mois\'">\n      mois\n      <ion-item>\n        <ion-thumbnail item-left>\n          <img src="img/thumbnail-kitten-1.jpg">\n        </ion-thumbnail>\n        <h2>Luna</h2>\n      </ion-item>\n    </ion-list>\n  </div>\n\n</ion-content>\n'/*ion-inline-end:"D:\Surya\GitHub\ChillOut\src\pages\accueil-participant\accueil-participant.html"*/
         }), 
         __metadata$5('design:paramtypes', [NavController])
     ], AccueilParticipantPage);
@@ -81214,6 +81216,8 @@ var ConnexionPage = (function () {
     }
     ConnexionPage.prototype.connexion = function () {
         var _this = this;
+        console.log(this.identifiant);
+        console.log(this.mdp);
         Chillout.authConnectUser({ login: this.identifiant, password: this.mdp, success: function (data) {
                 // TODO mettre en place la condition de redirection (accueil participant/organisateur)
                 _this.navCtrl.push(AccueilParticipantPage);
@@ -81233,7 +81237,7 @@ var ConnexionPage = (function () {
         this.navCtrl.push(InscriptionOrganisateurPage);
     };
     ConnexionPage = __decorate$108([
-        Component({template:/*ion-inline-start:"D:\Surya\GitHub\ChillOut\src\pages\connexion\connexion.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle> <!-- A retirer ensuite car on ne doit pas voir le menu sur l\'\'accueil de connexion -->\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>ChillOut</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n\n  <button ion-button color="primary" round block>Se connecter avec Facebook</button>\n  <button ion-button color="danger" round block>Se connecter avec Google+</button>\n\n\n  <h5> Se connecter avec un compte ChillOut </h5>\n  <p>\n\n    <ion-list>\n      <ion-item>\n        <ion-label floating>Username</ion-label>\n        <ion-input type="text" [(ngModel)]="identifant"></ion-input>\n      </ion-item>\n\n      <ion-item>\n        <ion-label floating>Password</ion-label>\n        <ion-input type="password" [(ngModel)]="mdp"></ion-input>\n      </ion-item>\n    </ion-list>\n\n    <button ion-button color="secondary" (click)="connexion()" round block>Se connecter</button>\n  </p>\n\n\n  <h5> pas encore inscrit ? </h5>\n  <button ion-button icon-left clear small (click)="nouveauParticipant()">\n    <ion-icon name="person"></ion-icon>Nouveau participant\n  </button>\n  <button ion-button icon-left clear small (click)="nouvelOrganisateur()">\n    <ion-icon name="briefcase"></ion-icon>Nouvel organisateur\n  </button>\n\n\n</ion-content>\n'/*ion-inline-end:"D:\Surya\GitHub\ChillOut\src\pages\connexion\connexion.html"*/,
+        Component({template:/*ion-inline-start:"D:\Surya\GitHub\ChillOut\src\pages\connexion\connexion.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle> <!-- A retirer ensuite car on ne doit pas voir le menu sur l\'\'accueil de connexion -->\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>ChillOut</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n\n  <button ion-button color="primary" round block>Se connecter avec Facebook</button>\n  <button ion-button color="danger" round block>Se connecter avec Google+</button>\n\n\n  <h5> Se connecter avec un compte ChillOut </h5>\n  <p>\n\n    <ion-list>\n      <ion-item>\n        <ion-label floating>Username</ion-label>\n        <ion-input type="text" [(ngModel)]="identifiant"></ion-input>\n      </ion-item>\n\n      <ion-item>\n        <ion-label floating>Password</ion-label>\n        <ion-input type="password" [(ngModel)]="mdp"></ion-input>\n      </ion-item>\n    </ion-list>\n\n    <button ion-button color="secondary" (click)="connexion()" round block>Se connecter</button>\n  </p>\n\n\n  <h5> pas encore inscrit ? </h5>\n  <button ion-button icon-left clear small (click)="nouveauParticipant()">\n    <ion-icon name="person"></ion-icon>Nouveau participant\n  </button>\n  <button ion-button icon-left clear small (click)="nouvelOrganisateur()">\n    <ion-icon name="briefcase"></ion-icon>Nouvel organisateur\n  </button>\n\n\n</ion-content>\n'/*ion-inline-end:"D:\Surya\GitHub\ChillOut\src\pages\connexion\connexion.html"*/,
         }), 
         __metadata$2('design:paramtypes', [NavController, AlertController])
     ], ConnexionPage);
