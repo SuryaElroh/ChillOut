@@ -8,7 +8,7 @@
  * * * * * * * * * * * * * * * * * * * * * * * * * *
  *
  */
-Chillout.prototype.vibrate = function (parameters) {
+Chillout.vibrate = function (parameters) {
     var time = 1000;
     if (parameters && parameters.hasOwnProperty ("time")) time = parameters.time;
     navigator.vibrate(time);

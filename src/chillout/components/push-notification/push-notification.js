@@ -9,7 +9,7 @@
  * * * * * * * * * * * * * * * * * * * * * * * * * *
  *
  */
-Chillout.prototype.pushNotification = function(parameters){
+Chillout.pushNotification = function(parameters){
     var titre = parameters.titre;
     var message = parameters.message;
     cordova.plugins.notification.local.schedule ({
