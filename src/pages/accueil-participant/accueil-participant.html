@@ -11,22 +11,21 @@
 </ion-header>
 
 
-<ion-content padding>
-  <ion-segment [(ngModel)]="evenement" color="primary">
-    <ion-segment-button value="tout" (ionSelect)="selectedAll()">
+<ion-content class="bk" padding>
+  <ion-segment [(ngModel)]="evenement" color="light">
+    <ion-segment-button value="tout">
       Tout
     </ion-segment-button>
-    <ion-segment-button value="semaine" (ionSelect)="selectedWeek()">
+    <ion-segment-button value="semaine">
       Cette semaine
     </ion-segment-button>
-    <ion-segment-button value="mois" (ionSelect)="selectedMonth()">
+    <ion-segment-button value="mois">
       Ce mois-ci
     </ion-segment-button>
   </ion-segment>
 
   <div [ngSwitch]="evenement">
     <ion-list *ngSwitchCase="'tout'">
-      coucou
       <ion-item>
         <ion-thumbnail item-left>
           <img src="img/thumbnail-puppy-1.jpg">
@@ -36,7 +35,6 @@
     </ion-list>
 
     <ion-list *ngSwitchCase="'semaine'">
-      smeaine
       <ion-card *ngFor="let event of events" (click)="evenementPage(event.category_id)">
         <ion-card-content>
           <ion-card-title>
@@ -49,7 +47,6 @@
     </ion-list>
 
     <ion-list *ngSwitchCase="'mois'">
-      mois
       <ion-item>
         <ion-thumbnail item-left>
           <img src="img/thumbnail-kitten-1.jpg">
