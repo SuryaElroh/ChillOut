@@ -20,7 +20,7 @@ window.Chillout = function(){
  * * * * * * * * * * * * * * * * * * * * * * * * * *
  *
  */
-Chillout.ajax = function (parameters) {
+Chillout.ajax = function (p = {}) {
     // default
     var url = this.config.url;
     var data = function () {return {}} ();
@@ -30,28 +30,32 @@ Chillout.ajax = function (parameters) {
     var type = "get";
     var route = "";
     var form_data = null;
+    var withToken = true;
     // parameters
-    if (parameters && parameters.hasOwnProperty ("type")) {
-        type = parameters.type;
+    if (p.hasOwnProperty ("type")) {
+        type = p.type;
     }
-    if (parameters && parameters.hasOwnProperty ("route")) {
-        route = parameters.route;
+    if (p.hasOwnProperty ("route")) {
+        route = p.route;
     }
-    if (parameters && parameters.hasOwnProperty ("url")) {
-        url = parameters.url;
+    if (p.hasOwnProperty ("url")) {
+        url = p.url;
     }
-    if (parameters && parameters.hasOwnProperty ("data")) {
-        data = parameters.data;
+    if (p.hasOwnProperty ("data")) {
+        data = p.data;
     }
-    if (parameters && parameters.hasOwnProperty ("success")) {
-        success = parameters.success;
+    if (p.hasOwnProperty ("success")) {
+        success = p.success;
     }
-    if (parameters && parameters.hasOwnProperty ("error")) {
-        error = parameters.error;
+    if (p.hasOwnProperty ("error")) {
+        error = p.error;
+    }
+    if (p.hasOwnProperty ("withToken")) {
+        withToken = p.withToken;
     }
     // on ajoute le token au data
     var token = Chillout.authGetToken();
-    if (token) data.token = token;
+    if (token && withToken) data.token = token;
     // si on a le type get
     if (type === "get" || type === "put" || type === "delete") {
         for (var i in data) {
@@ -68,7 +72,7 @@ Chillout.ajax = function (parameters) {
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4) {
             if (xhr.status == 200) {
-              let successData = "nothing";
+                let successData = "nothing";
                 try {successData = JSON.parse (xhr.responseText); }
                 catch (e) {
                     Chillout.log ({
@@ -79,10 +83,10 @@ Chillout.ajax = function (parameters) {
                     });
                     console.log(e);
                 }
-              success(successData);
+                success(successData);
             }
             else {
-              var results = xhr.responseText;
+                var results = xhr.responseText;
                 try {
                     results = JSON.parse (results);
                 }
@@ -145,6 +149,7 @@ Chillout.authConnectUser = function (parameters) {
     // action
     this.ajax({
         type : "post",
+        withToken : false,
         data : {
             email : login,
             password : password

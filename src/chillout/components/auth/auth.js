@@ -40,6 +40,7 @@ Chillout.authConnectUser = function (parameters) {
     // action
     this.ajax({
         type : "post",
+        withToken : false,
         data : {
             email : login,
             password : password
