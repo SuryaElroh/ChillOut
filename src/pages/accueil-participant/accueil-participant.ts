@@ -11,9 +11,25 @@ declare var Chillout;
 export class AccueilParticipantPage {
   events = [];
 
-  constructor(public navCtrl: NavController) {
-    this.navCtrl = navCtrl;
+  constructor(public navCtrl: NavController, public eventPage : EvenementPage) {
     // this.connexionDB();
+  }
+
+  DateTimeToDate(dateTime) {
+    var newDate = Chillout.facadeLibraryMoment()(dateTime).format("DD MMM YY");
+    return newDate;
+  }
+
+  DaysLeft(startDate) {
+    var now = Chillout.facadeLibraryMoment()();
+    var startDate = Chillout.facadeLibraryMoment()(startDate);
+    var daysLeft = startDate.diff(now, 'days');
+
+    if (daysLeft < 0) {
+      return "";
+    }
+
+    return "Jour(s) restant(s) : " + daysLeft;
   }
 
   allEvents() {
@@ -25,7 +41,6 @@ export class AccueilParticipantPage {
     })
 }
 
-
   // connexionDB(){
   //   var chillout = new Chillout();
   //   chillout.ajax({
@@ -36,9 +51,4 @@ export class AccueilParticipantPage {
   //     }
   //   });
   // }
-
-  evenementPage(){
-    this.navCtrl.push(EvenementPage);
-  }
-
 }

@@ -25,32 +25,23 @@
 
   <div [ngSwitch]="evenement">
     <ion-list *ngSwitchCase="'tout'">
-      <ion-card *ngFor="let event of events" (click)="evenementPage(event.category_id)" style="background-image: url('../../assets/img/categories/gastronomie.jpg'); background-size:100%;">
+      <ion-card *ngFor="let event of events" [navPush]="eventPage" [navParams]="event" style="background-image: url('../../assets/img/categories/gastronomie.jpg'); background-size:100%;">
         <ion-card-content>
-          <ion-card-title>
+          <ion-card-title class="fontwhite">
             {{ event.title }}
           </ion-card-title>
-          <p>{{ event.startTime }} au {{ event.endTime }}</p>
+          <p class="fontwhite">{{ DateTimeToDate(event.startTime) }} au {{ DateTimeToDate(event.endTime) }}</p>
+          <p class="fontwhite">{{ DaysLeft(event.startTime) }}</p>
         </ion-card-content>
       </ion-card>
     </ion-list>
 
     <ion-list *ngSwitchCase="'semaine'">
-      <ion-item>
-        <ion-thumbnail item-left>
-          <img src="img/thumbnail-puppy-1.jpg">
-        </ion-thumbnail>
-        <h2>Ruby</h2>
-      </ion-item>
+
     </ion-list>
 
     <ion-list *ngSwitchCase="'mois'">
-      <ion-item>
-        <ion-thumbnail item-left>
-          <img src="img/thumbnail-kitten-1.jpg">
-        </ion-thumbnail>
-        <h2>Luna</h2>
-      </ion-item>
+
     </ion-list>
   </div>
 
