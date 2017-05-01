@@ -3,6 +3,7 @@ import {NavController, AlertController} from "ionic-angular";
 import {InscriptionParticipantPage} from "../inscription-participant/inscription-participant";
 import {InscriptionOrganisateurPage} from "../inscription-organisateur/inscription-organisateur";
 import {AccueilParticipantPage} from "../accueil-participant/accueil-participant";
+import {AccueilOrganisateurPage} from "../accueil-organisateur/accueil-organisateur";
 
 declare var Chillout;
 
@@ -19,8 +20,12 @@ export class ConnexionPage {
 
   connexion(){
     Chillout.authConnectUser({login: this.identifiant, password: this.mdp, success: (data) => {
-      // TODO mettre en place la condition de redirection (accueil participant/organisateur)
-      this.navCtrl.push(AccueilParticipantPage);
+      if (Chillout.sessionGet("isOrganizer") === 0) {
+        this.navCtrl.setRoot(AccueilParticipantPage);
+      }else {
+        this.navCtrl.setRoot(AccueilOrganisateurPage);
+      }
+
     }, error: (data) => {
         let alert = this.alertCtrl.create({
           title: 'Erreur',

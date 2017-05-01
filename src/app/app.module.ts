@@ -9,6 +9,7 @@ import {InscriptionOrganisateurPage} from "../pages/inscription-organisateur/ins
 import {CompteParticipantPage, ModalInfosPage, ModalMdpPage} from "../pages/compte-participant/compte-participant";
 import {CompteOrganisateurPage} from "../pages/compte-organisateur/compte-organisateur";
 import {AccueilParticipantPage} from "../pages/accueil-participant/accueil-participant";
+import {AccueilOrganisateurPage} from "../pages/accueil-organisateur/accueil-organisateur";
 import {RecherchePage} from "../pages/recherche/recherche";
 import {EvenementPersoPage} from "../pages/evenement-perso/evenement-perso";
 import {EvenementPage} from "../pages/evenement/evenement";
@@ -24,6 +25,7 @@ import {EvenementPage} from "../pages/evenement/evenement";
     ModalMdpPage,
     CompteOrganisateurPage,
     AccueilParticipantPage,
+    AccueilOrganisateurPage,
     RecherchePage,
     CreationEvenementPage,
     EvenementPersoPage,
@@ -43,6 +45,7 @@ import {EvenementPage} from "../pages/evenement/evenement";
     ModalMdpPage,
     CompteOrganisateurPage,
     AccueilParticipantPage,
+    AccueilOrganisateurPage,
     RecherchePage,
     CreationEvenementPage,
     EvenementPersoPage,

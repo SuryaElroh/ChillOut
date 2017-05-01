@@ -4,9 +4,6 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>ChillOut</ion-title>
-    <button ion-button>
-      <ion-icon name="power"></ion-icon>
-    </button>
   </ion-navbar>
 </ion-header>
 
@@ -24,7 +21,7 @@
   </ion-segment>
 
   <div [ngSwitch]="evenement">
-    <ion-list *ngSwitchCase="'tout'">
+    <ion-list *ngSwitchDefault>
       <ion-card *ngFor="let event of events" (click)="eventPage(event)" style="background-image: url('../../assets/img/categories/gastronomie.jpg'); background-size:100%;">
         <ion-card-content>
           <ion-card-title class="fontwhite">

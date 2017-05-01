@@ -2,33 +2,26 @@ import { Component } from '@angular/core';
 import {NavController, ModalController, NavParams, ViewController} from "ionic-angular";
 import {RecherchePage} from "../recherche/recherche";
 
+declare var Chillout;
+
 @Component({
   templateUrl: 'compte-participant.html'
 })
 export class CompteParticipantPage {
 
-  infos = [
-    {
-      libelle: "Nom",
-      value: "Toto",
-    },
-    {
-      libelle: "Prénom",
-      value: "Tata",
-    },
-    {
-      libelle: "E-mail",
-      value: "Tata.toto@gmail.com",
-    },
-    {
-      libelle: "Date de naissance",
-      value: "01/06/1993",
-    }
-  ];
+  nom = "";
+  prenom = "";
+  ddn = "";
+  email = "";
 
   constructor(public navCtrl: NavController, public modalCtrl: ModalController) {
     this.navCtrl = navCtrl;
     this.modalCtrl = modalCtrl;
+    var infoParticipant = Chillout.sessionGet("participant");
+    this.nom = infoParticipant.lastName;
+    this.prenom = infoParticipant.firstName;
+    this.ddn = infoParticipant.birthday;
+    this.email = infoParticipant.user.email;
   }
 
   recherche(){
@@ -40,7 +33,7 @@ export class CompteParticipantPage {
   }
 
   modalModifierInfo() {
-    let modal = this.modalCtrl.create(ModalInfosPage, this.infos);
+    let modal = this.modalCtrl.create(ModalInfosPage);
     modal.present();
   }
 

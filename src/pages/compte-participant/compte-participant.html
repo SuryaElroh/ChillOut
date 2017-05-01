@@ -4,9 +4,6 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>ChillOut</ion-title>
-    <button ion-button>
-      <ion-icon name="power"></ion-icon>
-    </button>
   </ion-navbar>
 </ion-header>
 
@@ -15,13 +12,29 @@
   <h4 text-center>Profile</h4>
 
   <ion-avatar>
-    <img src="https://image.freepik.com/free-icon/user-male-shape-in-a-circle--ios-7-interface-symbol_318-35357.png" alt="Photo profile">
+    <img src="../../assets/img/user.jpg" alt="Photo profile">
   </ion-avatar>
 
-  <ion-item *ngFor=" let info of infos">
-    <ion-label stacked>{{info.libelle}}</ion-label>
-    <ion-input type="text" value="{{info.value}}" disabled></ion-input>
-  </ion-item>
+  <ion-list>
+    <io
+  tem>
+      <ion-label stacked>Nom</ion-label>
+      <ion-input type="text" value="{{ nom }}" disabled></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Prénom</ion-label>
+      <ion-input type="text" value="{{ prenom }}" disabled></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Email</ion-label>
+      <ion-input type="text" value="{{ email }}" disabled></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Date de naissance</ion-label>
+      <ion-input type="text" value="{{ ddn }}" disabled></ion-input>
+    </ion-item>
+  </ion-list>
+
 
   <button ion-button color="light" block (click)="modalModifierInfo()">Modifier mes informations</button>
   <button ion-button color="light" block (click)="modalModifierMdp()">Changer mon mot de passe</button>

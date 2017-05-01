@@ -8,6 +8,7 @@ Chillout.authConnectUser = function (parameters) {
     var success = this.modelSuccess;
     var login = "__REQUIRED__";
     var password = "__REQUIRED__";
+    var isOrganizer = 0;
     console.log(parameters);
     // parameters
     if (parameters && parameters.hasOwnProperty ("login")) {
@@ -54,7 +55,43 @@ Chillout.authConnectUser = function (parameters) {
             error(data);
         }
     });
+    // récupération des données utilisateur
+    this.ajax({
+      type : "get",
+      data : {},
+      route : "participants",
+      success : (data) => {
+        data.data.forEach(participant => {
+          if(participant.user.email === login) {
+            this.sessionPut("participant", participant);
+            this.sessionPut("isOrganizer", isOrganizer);
+          }
+        })
+      },
+      error : function(data){
+        error(data);
+      }
+    });
+    // récupération des données organisateur
+    this.ajax({
+      type : "get",
+      data : {},
+      route : "organizers",
+      success : (data) => {
+        data.data.forEach(organizer => {
+          if(organizer.user.email === login) {
+            this.sessionPut("organizer", organizer);
+            isOrganizer = 1;
+            this.sessionPut("isOrganizer", isOrganizer);
+          }
+        })
+      },
+      error : function(data){
+        error(data);
+      }
+    });
 };
+
 /**
  * @description déconnecte un utilisateur
  */
