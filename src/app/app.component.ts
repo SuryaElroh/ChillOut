@@ -1,15 +1,15 @@
 import { Component, ViewChild } from '@angular/core';
-
 import {Platform, MenuController, Nav} from 'ionic-angular';
-
 import { StatusBar } from 'ionic-native';
-
 import {ConnexionPage} from "../pages/connexion/connexion";
 import {CompteParticipantPage} from "../pages/compte-participant/compte-participant";
 import {CompteOrganisateurPage} from "../pages/compte-organisateur/compte-organisateur";
 import {AccueilParticipantPage} from "../pages/accueil-participant/accueil-participant";
+import {AccueilOrganisateurPage} from "../pages/accueil-organisateur/accueil-organisateur";
 import {RecherchePage} from "../pages/recherche/recherche";
-import {EvenementPersoPage} from "../pages/evenement-perso/evenement-perso";
+import {DeconnexionPage} from "../pages/deconnexion/deconnexion";
+
+declare  var Chillout;
 
 @Component({
   templateUrl: 'app.html'
@@ -25,15 +25,40 @@ export class MyApp {
     public platform: Platform,
     public menu: MenuController
   ) {
+    console.log("Je suis dans le constructeur");
+    if (Chillout.authIsConnected()) {
+      console.log("Je suis connecté");
+      if (Chillout.sessionGet("isOrganizer") == 1) {
+        console.log("Je suis un organisateur");
+
+        // Redirect to Organizer home page
+        this.rootPage = AccueilOrganisateurPage;
+        // set menu's pages
+        this.pages = [
+          { title : 'Accueil', component: AccueilOrganisateurPage },
+          { title : 'Profile', component: CompteOrganisateurPage },
+          { title : 'Recherche', component: RecherchePage },
+          { title : 'Deconnexion', component: DeconnexionPage }
+        ];
+      }
+      else {
+        console.log("Je suis un participant");
+
+        // Redirect to Participant home page
+        this.rootPage = AccueilParticipantPage;
+
+        // set menu's pages
+        this.pages = [
+          { title : 'Accueil', component: AccueilParticipantPage },
+          { title : 'Profile', component: CompteParticipantPage },
+          { title : 'Recherche', component: RecherchePage },
+          { title : 'Deconnexion', component: DeconnexionPage }
+        ];
+      }
+    }
     this.initializeApp();
 
-    // set menu's pages
-    this.pages = [
-      { title : 'Recherche', component: RecherchePage },
-      { title : 'Accueil participant', component: AccueilParticipantPage },
-      { title : 'Profile participant', component: CompteParticipantPage },
-      { title : 'Profile organisateur', component: CompteOrganisateurPage }
-    ];
+    // initially set menu's pages here !
   }
 
   initializeApp() {

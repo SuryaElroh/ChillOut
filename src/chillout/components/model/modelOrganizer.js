@@ -86,11 +86,13 @@ Chillout.modelPostOrganizer = function (p={}) {
         route : "organizers" ,
         data : {
           name : p.name ,
-          address : p.adresse ,
+          address : p.address ,
           phone : p.phone ,
           website : p.website,
           email : p.email,
-          password : p.password
+          password : p.password,
+          description : p.description,
+          certifyLevel : p.certifyLevel
         } ,
         success : function (data) {
             success (data);

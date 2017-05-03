@@ -13,11 +13,13 @@ import {AccueilOrganisateurPage} from "../pages/accueil-organisateur/accueil-org
 import {RecherchePage} from "../pages/recherche/recherche";
 import {EvenementPersoPage} from "../pages/evenement-perso/evenement-perso";
 import {EvenementPage} from "../pages/evenement/evenement";
+import {DeconnexionPage} from "../pages/deconnexion/deconnexion";
 
 @NgModule({
   declarations: [
     MyApp,
     ConnexionPage,
+    DeconnexionPage,
     InscriptionParticipantPage,
     InscriptionOrganisateurPage,
     CompteParticipantPage,
@@ -38,6 +40,7 @@ import {EvenementPage} from "../pages/evenement/evenement";
   entryComponents: [
     MyApp,
     ConnexionPage,
+    DeconnexionPage,
     InscriptionParticipantPage,
     InscriptionOrganisateurPage,
     CompteParticipantPage,

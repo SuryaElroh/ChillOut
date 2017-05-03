@@ -21110,7 +21110,11 @@ sub {
   color: #FFFFFF !important;
 }
 
-.btncxn {
+.bk {
+  background-color: #373E48;
+}
+
+.btnchill {
   background-color: #ff751a;
 }
 
@@ -21161,8 +21165,11 @@ sub {
   color: #FFFFFF !important;
 }
 
-.bk {
-  background-color: #373E48;
+.avatar {
+  position: relative;
+  left: 30%;
+  width: 150px;
+  border-radius: 6%;
 }
 
 .list .item.item-accordion {

@@ -1,19 +1,46 @@
-<div id="accueil" class="container">
-    <script>loadAllEvents();</script>
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>ChillOut</ion-title>
+  </ion-navbar>
+</ion-header>
 
-    <div class="row nav navbar header">
-        <a class="retourSommaire text-left btn"><i class="glyphicon glyphicon-chevron-left"></i> Retour</a>
-        <h3 class="text-center">Accueil</h3>
-        <a class="btn btn-danger btnDeconnecter" id="deconnecter"><i class="fa fa-power-off"></i></a>
-    </div>
+<ion-content class="bk" padding>
+  <ion-segment [(ngModel)]="evenement" color="light">
+    <ion-segment-button value="tout" (ionSelect)="allEvents()">
+      Tout
+    </ion-segment-button>
+    <ion-segment-button value="semaine">
+      Cette semaine
+    </ion-segment-button>
+    <ion-segment-button value="mois">
+      Ce mois-ci
+    </ion-segment-button>
+  </ion-segment>
 
-    <div class="" id="divcontenu">
-    <div class="row cadreEvenement">
+  <div [ngSwitch]="evenement">
+    <ion-list *ngSwitchDefault>
+      <ion-card *ngFor="let event of events" (click)="eventPage(event)" style="background-image: url('../../assets/img/categories/gastronomie.jpg'); background-size:100%;">
+        <ion-card-content>
+          <ion-card-title class="fontwhite">
+            {{ event.title }}
+          </ion-card-title>
+          <p class="fontwhite">{{ DateTimeToDate(event.startTime) }} au {{ DateTimeToDate(event.endTime) }}</p>
+          <p class="fontwhite">{{ DaysLeft(event.startTime) }}</p>
+        </ion-card-content>
+      </ion-card>
+    </ion-list>
 
+    <ion-list *ngSwitchCase="'semaine'">
 
+    </ion-list>
 
-    </div>
-    </div>
+    <ion-list *ngSwitchCase="'mois'">
 
+    </ion-list>
+  </div>
 
-</div>
+</ion-content>
+

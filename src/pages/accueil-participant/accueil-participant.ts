@@ -45,15 +45,4 @@ export class AccueilParticipantPage {
       }
     })
 }
-
-  // connexionDB(){
-  //   var chillout = new Chillout();
-  //   chillout.ajax({
-  //     type: "get",
-  //     // route : "participants",
-  //     success:function(results){
-  //       console.log(results)
-  //     }
-  //   });
-  // }
 }

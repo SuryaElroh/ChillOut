@@ -18,6 +18,7 @@ export class CompteParticipantPage {
     this.navCtrl = navCtrl;
     this.modalCtrl = modalCtrl;
     var infoParticipant = Chillout.sessionGet("participant");
+
     this.nom = infoParticipant.lastName;
     this.prenom = infoParticipant.firstName;
     this.ddn = infoParticipant.birthday;
@@ -47,18 +48,42 @@ export class CompteParticipantPage {
     templateUrl: 'modalInfos.html'
   })
 
-export class ModalInfosPage {
-   infos;
 
-  constructor(public modalCtrl: ModalController, public params: NavParams, public viewCtrl: ViewController) {
+
+export class ModalInfosPage {
+    id = "";
+    nom = "";
+    prenom = "";
+    email = "";
+    ddn = "";
+
+  constructor(public modalCtrl: ModalController, public params: NavParams, public viewCtrl: ViewController, public  navCtrl: NavController) {
     this.modalCtrl = modalCtrl;
     this.params = params;
     this.viewCtrl = viewCtrl;
-    this.infos = this.params.data;
+    var infoParticipant = Chillout.sessionGet("participant");
+    this.id = infoParticipant.id;
+    this.nom = infoParticipant.lastName;
+    this.prenom = infoParticipant.firstName;
+    this.email = infoParticipant.user.email;
+    this.ddn = infoParticipant.birthday;
   }
 
   valider(){
-    // TODO faire l'update des données de l'utilisateur dans la base de données
+    Chillout.modelPutParticipant({
+      id: this.id,
+      firstName: this.prenom,
+      lastName: this.nom,
+      email : this.email,
+      birthday : this.ddn,
+      success: (data) => {
+        console.log("Succès de valider()");
+        this.navCtrl.setRoot(CompteParticipantPage);
+      },
+      error: (e) => {
+        console.log(e);
+      }
+    })
   }
 
   annuler(){

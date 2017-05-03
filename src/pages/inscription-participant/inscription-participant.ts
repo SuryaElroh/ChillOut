@@ -1,7 +1,6 @@
 import {Component} from '@angular/core';
 import {NavController, AlertController} from "ionic-angular";
 import {ConnexionPage} from "../connexion/connexion";
-import {first} from "rxjs/operator/first";
 
 declare var Chillout;
 

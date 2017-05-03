@@ -15,13 +15,19 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
+// For all app
+// --------------------------------------------------
 .fontwhite {
   color: #FFFFFF !important;
 }
 
+.bk {
+  background-color: #373E48;
+}
+
 // For Connection Page
 // --------------------------------------------------
-.btncxn {
+.btnchill {
   background-color: #ff751a;
 }
 
@@ -69,7 +75,11 @@
   color: #FFFFFF !important;
 }
 
-// For background color
-.bk {
-  background-color: #373E48;
+// For profile Page
+// ----------------------------------------------------
+.avatar {
+  position: relative;
+  left: 30%;
+  width: 150px;
+  border-radius: 6%;
 }

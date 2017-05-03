@@ -7,6 +7,7 @@ Chillout.modelPostParticipant({
 });
 Chillout.modelGetParticipants();
 Chillout.modelPutParticipant({
+    user_id : "2",
     id : "3",
     firstName : "Melvin",
     lastName : "Felix",

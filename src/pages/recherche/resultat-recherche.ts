@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-
-import {ModalController, NavParams, ViewController, NavController} from 'ionic-angular';
+import {ModalController, NavController} from 'ionic-angular';
 import {CompteParticipantPage} from "../compte-participant/compte-participant";
 
 @Component({

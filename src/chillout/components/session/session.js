@@ -3,7 +3,7 @@ Chillout.session = {};
  * Récupère une valeur en session
  */
 Chillout.sessionGet = function(attr){
-    return this.session[attr];
+    return JSON.parse(localStorage.getItem(attr));
 };
 /**
  * Ajoute ou créer un attribut unique avec sa value
@@ -11,10 +11,10 @@ Chillout.sessionGet = function(attr){
  * @param {*} value
  */
 Chillout.sessionSet = function(attr, value){
-    if (Object.keys(this.session).indexOf(attr) !== -1 ) {
+    if (Object.keys(localStorage).indexOf(attr) !== -1 ) {
         return this.log({msg:"l'attribut [" + attr + "] est deja utilisé dans la session Chillout."});
     }
-    this.session[attr] = value;
+    this.sessionPut(attr, value);
 };
 /**
  * Ajoute ou créer un attribut avec sa value
@@ -22,5 +22,13 @@ Chillout.sessionSet = function(attr, value){
  * @param {*} value
  */
 Chillout.sessionPut = function(attr, value){
-    this.session[attr] = value;
+  localStorage.setItem(attr, JSON.stringify(value));
+};
+
+/**
+ * Supprime un attribut
+ * @param {String} attr
+ */
+Chillout.sessionRemove = function(attr){
+  localStorage.removeItem(attr);
 };

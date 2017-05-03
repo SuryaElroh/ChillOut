@@ -29,6 +29,8 @@ export class InscriptionOrganisateurPage {
       website : this.site,
       email : this.email,
       password : this.mdp,
+      description : "auncune description",
+      certifyLevel : "1",
       success : data => {
         let alert = this.alertCtrl.create({
           title: 'Succès',

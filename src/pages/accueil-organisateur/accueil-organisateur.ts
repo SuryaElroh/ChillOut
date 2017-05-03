@@ -39,21 +39,10 @@ export class AccueilOrganisateurPage {
 
   allEvents() {
     Chillout.modelGetEvents ({ success: (data) => {
-        this.events = data.data;
-      }, error: (data) => {
-        console.log('Erreur dans la récupération des évènements')
-      }
+      this.events = data.data;
+    }, error: (data) => {
+      console.log('Erreur dans la récupération des évènements')
+    }
     })
-}
-
-  // connexionDB(){
-  //   var chillout = new Chillout();
-  //   chillout.ajax({
-  //     type: "get",
-  //     // route : "participants",
-  //     success:function(results){
-  //       console.log(results)
-  //     }
-  //   });
-  // }
+  }
 }

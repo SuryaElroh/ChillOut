@@ -20,7 +20,7 @@ export class ConnexionPage {
 
   connexion(){
     Chillout.authConnectUser({login: this.identifiant, password: this.mdp, success: (data) => {
-      if (Chillout.sessionGet("isOrganizer") === 0) {
+      if (Chillout.sessionGet("isOrganizer") == 0) {
         this.navCtrl.setRoot(AccueilParticipantPage);
       }else {
         this.navCtrl.setRoot(AccueilOrganisateurPage);

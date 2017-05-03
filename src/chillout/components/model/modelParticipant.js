@@ -99,7 +99,7 @@ Chillout.modelPostParticipant = function (p={})  {
     });
 };
 /**
- * @description créer un participant
+ * @description Modifier un participant
  */
 Chillout.modelPutParticipant = function (p={}) {
     var error = this.modelError;
@@ -114,12 +114,19 @@ Chillout.modelPutParticipant = function (p={}) {
         type : "put" ,
         route : "participants/" + p.id ,
         data : {
+            user_id : this.sessionGet("participant").user_id,
             firstName : p.firstName ,
             lastName : p.lastName ,
+            email : p.email,
             birthday : p.birthday
         } ,
-        success : function (data) {
-            success (data);
+        success : (data) => {
+          Promise.all([this.authSetParticipant(), this.authSetOrganizer()]).then (function () {
+            console.log("J'ai mis à jour les données dans le local storage");
+            success(data);
+          }).catch(e => {
+            error(e);
+          })
         } ,
         error : function (data) {
             error (data);
