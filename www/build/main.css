@@ -21118,6 +21118,24 @@ sub {
   background-color: #ff751a;
 }
 
+.inputConnect {
+  border: none !important;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.item-md.item-block .item-inner, .item-md .item-block .item-inner {
+  border: none;
+}
+
+.pad {
+  padding-right: 10% !important;
+  padding-left: 10% !important;
+}
+
+.logo {
+  max-width: 20vh;
+}
+
 .btnicp {
   background: transparent;
   border: solid #FFFFFF;
@@ -21130,7 +21148,7 @@ sub {
 
 .bkimgicp {
   background-image: url("../assets/img/fond.jpg");
-  background-size: contain;
+  background-size: cover;
 }
 
 .blitemicp {
