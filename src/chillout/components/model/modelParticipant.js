@@ -117,7 +117,6 @@ Chillout.modelPutParticipant = function (p={}) {
             user_id : this.sessionGet("participant").user_id,
             firstName : p.firstName ,
             lastName : p.lastName ,
-            email : p.email,
             birthday : p.birthday
         } ,
         success : (data) => {

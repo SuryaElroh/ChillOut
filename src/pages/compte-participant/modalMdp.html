@@ -7,7 +7,7 @@
       </button>
     </ion-buttons>
     <ion-title>
-      Modifier mdp
+      Identifiants
     </ion-title>
     <ion-buttons end>
       <button ion-button (click)="annuler()">
@@ -19,5 +19,16 @@
 </ion-header>
 
 <ion-content>
-  <p> C'est ici que l'on changera son mot de passe lorsque la connexion avec la bdd sera établie</p>
+  <ion-list>
+    <ion-item>
+      <ion-label stacked>Email</ion-label>
+      <ion-input type="text" [(ngModel)]="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Mot de passe</ion-label>
+      <ion-input type="password" [(ngModel)]="password"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button round class="btnchill" (click)="valider()">Sauvegarder</button>
 </ion-content>

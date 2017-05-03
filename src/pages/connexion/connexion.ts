@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {NavController, AlertController} from "ionic-angular";
+import {NavController, AlertController, MenuController} from "ionic-angular";
 import {InscriptionParticipantPage} from "../inscription-participant/inscription-participant";
 import {InscriptionOrganisateurPage} from "../inscription-organisateur/inscription-organisateur";
 import {AccueilParticipantPage} from "../accueil-participant/accueil-participant";
@@ -20,12 +20,7 @@ export class ConnexionPage {
 
   connexion(){
     Chillout.authConnectUser({login: this.identifiant, password: this.mdp, success: (data) => {
-      if (Chillout.sessionGet("isOrganizer") == 0) {
-        this.navCtrl.setRoot(AccueilParticipantPage);
-      }else {
-        this.navCtrl.setRoot(AccueilOrganisateurPage);
-      }
-
+        Chillout.navRefresh();
     }, error: (data) => {
         let alert = this.alertCtrl.create({
           title: 'Erreur',

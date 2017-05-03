@@ -4,6 +4,12 @@ import {RecherchePage} from "../recherche/recherche";
 
 declare var Chillout;
 
+/*
+ *
+ * PAGE PROFILE
+ *
+ */
+
 @Component({
   templateUrl: 'compte-participant.html'
 })
@@ -25,14 +31,6 @@ export class CompteParticipantPage {
     this.email = infoParticipant.user.email;
   }
 
-  recherche(){
-    this.navCtrl.push(RecherchePage)
-  }
-
-  profile() {
-    this.navCtrl.push(CompteParticipantPage);
-  }
-
   modalModifierInfo() {
     let modal = this.modalCtrl.create(ModalInfosPage);
     modal.present();
@@ -44,17 +42,22 @@ export class CompteParticipantPage {
   }
 }
 
+
+
+/*
+ *
+ * MODAL MODIF INFO
+ *
+ */
+
   @Component({
     templateUrl: 'modalInfos.html'
   })
-
-
 
 export class ModalInfosPage {
     id = "";
     nom = "";
     prenom = "";
-    email = "";
     ddn = "";
 
   constructor(public modalCtrl: ModalController, public params: NavParams, public viewCtrl: ViewController, public  navCtrl: NavController) {
@@ -65,7 +68,6 @@ export class ModalInfosPage {
     this.id = infoParticipant.id;
     this.nom = infoParticipant.lastName;
     this.prenom = infoParticipant.firstName;
-    this.email = infoParticipant.user.email;
     this.ddn = infoParticipant.birthday;
   }
 
@@ -74,7 +76,6 @@ export class ModalInfosPage {
       id: this.id,
       firstName: this.prenom,
       lastName: this.nom,
-      email : this.email,
       birthday : this.ddn,
       success: (data) => {
         console.log("Succès de valider()");
@@ -91,20 +92,44 @@ export class ModalInfosPage {
   }
 }
 
+
+/*
+ *
+ * MODAL MODIF IDENTIFIANT
+ *
+ */
+
 @Component({
   templateUrl: 'modalMdp.html'
 })
 
 export class ModalMdpPage {
+  id = "";
+  email = "";
+  password = "";
 
-  constructor(public modalCtrl: ModalController, public params: NavParams, public viewCtrl: ViewController) {
+  constructor(public modalCtrl: ModalController, public params: NavParams, public viewCtrl: ViewController, public  navCtrl: NavController) {
     this.modalCtrl = modalCtrl;
     this.params = params;
     this.viewCtrl = viewCtrl;
+    var infoParticipant = Chillout.sessionGet("participant");
+    this.id = infoParticipant.user_id;
+    this.email = infoParticipant.email;
   }
 
   valider(){
-    // TODO faire l'update du mot de passe de l'utilisateur dans la base de données
+    Chillout.modelPutUser({
+      email: this.email,
+      password: this.password,
+      id : this.id,
+      success: (data) => {
+        console.log("Succès de valider()");
+        this.navCtrl.setRoot(CompteParticipantPage);
+      },
+      error: (e) => {
+        console.log(e);
+      }
+    })
   }
 
   annuler(){
