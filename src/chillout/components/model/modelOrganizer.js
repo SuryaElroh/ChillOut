@@ -119,7 +119,7 @@ Chillout.modelPutOrganizer = function (p={}) {
         route : "organizers/" + p.id ,
         data : {} ,
         success : function (data) {
-            success (data);
+          success(data);
         } ,
         error : function (data) {
             error (data);

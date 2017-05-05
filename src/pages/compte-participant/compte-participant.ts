@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import {NavController, ModalController, NavParams, ViewController} from "ionic-angular";
-import {RecherchePage} from "../recherche/recherche";
 
 declare var Chillout;
 
@@ -79,7 +78,7 @@ export class ModalInfosPage {
       birthday : this.ddn,
       success: (data) => {
         console.log("Succès de valider()");
-        this.navCtrl.setRoot(CompteParticipantPage);
+        Chillout.navRefresh("ProfilParticipant");
       },
       error: (e) => {
         console.log(e);
@@ -124,7 +123,7 @@ export class ModalMdpPage {
       id : this.id,
       success: (data) => {
         console.log("Succès de valider()");
-        this.navCtrl.setRoot(CompteParticipantPage);
+        Chillout.navRefresh("ProfilParticipant");
       },
       error: (e) => {
         console.log(e);

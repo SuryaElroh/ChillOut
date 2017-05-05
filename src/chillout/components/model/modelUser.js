@@ -18,7 +18,7 @@ Chillout.modelPutUser = function (p={}) {
       password : p.password
     } ,
     success : (data) => {
-     success(data);
+      success(data);
     } ,
     error : function (data) {
       error (data);

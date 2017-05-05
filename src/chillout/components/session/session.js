@@ -5,6 +5,15 @@ Chillout.session = {};
 Chillout.sessionGet = function(attr){
     return JSON.parse(localStorage.getItem(attr));
 };
+
+/**
+ * Récupère et détruit une session
+ */
+Chillout.sessionGetAndDestroy = function(attr){
+  var data = this.sessionGet(attr);
+  this.sessionRemove(attr);
+  return data;
+};
 /**
  * Ajoute ou créer un attribut unique avec sa value
  * @param {String} attr

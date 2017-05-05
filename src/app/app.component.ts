@@ -6,10 +6,12 @@ import {CompteParticipantPage} from "../pages/compte-participant/compte-particip
 import {CompteOrganisateurPage} from "../pages/compte-organisateur/compte-organisateur";
 import {AccueilParticipantPage} from "../pages/accueil-participant/accueil-participant";
 import {AccueilOrganisateurPage} from "../pages/accueil-organisateur/accueil-organisateur";
+import {EvenementPersoPage} from "../pages/evenement-perso/evenement-perso";
+import {EvenementPage} from "../pages/evenement/evenement";
 import {RecherchePage} from "../pages/recherche/recherche";
 import {DeconnexionPage} from "../pages/deconnexion/deconnexion";
 
-declare  var Chillout;
+declare var Chillout;
 
 @Component({
   templateUrl: 'app.html'
@@ -25,14 +27,31 @@ export class MyApp {
     public platform: Platform,
     public menu: MenuController
   ) {
+
+
+
+    var root = {
+      "HomeParticipant" : AccueilParticipantPage,
+      "ProfilParticipant" : CompteParticipantPage,
+      "HomeOrganizer" : AccueilOrganisateurPage,
+      "ProfileOrganizer" : CompteOrganisateurPage,
+      "OrganizerEvents" : EvenementPersoPage,
+      "Event" : EvenementPage,
+      "Research" : RecherchePage
+    }
     console.log("Je suis dans le constructeur");
     if (Chillout.authIsConnected()) {
       console.log("Je suis connecté");
       if (Chillout.sessionGet("isOrganizer") == 1) {
         console.log("Je suis un organisateur");
 
-        // Redirect to Organizer home page
-        this.rootPage = AccueilOrganisateurPage;
+        // Redirect to the page we want or Organizer home page
+        if(Chillout.sessionGet("page")){
+          this.rootPage = root[Chillout.sessionGetAndDestroy("page")];
+        }else{
+          Chillout.navRefresh("HomeOrganizer");
+        }
+
         // set menu's pages
         this.pages = [
           { title : 'Accueil', component: AccueilOrganisateurPage },
@@ -40,12 +59,17 @@ export class MyApp {
           { title : 'Recherche', component: RecherchePage },
           { title : 'Deconnexion', component: DeconnexionPage }
         ];
+
       }
       else {
         console.log("Je suis un participant");
 
-        // Redirect to Participant home page
-        this.rootPage = AccueilParticipantPage;
+        // Redirect to the page we want or Participant home page
+        if(Chillout.sessionGet("page")){
+          this.rootPage = root[Chillout.sessionGetAndDestroy("page")];
+        }else{
+          Chillout.navRefresh("HomeParticipant");
+        }
 
         // set menu's pages
         this.pages = [

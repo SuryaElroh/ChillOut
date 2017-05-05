@@ -52,12 +52,7 @@ Chillout.authConnectUser = function (parameters) {
         route : "authenticate",
         success : (data) => {
           Chillout.authSetToken(data.token);
-          Promise.all([this.authSetParticipant(), this.authSetOrganizer()]).then (function () {
-            console.log("Je suis dans la promise");
-            success(data);
-          }).catch(e => {
-            error(e);
-          })
+          success(data);
         },
         error : function(data){
             error(data);
@@ -128,6 +123,7 @@ Chillout.authDisconnectUser = function () {
     this.sessionRemove("participant");
     this.sessionRemove("organizer");
     this.sessionRemove("login");
+    this.sessionRemove("page")
     this.authRemoveToken();
     this.navRefresh();
 };

@@ -161,12 +161,7 @@ Chillout.authConnectUser = function (parameters) {
         route : "authenticate",
         success : (data) => {
           Chillout.authSetToken(data.token);
-          Promise.all([this.authSetParticipant(), this.authSetOrganizer()]).then (function () {
-            console.log("Je suis dans la promise");
-            success(data);
-          }).catch(e => {
-            error(e);
-          })
+          success(data);
         },
         error : function(data){
             error(data);
@@ -237,6 +232,7 @@ Chillout.authDisconnectUser = function () {
     this.sessionRemove("participant");
     this.sessionRemove("organizer");
     this.sessionRemove("login");
+    this.sessionRemove("page")
     this.authRemoveToken();
     this.navRefresh();
 };
@@ -1022,7 +1018,7 @@ Chillout.modelPutOrganizer = function (p={}) {
         route : "organizers/" + p.id ,
         data : {} ,
         success : function (data) {
-            success (data);
+          success(data);
         } ,
         error : function (data) {
             error (data);
@@ -1151,12 +1147,7 @@ Chillout.modelPutParticipant = function (p={}) {
             birthday : p.birthday
         } ,
         success : (data) => {
-          Promise.all([this.authSetParticipant(), this.authSetOrganizer()]).then (function () {
-            console.log("J'ai mis à jour les données dans le local storage");
-            success(data);
-          }).catch(e => {
-            error(e);
-          })
+          success(data);
         } ,
         error : function (data) {
             error (data);
@@ -1183,7 +1174,7 @@ Chillout.modelPutUser = function (p={}) {
       password : p.password
     } ,
     success : (data) => {
-     success(data);
+      success(data);
     } ,
     error : function (data) {
       error (data);
@@ -1193,8 +1184,16 @@ Chillout.modelPutUser = function (p={}) {
 /**
  * @description rafraichir une page
  */
-Chillout.navRefresh = function ()  {
-  window.location.href = "";
+Chillout.navRefresh = function (page)  {
+  if(page) {
+    this.sessionPut("page", page);
+  }
+  Promise.all([this.authSetParticipant(), this.authSetOrganizer()]).then (function () {
+    console.log("J'ai mis à jour les données dans le local storage");
+    window.location.href = "";
+  }).catch(e => {
+    console.log("Attention les données n'ont pas été mise à jour");
+  })
 };
 /*
  *
@@ -1221,6 +1220,15 @@ Chillout.pushNotification = function(parameters){
  */
 Chillout.sessionGet = function(attr){
     return JSON.parse(localStorage.getItem(attr));
+};
+
+/**
+ * Récupère et détruit une session
+ */
+Chillout.sessionGetAndDestroy = function(attr){
+  var data = this.sessionGet(attr);
+  this.sessionRemove(attr);
+  return data;
 };
 /**
  * Ajoute ou créer un attribut unique avec sa value

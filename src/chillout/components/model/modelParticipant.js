@@ -120,12 +120,7 @@ Chillout.modelPutParticipant = function (p={}) {
             birthday : p.birthday
         } ,
         success : (data) => {
-          Promise.all([this.authSetParticipant(), this.authSetOrganizer()]).then (function () {
-            console.log("J'ai mis à jour les données dans le local storage");
-            success(data);
-          }).catch(e => {
-            error(e);
-          })
+          success(data);
         } ,
         error : function (data) {
             error (data);
