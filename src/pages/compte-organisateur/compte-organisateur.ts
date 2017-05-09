@@ -35,6 +35,6 @@ export class CompteOrganisateurPage {
      * @description Ouvre la modal de création d'un événement
      */
     mesEvenements() {
-        console.log("on affcihe mes événements");
+        console.log("on affiche mes événements");
     }
 }
