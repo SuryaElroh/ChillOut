@@ -1,53 +1,66 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Nouvel événement</ion-title>
-  </ion-navbar>
+    <ion-toolbar>
+        <ion-title>
+            Créer un événement
+        </ion-title>
+        <ion-buttons end>
+            <button ion-button
+                    (click)="annuler()">
+                <ion-icon name="md-close"
+                          showWhen="android,windows,ios"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-toolbar>
 </ion-header>
-
-
 <ion-content padding>
-  <ion-item>
-    <ion-input type="text" placeholder="Nom de l'évènement" stacked></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label>Catégories</ion-label>
-    <ion-select [(ngModel)]="Categories" multiple>
-      <ion-option value="1">Spectacle</ion-option>
-      <ion-option value="2">Cinéma</ion-option>
-      <ion-option value="3">Soirée</ion-option>
-      <ion-option value="4">Théatre</ion-option>
-    </ion-select>
-      <!--<ion-select [(ngModel)]="nomCategories">-->
-      <!--<ion-option *ngFor="categorie of categories" value=" {{ categorie.name }}"> {{ categorie.name }}</ion-option>-->
-    <!--</ion-select>-->
-  </ion-item>
-
-  <ion-item>
-    <ion-input type="text" placeholder="Prix" stacked></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label stacked>Début de l'évènement</ion-label>
-    <ion-datetime displayFormat="DD MMM YYYY HH:mm" [(ngModel)]="dateDebut"></ion-datetime>
-  </ion-item>
-
-  <ion-item>
-    <ion-label stacked>Fin de l'évènement</ion-label>
-    <ion-datetime displayFormat="DD MMM YYYY HH:mm" [(ngModel)]="dateFin"></ion-datetime>
-  </ion-item>
-
-  <ion-item>
-    <ion-input type="text" placeholder="Adresse" stacked></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-input type="text" placeholder="Informations supplémentaires" stacked></ion-input>
-  </ion-item>
-
-  <button ion-button>Télécharger une photo</button>
-
+    <ion-item>
+        <ion-input type="text"
+                   [(ngModel)]="form.title"
+                   placeholder="Nom de l'évènement"
+                   stacked></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label>Catégories</ion-label>
+        <ion-select [(ngModel)]="form.category_id"
+                    multiple>
+            <ion-option value="1">Spectacle</ion-option>
+            <ion-option value="2">Cinéma</ion-option>
+            <ion-option value="3">Soirée</ion-option>
+            <ion-option value="4">Théatre</ion-option>
+        </ion-select>
+    </ion-item>
+    <ion-item>
+        <ion-input type="text"
+                   placeholder="Prix"
+                   [(ngModel)]="form.prix"
+                   stacked></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label stacked>Début de l'évènement</ion-label>
+        <ion-datetime displayFormat="DD MMM YYYY HH:mm"
+                      [(ngModel)]="form.startTime"></ion-datetime>
+    </ion-item>
+    <ion-item>
+        <ion-label stacked>Fin de l'évènement</ion-label>
+        <ion-datetime displayFormat="DD MMM YYYY HH:mm"
+                      [(ngModel)]="form.endTime"></ion-datetime>
+    </ion-item>
+    <ion-item>
+        <ion-input type="text"
+                   placeholder="Adresse"
+                   [(ngModel)]="form.address"
+                   stacked></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-input type="text"
+                   placeholder="Informations supplémentaires"
+                   [(ngModel)]="form.description"
+                   stacked></ion-input>
+    </ion-item>
+    <button ion-button>Télécharger une photo</button>
+    <button ion-button
+            round
+            class="btnchill"
+            (click)="valider()">Sauvegarder
+    </button>
 </ion-content>

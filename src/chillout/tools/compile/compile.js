@@ -25,7 +25,7 @@ Watch.prototype.files = [];
 Watch.prototype.source = "";
 Watch.prototype.destination = "";
 Watch.prototype.file_name = "";
-Watch.prototype.folder_separator = "\\";
+Watch.prototype.folder_separator = "/";
 /*
  *
  * * * * * * * * * * * * * * * * * * * * * * * * * *

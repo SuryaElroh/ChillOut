@@ -83,7 +83,16 @@ Chillout.modelPostEvent = function (p={}) {
     this.ajax ({
         type : "post" ,
         route : "events" ,
-        data : {} ,
+        data : {
+            title : p.title,
+            address : p.address,
+            startTime : p.startTime,
+            endTime : p.endTime,
+            description : p.description,
+            category_id : p.category_id,
+            user_id : p.user_id,
+            price : p.price,
+        } ,
         success : function (data) {
             success (data);
         } ,

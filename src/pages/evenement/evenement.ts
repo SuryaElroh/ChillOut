@@ -9,7 +9,7 @@ export class EvenementPage {
   event;
 
   constructor() {
-    this.event = Chillout.sessionGet("event");
+    this.event = Chillout.sessionGetAndDestroy("event");
   }
 
   DateTimeToDate(dateTime) {

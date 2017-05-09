@@ -98,9 +98,9 @@ Chillout.ajax = function (p = {}) {
                         "msg" : "in error :: the json is badely formated"
                     });
                 }
-                if (results.status_code == 401) {
-                  Chillout.authDisconnectUser()
-                }
+                //if (results.status_code == 401) {
+                //  Chillout.authDisconnectUser()
+                //}
                 error (results);
             }
         }
@@ -117,8 +117,6 @@ Chillout.authConnectUser = function (parameters) {
     var success = this.modelSuccess;
     var login = "__REQUIRED__";
     var password = "__REQUIRED__";
-    this.sessionPut("isOrganizer", 0);
-    console.log(parameters);
     // parameters
     if (parameters && parameters.hasOwnProperty ("login")) {
         login = parameters.login;
@@ -132,9 +130,6 @@ Chillout.authConnectUser = function (parameters) {
     if (parameters && parameters.hasOwnProperty ("error")) {
         error = parameters.error;
     }
-
-    this.sessionPut("login", login);
-
     // control
     if (login === "__REQUIRED__") {
         return error(this.log({
@@ -161,6 +156,8 @@ Chillout.authConnectUser = function (parameters) {
         route : "authenticate",
         success : (data) => {
           Chillout.authSetToken(data.token);
+          console.log("je me suis bien connecté",data);
+          this.sessionPut("user",data.user);
           success(data);
         },
         error : function(data){
@@ -170,71 +167,13 @@ Chillout.authConnectUser = function (parameters) {
 };
 
 /**
- * @description Récupère les données du participant
- */
-Chillout.authSetParticipant = function() {
-  return new Promise((resolve, reject) => {
-    console.log("je suis dans participant");
-    this.ajax({
-      type : "get",
-      data : {},
-      route : "participants",
-      success : (data) => {
-        console.log("je suis dans participant success");
-        data.data.forEach(participant => {
-          if(participant.user.email === this.sessionGet("login")) {
-            this.sessionPut("participant", participant);
-          }
-        });
-        resolve();
-      },
-      error : function(data){
-        console.log("je suis dans participant error");
-        reject(data);
-      }
-    });
-  })
-}
-
-/**
- * @description Récupère les données de l'organisateur
- */
-Chillout.authSetOrganizer = function() {
-  return new Promise((resolve, reject) => {
-    this.ajax({
-      type: "get",
-      data: {},
-      route: "organizers",
-      success: (data) => {
-        console.log("je suis dans organisateur success");
-        data.data.forEach(organizer => {
-          if (organizer.user.email === this.sessionGet("login")) {
-            this.sessionPut("organizer", organizer);
-            this.sessionPut("isOrganizer", 1);
-          }
-        });
-        resolve();
-      },
-      error: function (data) {
-        console.log("je suis dans organisateur error");
-        reject(data);
-      }
-    });
-  })
-}
-
-
-/**
  * @description déconnecte un utilisateur
  */
 Chillout.authDisconnectUser = function () {
-    this.sessionRemove("isOrganizer");
-    this.sessionRemove("participant");
-    this.sessionRemove("organizer");
-    this.sessionRemove("login");
-    this.sessionRemove("page")
+    this.sessionRemove("user");
+    this.sessionRemove("page");
     this.authRemoveToken();
-    this.navRefresh();
+    this.navRefresh(null,false);
 };
 /**
  * @description vérifie si un utilisateur est connecté
@@ -242,6 +181,13 @@ Chillout.authDisconnectUser = function () {
 Chillout.authIsConnected = function () {
     var token = this.authGetToken();
     if (token) return true;
+    return false;
+};
+/**
+ * @description vérifie si un utilisateur est connecté
+ */
+Chillout.authIsOrganisateur = function () {
+    if (this.sessionGet("user") && this.sessionGet("user").organizer) return true;
     return false;
 };
 /**
@@ -751,7 +697,16 @@ Chillout.modelPostEvent = function (p={}) {
     this.ajax ({
         type : "post" ,
         route : "events" ,
-        data : {} ,
+        data : {
+            title : p.title,
+            address : p.address,
+            startTime : p.startTime,
+            endTime : p.endTime,
+            description : p.description,
+            category_id : p.category_id,
+            user_id : p.user_id,
+            price : p.price,
+        } ,
         success : function (data) {
             success (data);
         } ,
@@ -1141,7 +1096,7 @@ Chillout.modelPutParticipant = function (p={}) {
         type : "put" ,
         route : "participants/" + p.id ,
         data : {
-            user_id : this.sessionGet("participant").user_id,
+            user_id : this.sessionGet("user").id,
             firstName : p.firstName ,
             lastName : p.lastName ,
             birthday : p.birthday
@@ -1182,18 +1137,74 @@ Chillout.modelPutUser = function (p={}) {
   });
 };
 /**
+ * @description récupère un user
+ */
+Chillout.modelGetUser = function (p={}) {
+  var error = this.modelError;
+  var success = this.modelSuccess;
+  if (p.hasOwnProperty ("success")) {
+    success = p.success;
+  }
+  if (p.hasOwnProperty ("error")) {
+    error = p.error;
+  }
+  this.ajax ({
+    route : "users/" + p.id ,
+    success : (data) => {
+      success(data);
+    } ,
+    error : function (data) {
+      error (data);
+    }
+  });
+};
+
+/**
+ * @description récupère toute les users
+ */
+Chillout.modelGetUsers = function (p={}) {
+  var error = this.modelError;
+  var success = this.modelSuccess;
+  if (p.hasOwnProperty ("success")) {
+    success = p.success;
+  }
+  if (p.hasOwnProperty ("error")) {
+    error = p.error;
+  }
+  this.ajax ({
+    route : "users" ,
+    success : (data) => {
+      success(data);
+    } ,
+    error : function (data) {
+      error (data);
+    }
+  });
+};
+/**
  * @description rafraichir une page
  */
-Chillout.navRefresh = function (page)  {
-  if(page) {
-    this.sessionPut("page", page);
-  }
-  Promise.all([this.authSetParticipant(), this.authSetOrganizer()]).then (function () {
-    console.log("J'ai mis à jour les données dans le local storage");
-    window.location.href = "";
-  }).catch(e => {
-    console.log("Attention les données n'ont pas été mise à jour");
-  })
+Chillout.navRefresh = function (page , setUser = true) {
+    if (page) {
+        this.sessionPut ("page" , page);
+    }
+    if (setUser) {
+        Chillout.modelGetUser ({
+            id : this.sessionGet ('user').id ,
+            success : (data) => {
+                console.log ("je récupère les infos du user");
+                this.sessionPut ('user' , data.data);
+                window.location.href = "";
+            } ,
+            error : function (error) {
+                console.log (error);
+            }
+        });
+    }
+    else {
+        console.log ("pas de user");
+        window.location.href = "";
+    }
 };
 /*
  *

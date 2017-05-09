@@ -8,8 +8,6 @@ Chillout.authConnectUser = function (parameters) {
     var success = this.modelSuccess;
     var login = "__REQUIRED__";
     var password = "__REQUIRED__";
-    this.sessionPut("isOrganizer", 0);
-    console.log(parameters);
     // parameters
     if (parameters && parameters.hasOwnProperty ("login")) {
         login = parameters.login;
@@ -23,9 +21,6 @@ Chillout.authConnectUser = function (parameters) {
     if (parameters && parameters.hasOwnProperty ("error")) {
         error = parameters.error;
     }
-
-    this.sessionPut("login", login);
-
     // control
     if (login === "__REQUIRED__") {
         return error(this.log({
@@ -52,6 +47,8 @@ Chillout.authConnectUser = function (parameters) {
         route : "authenticate",
         success : (data) => {
           Chillout.authSetToken(data.token);
+          console.log("je me suis bien connecté",data);
+          this.sessionPut("user",data.user);
           success(data);
         },
         error : function(data){
@@ -61,71 +58,13 @@ Chillout.authConnectUser = function (parameters) {
 };
 
 /**
- * @description Récupère les données du participant
- */
-Chillout.authSetParticipant = function() {
-  return new Promise((resolve, reject) => {
-    console.log("je suis dans participant");
-    this.ajax({
-      type : "get",
-      data : {},
-      route : "participants",
-      success : (data) => {
-        console.log("je suis dans participant success");
-        data.data.forEach(participant => {
-          if(participant.user.email === this.sessionGet("login")) {
-            this.sessionPut("participant", participant);
-          }
-        });
-        resolve();
-      },
-      error : function(data){
-        console.log("je suis dans participant error");
-        reject(data);
-      }
-    });
-  })
-}
-
-/**
- * @description Récupère les données de l'organisateur
- */
-Chillout.authSetOrganizer = function() {
-  return new Promise((resolve, reject) => {
-    this.ajax({
-      type: "get",
-      data: {},
-      route: "organizers",
-      success: (data) => {
-        console.log("je suis dans organisateur success");
-        data.data.forEach(organizer => {
-          if (organizer.user.email === this.sessionGet("login")) {
-            this.sessionPut("organizer", organizer);
-            this.sessionPut("isOrganizer", 1);
-          }
-        });
-        resolve();
-      },
-      error: function (data) {
-        console.log("je suis dans organisateur error");
-        reject(data);
-      }
-    });
-  })
-}
-
-
-/**
  * @description déconnecte un utilisateur
  */
 Chillout.authDisconnectUser = function () {
-    this.sessionRemove("isOrganizer");
-    this.sessionRemove("participant");
-    this.sessionRemove("organizer");
-    this.sessionRemove("login");
-    this.sessionRemove("page")
+    this.sessionRemove("user");
+    this.sessionRemove("page");
     this.authRemoveToken();
-    this.navRefresh();
+    this.navRefresh(null,false);
 };
 /**
  * @description vérifie si un utilisateur est connecté
@@ -133,6 +72,13 @@ Chillout.authDisconnectUser = function () {
 Chillout.authIsConnected = function () {
     var token = this.authGetToken();
     if (token) return true;
+    return false;
+};
+/**
+ * @description vérifie si un utilisateur est connecté
+ */
+Chillout.authIsOrganisateur = function () {
+    if (this.sessionGet("user") && this.sessionGet("user").organizer) return true;
     return false;
 };
 /**

@@ -1,45 +1,44 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>ChillOut</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <button ion-button
+                menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>ChillOut</ion-title>
+    </ion-navbar>
 </ion-header>
-
-<ion-content class="bk" padding>
-  <ion-segment [(ngModel)]="evenement" color="light">
-    <ion-segment-button value="tout" (ionSelect)="allEvents()">
-      Tout
-    </ion-segment-button>
-    <ion-segment-button value="semaine">
-      Cette semaine
-    </ion-segment-button>
-    <ion-segment-button value="mois">
-      Ce mois-ci
-    </ion-segment-button>
-  </ion-segment>
-
-  <div [ngSwitch]="evenement">
-    <ion-list *ngSwitchDefault>
-      <ion-card *ngFor="let event of events" (click)="eventPage(event)" style="background-image: url({{ event.image.link }}); background-size:100%;">
-        <ion-card-content>
-          <ion-card-title class="fontwhite">
-            {{ event.title }}
-          </ion-card-title>
-          <p class="fontwhite">{{ DateTimeToDate(event.startTime) }} au {{ DateTimeToDate(event.endTime) }}</p>
-          <p class="fontwhite">{{ DaysLeft(event.startTime) }}</p>
-        </ion-card-content>
-      </ion-card>
-    </ion-list>
-
-    <ion-list *ngSwitchCase="'semaine'">
-
-    </ion-list>
-
-    <ion-list *ngSwitchCase="'mois'">
-
-    </ion-list>
-  </div>
-
+<ion-content class="bk"
+             padding>
+    <ion-segment [(ngModel)]="evenement"
+                 color="light">
+        <ion-segment-button value="tout"
+                            (ionSelect)="allEvents()">
+            Tout
+        </ion-segment-button>
+        <ion-segment-button value="semaine">
+            Cette semaine
+        </ion-segment-button>
+        <ion-segment-button value="mois">
+            Ce mois-ci
+        </ion-segment-button>
+    </ion-segment>
+    <div [ngSwitch]="evenement"
+         class="ChillBackgroundBlack">
+        <ion-list *ngSwitchDefault
+                  class="ChillBackgroundBlack">
+            <ion-card *ngFor="let event of events"
+                      (click)="eventPage(event)">
+                <img src="{{ event.image.link }}">
+                <ion-card-content class="ChillBackgroundBlack">
+                    <ion-card-title class="fontwhite ChillBackgroundBlack">
+                        {{ event.title }}
+                    </ion-card-title>
+                    <p class="fontwhite">{{ DateTimeToDate(event.startTime) }} au {{ DateTimeToDate(event.endTime) }}</p>
+                    <p class="fontwhite">{{ DaysLeft(event.startTime) }}</p>
+                </ion-card-content>
+            </ion-card>
+        </ion-list>
+        <ion-list *ngSwitchCase="'semaine'"></ion-list>
+        <ion-list *ngSwitchCase="'mois'"></ion-list>
+    </div>
 </ion-content>

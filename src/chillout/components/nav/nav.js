@@ -1,14 +1,25 @@
 /**
  * @description rafraichir une page
  */
-Chillout.navRefresh = function (page)  {
-  if(page) {
-    this.sessionPut("page", page);
-  }
-  Promise.all([this.authSetParticipant(), this.authSetOrganizer()]).then (function () {
-    console.log("J'ai mis à jour les données dans le local storage");
-    window.location.href = "";
-  }).catch(e => {
-    console.log("Attention les données n'ont pas été mise à jour");
-  })
+Chillout.navRefresh = function (page , setUser = true) {
+    if (page) {
+        this.sessionPut ("page" , page);
+    }
+    if (setUser) {
+        Chillout.modelGetUser ({
+            id : this.sessionGet ('user').id ,
+            success : (data) => {
+                console.log ("je récupère les infos du user");
+                this.sessionPut ('user' , data.data);
+                window.location.href = "";
+            } ,
+            error : function (error) {
+                console.log (error);
+            }
+        });
+    }
+    else {
+        console.log ("pas de user");
+        window.location.href = "";
+    }
 };

@@ -114,7 +114,7 @@ Chillout.modelPutParticipant = function (p={}) {
         type : "put" ,
         route : "participants/" + p.id ,
         data : {
-            user_id : this.sessionGet("participant").user_id,
+            user_id : this.sessionGet("user").id,
             firstName : p.firstName ,
             lastName : p.lastName ,
             birthday : p.birthday

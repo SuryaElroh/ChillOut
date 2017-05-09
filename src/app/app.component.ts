@@ -1,6 +1,6 @@
-import { Component, ViewChild } from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import {Platform, MenuController, Nav} from 'ionic-angular';
-import { StatusBar } from 'ionic-native';
+import {StatusBar} from 'ionic-native';
 import {ConnexionPage} from "../pages/connexion/connexion";
 import {CompteParticipantPage} from "../pages/compte-participant/compte-participant";
 import {CompteOrganisateurPage} from "../pages/compte-organisateur/compte-organisateur";
@@ -14,89 +14,77 @@ import {DeconnexionPage} from "../pages/deconnexion/deconnexion";
 declare var Chillout;
 
 @Component({
-  templateUrl: 'app.html'
+    templateUrl: 'app.html'
 })
 export class MyApp {
-  @ViewChild(Nav) nav: Nav;
+    @ViewChild(Nav) nav:Nav;
 
-  // make ConnexionPage the root (or first) page
-  rootPage: any = ConnexionPage;
-  pages: Array<{title: string, component: any}>;
+    // make ConnexionPage the root (or first) page
+    rootPage:any = ConnexionPage;
+    pages:Array<{title:string, component:any}>;
 
-  constructor(
-    public platform: Platform,
-    public menu: MenuController
-  ) {
-
-
-
-    var root = {
-      "HomeParticipant" : AccueilParticipantPage,
-      "ProfilParticipant" : CompteParticipantPage,
-      "HomeOrganizer" : AccueilOrganisateurPage,
-      "ProfileOrganizer" : CompteOrganisateurPage,
-      "OrganizerEvents" : EvenementPersoPage,
-      "Event" : EvenementPage,
-      "Research" : RecherchePage
-    }
-    console.log("Je suis dans le constructeur");
-    if (Chillout.authIsConnected()) {
-      console.log("Je suis connecté");
-      if (Chillout.sessionGet("isOrganizer") == 1) {
-        console.log("Je suis un organisateur");
-
-        // Redirect to the page we want or Organizer home page
-        if(Chillout.sessionGet("page")){
-          this.rootPage = root[Chillout.sessionGetAndDestroy("page")];
-        }else{
-          Chillout.navRefresh("HomeOrganizer");
+    constructor(public platform:Platform,
+                public menu:MenuController) {
+        var root = {
+            "HomeParticipant": AccueilParticipantPage,
+            "ProfilParticipant": CompteParticipantPage,
+            "HomeOrganizer": AccueilOrganisateurPage,
+            "ProfileOrganizer": CompteOrganisateurPage,
+            "OrganizerEvents": EvenementPersoPage,
+            "Event": EvenementPage,
+            "Research": RecherchePage,
+        };
+        console.log("Je suis dans le constructeur");
+        if (Chillout.authIsConnected()) {
+            console.log("Je suis connecté");
+            if (Chillout.authIsOrganisateur()) {
+                console.log("Je suis un organisateur");
+                // Redirect to the page we want or Organizer home page
+                if (Chillout.sessionGet("page")) {
+                    this.rootPage = root[Chillout.sessionGetAndDestroy("page")];
+                } else {
+                    return Chillout.navRefresh("HomeOrganizer",false);
+                }
+                // set menu's pages
+                this.pages = [
+                    {title: 'Accueil', component: AccueilOrganisateurPage},
+                    {title: 'Profile', component: CompteOrganisateurPage},
+                    {title: 'Recherche', component: RecherchePage},
+                    {title: 'Deconnexion', component: DeconnexionPage}
+                ];
+            }
+            else {
+                console.log("Je suis un participant");
+                // Redirect to the page we want or Participant home page
+                if (Chillout.sessionGet("page")) {
+                    this.rootPage = root[Chillout.sessionGetAndDestroy("page")];
+                } else {
+                    return Chillout.navRefresh("HomeParticipant",false);
+                }
+                // set menu's pages
+                this.pages = [
+                    {title: 'Accueil', component: AccueilParticipantPage},
+                    {title: 'Profile', component: CompteParticipantPage},
+                    {title: 'Recherche', component: RecherchePage},
+                    {title: 'Deconnexion', component: DeconnexionPage}
+                ];
+            }
         }
-
-        // set menu's pages
-        this.pages = [
-          { title : 'Accueil', component: AccueilOrganisateurPage },
-          { title : 'Profile', component: CompteOrganisateurPage },
-          { title : 'Recherche', component: RecherchePage },
-          { title : 'Deconnexion', component: DeconnexionPage }
-        ];
-
-      }
-      else {
-        console.log("Je suis un participant");
-
-        // Redirect to the page we want or Participant home page
-        if(Chillout.sessionGet("page")){
-          this.rootPage = root[Chillout.sessionGetAndDestroy("page")];
-        }else{
-          Chillout.navRefresh("HomeParticipant");
-        }
-
-        // set menu's pages
-        this.pages = [
-          { title : 'Accueil', component: AccueilParticipantPage },
-          { title : 'Profile', component: CompteParticipantPage },
-          { title : 'Recherche', component: RecherchePage },
-          { title : 'Deconnexion', component: DeconnexionPage }
-        ];
-      }
+        this.initializeApp();
     }
-    this.initializeApp();
 
-    // initially set menu's pages here !
-  }
+    initializeApp() {
+        this.platform.ready().then(() => {
+            // Okay, so the platform is ready and our plugins are available.
+            // Here you can do any higher level native things you might need.
+            StatusBar.styleDefault();
+        });
+    }
 
-  initializeApp() {
-    this.platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
-      StatusBar.styleDefault();
-    });
-  }
-
-  openPage(page) {
-    // close the menu when clicking a link from the menu
-    this.menu.close();
-    // navigate to the new page if it is not the current page
-    this.nav.setRoot(page.component);
-  }
+    openPage(page) {
+        // close the menu when clicking a link from the menu
+        this.menu.close();
+        // navigate to the new page if it is not the current page
+        this.nav.setRoot(page.component);
+    }
 }

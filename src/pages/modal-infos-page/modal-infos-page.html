@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Informations personnelles
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="annuler()">
+        <ion-icon name="md-close" showWhen="android,windows,ios"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label stacked>Nom</ion-label>
+      <ion-input type="text" [(ngModel)]="nom"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Prénom</ion-label>
+      <ion-input type="text" [(ngModel)]="prenom"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Date de naissance</ion-label>
+      <ion-datetime  displayFormat="DD MMM, YYYY" [(ngModel)]="ddn"></ion-datetime>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button round class="btnchill" (click)="valider()">Sauvegarder</button>
+</ion-content>
