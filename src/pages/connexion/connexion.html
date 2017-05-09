@@ -6,36 +6,40 @@
 </ion-header>
 
 
-<ion-content padding>
-  <h5 style="text-align: center">Bienvenue sur Chillout</h5>
-  <br>
-  <p>
+<ion-content class="bkimgicp" padding>
+  <div class="pad">
+    <img src="../assets/img/logo2.png" alt="logo2">
+    <br>
+    <p>
 
-    <ion-list>
-      <ion-item>
-        <ion-label floating>Email</ion-label>
-        <ion-input type="text" [(ngModel)]="identifiant"></ion-input>
-      </ion-item>
+      <ion-list>
+        <ion-item class="inputConnect">
+          <ion-label floating>Username</ion-label>
+          <ion-input type="text" [(ngModel)]="identifiant"></ion-input>
+        </ion-item>
 
-      <ion-item>
-        <ion-label floating>Password</ion-label>
-        <ion-input type="password" [(ngModel)]="mdp"></ion-input>
-      </ion-item>
-    </ion-list>
+        <ion-item class="inputConnect">
+          <ion-label floating>Password</ion-label>
+          <ion-input type="password" [(ngModel)]="mdp"></ion-input>
+        </ion-item>
 
-    <button ion-button (click)="connexion()" round block class="btnchill">Se connecter</button>
-  </p>
+        <ion-item class="inputConnect">
+        </ion-item>
+      </ion-list>
 
-  <br>
-  <br>
-  <br>
-  <p> Pas encore inscrit ? </p>
-  <button ion-button icon-left clear small (click)="nouveauParticipant()">
-    <ion-icon name="person"></ion-icon>Nouveau participant
-  </button>
-  <button ion-button icon-left clear small (click)="nouvelOrganisateur()">
-    <ion-icon name="briefcase"></ion-icon>Nouvel organisateur
-  </button>
+      <button ion-button (click)="connexion()" round block class="btnchill">Se connecter</button>
+    </p>
 
+    <br>
+    <br>
+    <br>
+    <p> Pas encore inscrit ? </p>
+    <button ion-button icon-left clear small (click)="nouveauParticipant()">
+      <ion-icon name="person"></ion-icon>Nouveau participant
+    </button>
+    <button ion-button icon-left clear small (click)="nouvelOrganisateur()">
+      <ion-icon name="briefcase"></ion-icon>Nouvel organisateur
+    </button>
+  </div>
 
 </ion-content>

@@ -28,7 +28,21 @@
 // For Connection Page
 // --------------------------------------------------
 .btnchill {
-  background-color: #ff751a;
+  	background-color: #ff751a;
+}
+.inputConnect{
+	border: none !important;
+    background-color: rgba(255, 255, 255, 0);
+}
+.item-md.item-block .item-inner, .item-md .item-block .item-inner{
+	border: none;
+}
+.pad{
+	padding-right: 10% !important;
+	padding-left: 10% !important;
+}
+.logo{
+	max-width: 20vh;
 }
 
 // For Inscription Page
@@ -42,8 +56,8 @@
   margin: auto;
 }
 .bkimgicp {
-  background-image: url("../assets/img/fond.png");
-  background-size: contain;
+  background-image: url("../assets/img/fond.jpg");
+  background-size: cover;
 }
 .blitemicp {
   background: transparent;
