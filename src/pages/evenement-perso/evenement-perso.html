@@ -1,47 +1,43 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>ChillOut</ion-title>
-    <button ion-button>
-      <ion-icon name="power"></ion-icon>
-    </button>
-  </ion-navbar>
+    <ion-navbar>
+        <button ion-button
+                menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>ChillOut</ion-title>
+        <button ion-button>
+            <ion-icon name="power"></ion-icon>
+        </button>
+    </ion-navbar>
 </ion-header>
-
 <ion-content padding>
-
-  <div padding>
-    <ion-segment [(ngModel)]="event">
-      <ion-segment-button value="aVenir">
-        A VENIR
-      </ion-segment-button>
-      <ion-segment-button value="passe">
-        PASSE
-      </ion-segment-button>
-    </ion-segment>
-  </div>
-
-  <div [ngSwitch]="event">
-    <ion-list *ngSwitchCase="'aVenir'">
-      <ion-item>
-        <ion-thumbnail item-left>
-          <img src="../assets/img/categories/autre.jpg"/>
-        </ion-thumbnail>
-        <h2>Evenement quelconque</h2>
-        <p>Ceci est une description !!!! Ceci est une description !!!! Ceci est une description !!!! Ceci est une description !!!! Ceci est une description !!!! Ceci est une description !!!!</p>
-       </ion-item>
-    </ion-list>
-
-    <ion-list *ngSwitchCase="'passe'">
-      <ion-item>
-        <ion-thumbnail item-left>
-          <img src="../assets/img/categories/concert.jpg"/>
-        </ion-thumbnail>
-        <h2>Concert de Beyonce</h2>
-      </ion-item>
-    </ion-list>
-  </div>
-
+    <div padding>
+        <ion-segment [(ngModel)]="event">
+            <ion-segment-button value="aVenir">
+                A VENIR
+            </ion-segment-button>
+            <ion-segment-button value="passe">
+                PASSE
+            </ion-segment-button>
+        </ion-segment>
+    </div>
+    <div [ngSwitch]="event">
+        <ion-list *ngSwitchCase="'aVenir'">
+            <ion-item>
+                <ion-thumbnail item-left>
+                    <img src="../assets/img/categories/autre.jpg"/>
+                </ion-thumbnail>
+                <h2>Evenement quelconque</h2>
+                <p>Ceci est une description !!!! Ceci est une description !!!! Ceci est une description !!!! Ceci est une description !!!! Ceci est une description !!!! Ceci est une description !!!!</p>
+            </ion-item>
+        </ion-list>
+        <ion-list *ngSwitchCase="'passe'">
+            <ion-item>
+                <ion-thumbnail item-left>
+                    <img src="../assets/img/categories/concert.jpg"/>
+                </ion-thumbnail>
+                <h2>Concert de Beyonce</h2>
+            </ion-item>
+        </ion-list>
+    </div>
 </ion-content>

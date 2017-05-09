@@ -1,61 +1,76 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>ChillOut</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <button ion-button
+                menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>ChillOut</ion-title>
+    </ion-navbar>
 </ion-header>
-
-
 <ion-content padding>
-  <h4 text-center>Mon profil</h4>
-
-  <div class="avatar">
-    <img src="../../assets/img/avatarTest.png"/>
-  </div>
-
-  <hr>
-  <div text-center>
-    <button ion-button icon-left clear (click)="nouvelEvenement()">
-      <ion-icon name="add"></ion-icon>Créer un évènement
+    <h4 text-center>Mon profil</h4>
+    <div class="avatar">
+        <img src="../../assets/img/avatarTest.png"/>
+    </div>
+    <hr>
+    <div text-center>
+        <button ion-button
+                icon-left
+                clear
+                (click)="nouvelEvenement()">
+            <ion-icon name="add"></ion-icon>
+            Créer un évènement
+        </button>
+        <button ion-button
+                icon-left
+                clear
+                (click)="mesEvenements()">
+            <ion-icon name="albums"></ion-icon>
+            Mes évènements
+        </button>
+    </div>
+    <hr>
+    <ion-list>
+        <ion-item>
+            <ion-label stacked>Dénomination sociale</ion-label>
+            <ion-input type="text"
+                       value="{{ name }}"
+                       disabled></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label stacked>Adresse</ion-label>
+            <ion-input type="text"
+                       value="{{ address }}"
+                       disabled></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label stacked>E-mail</ion-label>
+            <ion-input type="email"
+                       value="{{ email }}"
+                       disabled></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label stacked>Téléphone</ion-label>
+            <ion-input type="text"
+                       value="{{ phone }}"
+                       disabled></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label stacked>Site web</ion-label>
+            <ion-input type="text"
+                       value="{{ website }}"
+                       disabled></ion-input>
+        </ion-item>
+    </ion-list>
+    <button ion-button
+            color="light"
+            block
+            (click)="modalModifierInfo()">Modifier mes informations
     </button>
-    <button ion-button icon-left clear (click)="mesEvenements()">
-      <ion-icon name="albums"></ion-icon>Mes évènements
+    <button ion-button
+            color="light"
+            block
+            (click)="modalModifierMdp()">Modifier mes identifiants de connexion
     </button>
-  </div>
-
-  <hr>
-
-  <ion-list>
-    <ion-item>
-      <ion-label stacked>Dénomination sociale</ion-label>
-      <ion-input type="text" value="{{ name }}" disabled></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label stacked>Adresse</ion-label>
-      <ion-input type="text" value="{{ address }}" disabled></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label stacked>E-mail</ion-label>
-      <ion-input type="email" value="{{ email }}" disabled></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label stacked>Téléphone</ion-label>
-      <ion-input type="text" value="{{ phone }}" disabled></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label stacked>Site web</ion-label>
-      <ion-input type="text" value="{{ website }}" disabled></ion-input>
-    </ion-item>
-  </ion-list>
-
-  <button ion-button color="light" block (click)="modalModifierInfo()">Modifier mes informations</button>
-  <button ion-button color="light" block (click)="modalModifierMdp()">Modifier mes identifiants de connexion</button>
-
 </ion-content>
 
