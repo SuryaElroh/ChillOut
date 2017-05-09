@@ -53,6 +53,7 @@ Chillout.ajax = function (p = {}) {
     // si on des type post
     if(type === "post" || type === "put" || type === "delete") {
         form_data = JSON.stringify (data);
+        variables.push( "token" + "=" + token);
     }
     var xhr = new XMLHttpRequest ();
     xhr.open (type.toUpperCase () , url + route + "?" + variables.join("&"));

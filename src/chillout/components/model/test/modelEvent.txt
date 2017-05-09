@@ -1,1 +1,11 @@
 Chillout.modelGetEvents();
+Chillout.modelPostEvent({
+            title : "title ",
+            address : "address ",
+            startTime : "",
+            endTime : "",
+            description : "description ",
+            category_id : "1 ",
+            user_id : "6 ",
+            price : "12 ",
+});

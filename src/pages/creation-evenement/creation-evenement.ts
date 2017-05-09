@@ -10,8 +10,8 @@ export class CreationEvenementPage {
     form = {
         title: "",
         address: "",
-        startTime: new Date(),
-        endTime: new Date(),
+        startTime: "",
+        endTime: "",
         description: "",
         category_id: "",
         price: "",
@@ -27,7 +27,7 @@ export class CreationEvenementPage {
      */
     valider() {
         console.log("création de l'événement form",this.form);
-        Chillout.modelPutParticipant({
+        Chillout.modelPostEvent({
             title : this.form.title,
             address : this.form.address,
             startTime : this.form.startTime,
@@ -36,11 +36,12 @@ export class CreationEvenementPage {
             category_id : this.form.category_id,
             user_id : Chillout.sessionGet("user").id,
             price : this.form.price,
-            success: () => {
-                console.log("création événement ok");
-                Chillout.navRefresh("ProfileOrganizer");
+            success: (data) => {
+                console.log("création événement ok",data);
+                // Chillout.navRefresh("ProfileOrganizer");
             },
             error: (e) => {
+                console.log("erreur création événement ok");
                 console.log(e);
             }
         })

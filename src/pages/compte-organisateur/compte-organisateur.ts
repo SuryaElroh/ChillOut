@@ -30,4 +30,11 @@ export class CompteOrganisateurPage {
     nouvelEvenement() {
         this.modalCtrl.create(CreationEvenementPage).present();
     }
+
+    /**
+     * @description Ouvre la modal de création d'un événement
+     */
+    mesEvenements() {
+        console.log("on affcihe mes événements");
+    }
 }

@@ -28,7 +28,7 @@
                   class="ChillBackgroundBlack">
             <ion-card *ngFor="let event of events"
                       (click)="eventPage(event)">
-                <img src="{{ event.image.link }}">
+                <img src="{{event.image == null ? 'hide' : event.image.link}}">
                 <ion-card-content class="ChillBackgroundBlack">
                     <ion-card-title class="fontwhite ChillBackgroundBlack">
                         {{ event.title }}
