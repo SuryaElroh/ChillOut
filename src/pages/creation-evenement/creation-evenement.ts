@@ -25,7 +25,6 @@ export class CreationEvenementPage {
         Chillout.modelGetCategories({
             success: (data) => {
                 this.caterories = data.data;
-                console.log(this.caterories );
                 console.log("catégories récup");
             },
             error: (e) => {
@@ -50,7 +49,7 @@ export class CreationEvenementPage {
             price : this.form.price,
             success: (data) => {
                 console.log("création événement ok",data);
-                // Chillout.navRefresh("ProfileOrganizer");
+                Chillout.navRefresh("ProfileOrganizer");
             },
             error: (e) => {
                 console.log("erreur création événement ok");
