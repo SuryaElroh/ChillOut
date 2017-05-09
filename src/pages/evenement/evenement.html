@@ -15,7 +15,7 @@
     <ion-title>
         <small class="fontwhite">{{ DateTimeToDate(event.startTime) }} - {{ DateTimeToDate(event.endTime) }}</small>
     </ion-title>
-    <img src="{{event.image == null ? 'hide' : event.image.link}}">
+    <img src="{{event.image == null ? 'https://www.communecter.org/assets/62c97969/images/thumbnail-default.jpg' : event.image.link}}">
     <p>
         <strong>Prix :</strong>
         {{ event.price }} €
