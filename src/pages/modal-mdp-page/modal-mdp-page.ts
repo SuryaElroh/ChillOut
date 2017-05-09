@@ -19,7 +19,6 @@ export class ModalMdpPage {
     }
 
     valider() {
-    console.log(this.email);
         Chillout.modelPutUser({
             email: this.email,
             password: this.password,

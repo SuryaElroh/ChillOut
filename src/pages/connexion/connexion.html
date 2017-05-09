@@ -1,45 +1,55 @@
 <script src="../../chillout/components/model/model.js"></script>
 <ion-header>
-  <ion-navbar>
-    <ion-title>ChillOut</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>ChillOut</ion-title>
+    </ion-navbar>
 </ion-header>
-
-
-<ion-content class="bkimgicp" padding>
-  <div class="pad">
-    <img src="../assets/img/logo2.png" alt="logo2">
-    <br>
-    <p>
-
-      <ion-list>
-        <ion-item class="inputConnect">
-          <ion-label floating>Username</ion-label>
-          <ion-input type="text" [(ngModel)]="identifiant"></ion-input>
-        </ion-item>
-
-        <ion-item class="inputConnect">
-          <ion-label floating>Password</ion-label>
-          <ion-input type="password" [(ngModel)]="mdp"></ion-input>
-        </ion-item>
-
-        <ion-item class="inputConnect">
-        </ion-item>
-      </ion-list>
-
-      <button ion-button (click)="connexion()" round block class="btnchill">Se connecter</button>
-    </p>
-
-    <br>
-    <br>
-    <br>
-    <p> Pas encore inscrit ? </p>
-    <button ion-button icon-left clear small (click)="nouveauParticipant()">
-      <ion-icon name="person"></ion-icon>Nouveau participant
-    </button>
-    <button ion-button icon-left clear small (click)="nouvelOrganisateur()">
-      <ion-icon name="briefcase"></ion-icon>Nouvel organisateur
-    </button>
-  </div>
-
+<ion-content class="bkimgicp"
+             padding>
+    <div class="pad">
+        <img src="https://goto4ever.com/chill/ogo2.png"
+             alt="logo2">
+        <br>
+        <p>
+            <ion-list>
+                <ion-item class="inputConnect">
+                    <ion-label floating>Username</ion-label>
+                    <ion-input type="text"
+                               [(ngModel)]="identifiant"></ion-input>
+                </ion-item>
+                <ion-item class="inputConnect">
+                    <ion-label floating>Password</ion-label>
+                    <ion-input type="password"
+                               [(ngModel)]="mdp"></ion-input>
+                </ion-item>
+                <ion-item class="inputConnect"></ion-item>
+            </ion-list>
+            <button ion-button
+                    (click)="connexion()"
+                    round
+                    block
+                    class="btnchill">Se connecter
+            </button>
+        </p>
+        <br>
+        <br>
+        <br>
+        <p> Pas encore inscrit ?</p>
+        <button ion-button
+                icon-left
+                clear
+                small
+                (click)="nouveauParticipant()">
+            <ion-icon name="person"></ion-icon>
+            Nouveau participant
+        </button>
+        <button ion-button
+                icon-left
+                clear
+                small
+                (click)="nouvelOrganisateur()">
+            <ion-icon name="briefcase"></ion-icon>
+            Nouvel organisateur
+        </button>
+    </div>
 </ion-content>

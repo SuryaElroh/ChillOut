@@ -1,19 +1,19 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 declare var Chillout;
 
 @Component({
-  templateUrl: 'evenement.html'
+    templateUrl: 'evenement.html'
 })
 export class EvenementPage {
-  event;
+    event;
 
-  constructor() {
-    this.event = Chillout.sessionGetAndDestroy("event");
-  }
+    constructor() {
+        this.event = Chillout.sessionGetAndDestroy("event");
+    }
 
-  DateTimeToDate(dateTime) {
-    var newDate = Chillout.facadeLibraryMoment()(dateTime).format("DD MMM YYYY");
-    return newDate;
-  }
+    DateTimeToDate(dateTime) {
+        var newDate = Chillout.facadeLibraryMoment()(dateTime).format("DD MMM YYYY");
+        return newDate;
+    }
 }

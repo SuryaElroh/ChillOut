@@ -87,9 +87,9 @@ Chillout.ajax = function (p = {}) {
                         "msg" : "in error :: the json is badely formated"
                     });
                 }
-                //if (results.status_code == 401) {
-                //  Chillout.authDisconnectUser()
-                //}
+                if (results.status_code == 401) {
+                  Chillout.authDisconnectUser();
+                }
                 error (results);
             }
         }

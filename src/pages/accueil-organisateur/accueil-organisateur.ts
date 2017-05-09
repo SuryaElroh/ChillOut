@@ -12,7 +12,6 @@ export class AccueilOrganisateurPage {
   events = [];
 
   constructor(public navCtrl : NavController ) {
-    // this.connexionDB();
   }
 
   eventPage(event) {

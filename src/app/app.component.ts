@@ -48,7 +48,7 @@ export class MyApp {
                 // set menu's pages
                 this.pages = [
                     {title: 'Accueil', component: AccueilOrganisateurPage},
-                    {title: 'Profile', component: CompteOrganisateurPage},
+                    {title: 'Profil', component: CompteOrganisateurPage},
                     {title: 'Recherche', component: RecherchePage},
                     {title: 'Deconnexion', component: DeconnexionPage}
                 ];
@@ -64,7 +64,7 @@ export class MyApp {
                 // set menu's pages
                 this.pages = [
                     {title: 'Accueil', component: AccueilParticipantPage},
-                    {title: 'Profile', component: CompteParticipantPage},
+                    {title: 'Profil', component: CompteParticipantPage},
                     {title: 'Recherche', component: RecherchePage},
                     {title: 'Deconnexion', component: DeconnexionPage}
                 ];

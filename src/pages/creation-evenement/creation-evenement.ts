@@ -16,11 +16,23 @@ export class CreationEvenementPage {
         category_id: "",
         price: "",
     };
+    caterories = [];
     /**
      * @description Constructor
      */
     constructor(public viewCtrl:ViewController) {
         console.log("on est sur la modal création d'événement");
+        Chillout.modelGetCategories({
+            success: (data) => {
+                this.caterories = data.data;
+                console.log(this.caterories );
+                console.log("catégories récup");
+            },
+            error: (e) => {
+                console.log("erreur lors de la récup des catégories");
+                console.log(e);
+            }
+        })
     }
     /**
      * @description Quand on clique sur valider

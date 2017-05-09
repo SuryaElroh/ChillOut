@@ -22,6 +22,7 @@
     <ion-item>
         <ion-label>Catégories</ion-label>
         <ion-select [(ngModel)]="form.category_id">
+            <!--ion-option *ngFor="let categorie of categories" value="{{categorie.id}}">{{ categorie.name }}</ion-option-->
             <ion-option value="1">Spectacle</ion-option>
             <ion-option value="2">Cinéma</ion-option>
             <ion-option value="3">Soirée</ion-option>

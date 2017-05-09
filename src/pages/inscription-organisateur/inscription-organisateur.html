@@ -1,49 +1,92 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Inscription Organisateur</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>Inscription Organisateur</ion-title>
+    </ion-navbar>
 </ion-header>
-
-<ion-content class="bkimgicp" padding>
-  <ion-col class="centrage" >
-    <ion-list>
-      <ion-item class="blitemicp">
-        <ion-label class="fontwhite" stacked text-center>Dénomination sociale</ion-label>
-        <ion-input class="inputicp" type="text" [(ngModel)]="ds" text-center></ion-input>
-      </ion-item>
-
-      <ion-item class="blitemicp">
-        <ion-label class="fontwhite" stacked text-center>Adresse</ion-label>
-        <ion-input class="inputicp" type="text" [(ngModel)]="adresse" text-center></ion-input>
-      </ion-item>
-
-      <ion-item class="blitemicp">
-        <ion-label class="fontwhite" stacked text-center>Téléphone</ion-label>
-        <ion-input class="inputicp" type="text" [(ngModel)]="tel" text-center></ion-input>
-      </ion-item>
-
-      <ion-item class="blitemicp">
-        <ion-label class="fontwhite" stacked text-center>Site web</ion-label>
-        <ion-input class="inputicp" type="text" [(ngModel)]="site" placeholder="http://" text-center></ion-input>
-      </ion-item>
-      <br>
-      <ion-item class="blitemicp">
-        <ion-label class="fontwhite" stacked text-center>E-mail</ion-label>
-        <ion-input class="inputicp" type="email" [(ngModel)]="email" text-center></ion-input>
-      </ion-item>
-
-      <ion-item class="blitemicp">
-        <ion-label class="fontwhite" stacked text-center>Mot de passe</ion-label>
-        <ion-input class="inputicp" type="password" [(ngModel)]="mdp" text-center></ion-input>
-      </ion-item>
-
-      <ion-item class="blitemicp">
-        <ion-label class="fontwhite" stacked text-center>Confirmation mot de passe</ion-label>
-        <ion-input class="inputicp" type="password" [(ngModel)]="mdp2" text-center disabled></ion-input>
-      </ion-item>
-    </ion-list>
-
-    <button class="btnicp" ion-button color="secondary" round block (click)="nouveauCompte()">S'inscrire</button>
-
-  </ion-col>
+<ion-content class="bkimgicp"
+             padding>
+    <ion-col class="centrage">
+        <ion-list>
+            <ion-item class="blitemicp">
+                <ion-label class="fontwhite"
+                           stacked
+                           text-center>Dénomination sociale
+                </ion-label>
+                <ion-input class="inputicp"
+                           type="text"
+                           [(ngModel)]="ds"
+                           text-center></ion-input>
+            </ion-item>
+            <ion-item class="blitemicp">
+                <ion-label class="fontwhite"
+                           stacked
+                           text-center>Adresse
+                </ion-label>
+                <ion-input class="inputicp"
+                           type="text"
+                           [(ngModel)]="adresse"
+                           text-center></ion-input>
+            </ion-item>
+            <ion-item class="blitemicp">
+                <ion-label class="fontwhite"
+                           stacked
+                           text-center>Téléphone
+                </ion-label>
+                <ion-input class="inputicp"
+                           type="text"
+                           [(ngModel)]="tel"
+                           text-center></ion-input>
+            </ion-item>
+            <ion-item class="blitemicp">
+                <ion-label class="fontwhite"
+                           stacked
+                           text-center>Site web
+                </ion-label>
+                <ion-input class="inputicp"
+                           type="text"
+                           [(ngModel)]="site"
+                           placeholder="http://"
+                           text-center></ion-input>
+            </ion-item>
+            <br>
+            <ion-item class="blitemicp">
+                <ion-label class="fontwhite"
+                           stacked
+                           text-center>E-mail
+                </ion-label>
+                <ion-input class="inputicp"
+                           type="email"
+                           [(ngModel)]="email"
+                           text-center></ion-input>
+            </ion-item>
+            <ion-item class="blitemicp">
+                <ion-label class="fontwhite"
+                           stacked
+                           text-center>Mot de passe
+                </ion-label>
+                <ion-input class="inputicp"
+                           type="password"
+                           [(ngModel)]="mdp"
+                           text-center></ion-input>
+            </ion-item>
+            <ion-item class="blitemicp">
+                <ion-label class="fontwhite"
+                           stacked
+                           text-center>Confirmation mot de passe
+                </ion-label>
+                <ion-input class="inputicp"
+                           type="password"
+                           [(ngModel)]="mdp2"
+                           text-center
+                           disabled></ion-input>
+            </ion-item>
+        </ion-list>
+        <button class="btnicp"
+                ion-button
+                color="secondary"
+                round
+                block
+                (click)="nouveauCompte()">S'inscrire
+        </button>
+    </ion-col>
 </ion-content>

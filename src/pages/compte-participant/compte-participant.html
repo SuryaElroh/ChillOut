@@ -1,42 +1,52 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>ChillOut</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <button ion-button
+                menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>ChillOut</ion-title>
+    </ion-navbar>
 </ion-header>
-
-
 <ion-content padding>
-  <h4 text-center>Profil</h4>
-
-  <div class="avatar">
-      <img src="../../assets/img/avatarTest.png"/>
-  </div>
-
-  <ion-list>
-    <ion-item>
-      <ion-label stacked>Nom</ion-label>
-      <ion-input type="text" value="{{ nom }}" disabled></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label stacked>Prénom</ion-label>
-      <ion-input type="text" value="{{ prenom }}" disabled></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label stacked>Email</ion-label>
-      <ion-input type="text" value="{{ email }}" disabled></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label stacked>Date de naissance</ion-label>
-      <ion-input type="text" value="{{ ddn }}" disabled></ion-input>
-    </ion-item>
-  </ion-list>
-
-
-  <button ion-button color="light" block (click)="modalModifierInfo()">Modifier mes informations</button>
-  <button ion-button color="light" block (click)="modalModifierMdp()">Modifier mes identifiants de connexion</button>
-
+    <h4 text-center>Profil</h4>
+    <div class="avatar">
+        <img src="https://goto4ever.com/chill/avatarTest.png"/>
+    </div>
+    <ion-list>
+        <ion-item>
+            <ion-label stacked>Nom</ion-label>
+            <ion-input type="text"
+                       value="{{ nom }}"
+                       disabled></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label stacked>Prénom</ion-label>
+            <ion-input type="text"
+                       value="{{ prenom }}"
+                       disabled></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label stacked>Email</ion-label>
+            <ion-input type="text"
+                       value="{{ email }}"
+                       disabled></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label stacked>Date de naissance</ion-label>
+            <ion-input type="text"
+                       value="{{ ddn }}"
+                       disabled></ion-input>
+        </ion-item>
+    </ion-list>
+    <button ion-button
+            color="light"
+            block
+            (click)="modalModifierInfo()">Modifier mes informations
+    </button>
+    <button ion-button
+            color="light"
+            block
+            (click)="modalModifierMdp()">Modifier mes identifiants de connexion
+    </button>
 </ion-content>
 
