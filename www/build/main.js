@@ -81042,7 +81042,7 @@ var __decorate$109 = (undefined && undefined.__decorate) || function (decorators
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata$3 = (undefined && undefined.__metadata) || function (k, v) {
+var __metadata$2 = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var InscriptionParticipantPage = (function () {
@@ -81078,13 +81078,13 @@ var InscriptionParticipantPage = (function () {
             }
         });
     };
-    InscriptionParticipantPage = __decorate$109([
-        Component({template:/*ion-inline-start:"D:\Surya\GitHub\ChillOut\src\pages\inscription-participant\inscription-participant.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Inscription participant</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content class="bkimgicp" padding>\n  <ion-col class="centrage" >\n    <ion-list>\n      <ion-item class="blitemicp">\n        <ion-label class="fontwhite" stacked text-center>Adresse e-mail</ion-label>\n        <ion-input class="inputicp" type="email" [(ngModel)]="email" text-center></ion-input>\n      </ion-item>\n\n      <ion-item class="blitemicp">\n        <ion-label class="fontwhite" stacked text-center>Mot de passe</ion-label>\n        <ion-input class="inputicp" type="password" [(ngModel)]="mdp" text-center></ion-input>\n      </ion-item>\n\n      <ion-item class="blitemicp">\n        <ion-label class="fontwhite" stacked text-center>Confirmer votre mot de passe</ion-label>\n        <ion-input class="inputicp" type="password" [(ngModel)]="mdp2" text-center disabled></ion-input>\n      </ion-item>\n\n      <ion-item class="blitemicp">\n        <ion-label class="fontwhite" stacked text-center>Nom</ion-label>\n        <ion-input class="inputicp" type="text" [(ngModel)]="nom" text-center></ion-input>\n      </ion-item>\n\n      <ion-item class="blitemicp">\n        <ion-label class="fontwhite" stacked text-center>Prénom</ion-label>\n        <ion-input class="inputicp" type="text" [(ngModel)]="prenom" text-center></ion-input>\n      </ion-item>\n\n      <ion-item class="blitemicp">\n        <ion-label class="fontwhite" stacked text-center>Date de naissance</ion-label>\n        <ion-datetime class="inputicp" displayFormat="DD MMM, YYYY" [(ngModel)]="ddn" text-center></ion-datetime>\n      </ion-item>\n    </ion-list>\n\n    <button class="btnicp" ion-button round block (click)="nouveauCompte()">S\'inscrire</button>\n   </ion-col>\n</ion-content>\n'/*ion-inline-end:"D:\Surya\GitHub\ChillOut\src\pages\inscription-participant\inscription-participant.html"*/
-        }), 
-        __metadata$3('design:paramtypes', [NavController, AlertController])
-    ], InscriptionParticipantPage);
     return InscriptionParticipantPage;
 }());
+InscriptionParticipantPage = __decorate$109([
+    Component({template:/*ion-inline-start:"/melvin/program/app/ChillOut/src/pages/inscription-participant/inscription-participant.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Inscription participant</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content class="bkimgicp" padding>\n  <ion-col class="centrage" >\n    <ion-list>\n      <ion-item class="blitemicp">\n        <ion-label class="fontwhite" stacked text-center>Adresse e-mail</ion-label>\n        <ion-input class="inputicp" type="email" [(ngModel)]="email" text-center></ion-input>\n      </ion-item>\n\n      <ion-item class="blitemicp">\n        <ion-label class="fontwhite" stacked text-center>Mot de passe</ion-label>\n        <ion-input class="inputicp" type="password" [(ngModel)]="mdp" text-center></ion-input>\n      </ion-item>\n\n      <ion-item class="blitemicp">\n        <ion-label class="fontwhite" stacked text-center>Confirmer votre mot de passe</ion-label>\n        <ion-input class="inputicp" type="password" [(ngModel)]="mdp2" text-center disabled></ion-input>\n      </ion-item>\n\n      <ion-item class="blitemicp">\n        <ion-label class="fontwhite" stacked text-center>Nom</ion-label>\n        <ion-input class="inputicp" type="text" [(ngModel)]="nom" text-center></ion-input>\n      </ion-item>\n\n      <ion-item class="blitemicp">\n        <ion-label class="fontwhite" stacked text-center>Prénom</ion-label>\n        <ion-input class="inputicp" type="text" [(ngModel)]="prenom" text-center></ion-input>\n      </ion-item>\n\n      <ion-item class="blitemicp">\n        <ion-label class="fontwhite" stacked text-center>Date de naissance</ion-label>\n        <ion-datetime class="inputicp" displayFormat="DD MMM, YYYY" [(ngModel)]="ddn" text-center></ion-datetime>\n      </ion-item>\n    </ion-list>\n\n    <button class="btnicp" ion-button round block (click)="nouveauCompte()">S\'inscrire</button>\n   </ion-col>\n</ion-content>\n'/*ion-inline-end:"/melvin/program/app/ChillOut/src/pages/inscription-participant/inscription-participant.html"*/
+    }),
+    __metadata$2("design:paramtypes", [NavController, AlertController])
+], InscriptionParticipantPage);
 
 var __decorate$110 = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -81092,7 +81092,7 @@ var __decorate$110 = (undefined && undefined.__decorate) || function (decorators
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata$4 = (undefined && undefined.__metadata) || function (k, v) {
+var __metadata$3 = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var InscriptionOrganisateurPage = (function () {
@@ -81133,13 +81133,13 @@ var InscriptionOrganisateurPage = (function () {
             }
         });
     };
-    InscriptionOrganisateurPage = __decorate$110([
-        Component({template:/*ion-inline-start:"D:\Surya\GitHub\ChillOut\src\pages\inscription-organisateur\inscription-organisateur.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Inscription Organisateur</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content class="bkimgicp" padding>\n  <ion-col class="centrage" >\n    <ion-list>\n      <ion-item class="blitemicp">\n        <ion-label class="fontwhite" stacked text-center>Dénomination sociale</ion-label>\n        <ion-input class="inputicp" type="text" [(ngModel)]="ds" text-center></ion-input>\n      </ion-item>\n\n      <ion-item class="blitemicp">\n        <ion-label class="fontwhite" stacked text-center>Adresse</ion-label>\n        <ion-input class="inputicp" type="text" [(ngModel)]="adresse" text-center></ion-input>\n      </ion-item>\n\n      <ion-item class="blitemicp">\n        <ion-label class="fontwhite" stacked text-center>Téléphone</ion-label>\n        <ion-input class="inputicp" type="text" [(ngModel)]="tel" text-center></ion-input>\n      </ion-item>\n\n      <ion-item class="blitemicp">\n        <ion-label class="fontwhite" stacked text-center>Site web</ion-label>\n        <ion-input class="inputicp" type="text" [(ngModel)]="site" placeholder="http://" text-center></ion-input>\n      </ion-item>\n      <br>\n      <ion-item class="blitemicp">\n        <ion-label class="fontwhite" stacked text-center>E-mail</ion-label>\n        <ion-input class="inputicp" type="email" [(ngModel)]="email" text-center></ion-input>\n      </ion-item>\n\n      <ion-item class="blitemicp">\n        <ion-label class="fontwhite" stacked text-center>Mot de passe</ion-label>\n        <ion-input class="inputicp" type="password" [(ngModel)]="mdp" text-center></ion-input>\n      </ion-item>\n\n      <ion-item class="blitemicp">\n        <ion-label class="fontwhite" stacked text-center>Confirmation mot de passe</ion-label>\n        <ion-input class="inputicp" type="password" [(ngModel)]="mdp2" text-center disabled></ion-input>\n      </ion-item>\n    </ion-list>\n\n    <button class="btnicp" ion-button color="secondary" round block (click)="nouveauCompte()">S\'inscrire</button>\n\n  </ion-col>\n</ion-content>\n'/*ion-inline-end:"D:\Surya\GitHub\ChillOut\src\pages\inscription-organisateur\inscription-organisateur.html"*/
-        }), 
-        __metadata$4('design:paramtypes', [NavController, AlertController])
-    ], InscriptionOrganisateurPage);
     return InscriptionOrganisateurPage;
 }());
+InscriptionOrganisateurPage = __decorate$110([
+    Component({template:/*ion-inline-start:"/melvin/program/app/ChillOut/src/pages/inscription-organisateur/inscription-organisateur.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Inscription Organisateur</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content class="bkimgicp" padding>\n  <ion-col class="centrage" >\n    <ion-list>\n      <ion-item class="blitemicp">\n        <ion-label class="fontwhite" stacked text-center>Dénomination sociale</ion-label>\n        <ion-input class="inputicp" type="text" [(ngModel)]="ds" text-center></ion-input>\n      </ion-item>\n\n      <ion-item class="blitemicp">\n        <ion-label class="fontwhite" stacked text-center>Adresse</ion-label>\n        <ion-input class="inputicp" type="text" [(ngModel)]="adresse" text-center></ion-input>\n      </ion-item>\n\n      <ion-item class="blitemicp">\n        <ion-label class="fontwhite" stacked text-center>Téléphone</ion-label>\n        <ion-input class="inputicp" type="text" [(ngModel)]="tel" text-center></ion-input>\n      </ion-item>\n\n      <ion-item class="blitemicp">\n        <ion-label class="fontwhite" stacked text-center>Site web</ion-label>\n        <ion-input class="inputicp" type="text" [(ngModel)]="site" placeholder="http://" text-center></ion-input>\n      </ion-item>\n      <br>\n      <ion-item class="blitemicp">\n        <ion-label class="fontwhite" stacked text-center>E-mail</ion-label>\n        <ion-input class="inputicp" type="email" [(ngModel)]="email" text-center></ion-input>\n      </ion-item>\n\n      <ion-item class="blitemicp">\n        <ion-label class="fontwhite" stacked text-center>Mot de passe</ion-label>\n        <ion-input class="inputicp" type="password" [(ngModel)]="mdp" text-center></ion-input>\n      </ion-item>\n\n      <ion-item class="blitemicp">\n        <ion-label class="fontwhite" stacked text-center>Confirmation mot de passe</ion-label>\n        <ion-input class="inputicp" type="password" [(ngModel)]="mdp2" text-center disabled></ion-input>\n      </ion-item>\n    </ion-list>\n\n    <button class="btnicp" ion-button color="secondary" round block (click)="nouveauCompte()">S\'inscrire</button>\n\n  </ion-col>\n</ion-content>\n'/*ion-inline-end:"/melvin/program/app/ChillOut/src/pages/inscription-organisateur/inscription-organisateur.html"*/
+    }),
+    __metadata$3("design:paramtypes", [NavController, AlertController])
+], InscriptionOrganisateurPage);
 
 var __decorate$108 = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -81147,7 +81147,7 @@ var __decorate$108 = (undefined && undefined.__decorate) || function (decorators
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata$2 = (undefined && undefined.__metadata) || function (k, v) {
+var __metadata$1 = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var ConnexionPage = (function () {
@@ -81176,13 +81176,13 @@ var ConnexionPage = (function () {
     ConnexionPage.prototype.nouvelOrganisateur = function () {
         this.navCtrl.push(InscriptionOrganisateurPage);
     };
-    ConnexionPage = __decorate$108([
-        Component({template:/*ion-inline-start:"D:\Surya\GitHub\ChillOut\src\pages\connexion\connexion.html"*/'<script src="../../chillout/components/model/model.js"></script>\n<ion-header>\n  <ion-navbar>\n    <ion-title>ChillOut</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n  <h5 style="text-align: center">Bienvenue sur Chillout</h5>\n  <br>\n  <p>\n\n    <ion-list>\n      <ion-item>\n        <ion-label floating>Email</ion-label>\n        <ion-input type="text" [(ngModel)]="identifiant"></ion-input>\n      </ion-item>\n\n      <ion-item>\n        <ion-label floating>Password</ion-label>\n        <ion-input type="password" [(ngModel)]="mdp"></ion-input>\n      </ion-item>\n    </ion-list>\n\n    <button ion-button (click)="connexion()" round block class="btnchill">Se connecter</button>\n  </p>\n\n  <br>\n  <br>\n  <br>\n  <p> Pas encore inscrit ? </p>\n  <button ion-button icon-left clear small (click)="nouveauParticipant()">\n    <ion-icon name="person"></ion-icon>Nouveau participant\n  </button>\n  <button ion-button icon-left clear small (click)="nouvelOrganisateur()">\n    <ion-icon name="briefcase"></ion-icon>Nouvel organisateur\n  </button>\n\n\n</ion-content>\n'/*ion-inline-end:"D:\Surya\GitHub\ChillOut\src\pages\connexion\connexion.html"*/,
-        }), 
-        __metadata$2('design:paramtypes', [NavController, AlertController])
-    ], ConnexionPage);
     return ConnexionPage;
 }());
+ConnexionPage = __decorate$108([
+    Component({template:/*ion-inline-start:"/melvin/program/app/ChillOut/src/pages/connexion/connexion.html"*/'<script src="../../chillout/components/model/model.js"></script>\n<ion-header>\n  <ion-navbar>\n    <ion-title>ChillOut</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content class="bkimgicp" padding>\n  <div class="pad">\n    <img src="../assets/img/logo2.png" alt="logo2">\n    <br>\n    <p>\n\n      <ion-list>\n        <ion-item class="inputConnect">\n          <ion-label floating>Username</ion-label>\n          <ion-input type="text" [(ngModel)]="identifiant"></ion-input>\n        </ion-item>\n\n        <ion-item class="inputConnect">\n          <ion-label floating>Password</ion-label>\n          <ion-input type="password" [(ngModel)]="mdp"></ion-input>\n        </ion-item>\n\n        <ion-item class="inputConnect">\n        </ion-item>\n      </ion-list>\n\n      <button ion-button (click)="connexion()" round block class="btnchill">Se connecter</button>\n    </p>\n\n    <br>\n    <br>\n    <br>\n    <p> Pas encore inscrit ? </p>\n    <button ion-button icon-left clear small (click)="nouveauParticipant()">\n      <ion-icon name="person"></ion-icon>Nouveau participant\n    </button>\n    <button ion-button icon-left clear small (click)="nouvelOrganisateur()">\n      <ion-icon name="briefcase"></ion-icon>Nouvel organisateur\n    </button>\n  </div>\n\n</ion-content>\n'/*ion-inline-end:"/melvin/program/app/ChillOut/src/pages/connexion/connexion.html"*/,
+    }),
+    __metadata$1("design:paramtypes", [NavController, AlertController])
+], ConnexionPage);
 
 var __decorate$111 = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -81190,7 +81190,7 @@ var __decorate$111 = (undefined && undefined.__decorate) || function (decorators
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata$5 = (undefined && undefined.__metadata) || function (k, v) {
+var __metadata$4 = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 /*
@@ -81222,13 +81222,13 @@ var CompteParticipantPage = (function () {
         var modal = this.modalCtrl.create(ModalMdpPage);
         modal.present();
     };
-    CompteParticipantPage = __decorate$111([
-        Component({template:/*ion-inline-start:"D:\Surya\GitHub\ChillOut\src\pages\compte-participant\compte-participant.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>ChillOut</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n  <h4 text-center>Profile</h4>\n\n  <div class="avatar">\n      <img src="../../assets/img/avatarTest.png"/>\n  </div>\n\n  <ion-list>\n    <ion-item>\n      <ion-label stacked>Nom</ion-label>\n      <ion-input type="text" value="{{ nom }}" disabled></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-label stacked>Prénom</ion-label>\n      <ion-input type="text" value="{{ prenom }}" disabled></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-label stacked>Email</ion-label>\n      <ion-input type="text" value="{{ email }}" disabled></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-label stacked>Date de naissance</ion-label>\n      <ion-input type="text" value="{{ ddn }}" disabled></ion-input>\n    </ion-item>\n  </ion-list>\n\n\n  <button ion-button color="light" block (click)="modalModifierInfo()">Modifier mes informations</button>\n  <button ion-button color="light" block (click)="modalModifierMdp()">Modifier mes identifiants de connexion</button>\n\n</ion-content>\n\n'/*ion-inline-end:"D:\Surya\GitHub\ChillOut\src\pages\compte-participant\compte-participant.html"*/
-        }), 
-        __metadata$5('design:paramtypes', [NavController, ModalController])
-    ], CompteParticipantPage);
     return CompteParticipantPage;
 }());
+CompteParticipantPage = __decorate$111([
+    Component({template:/*ion-inline-start:"/melvin/program/app/ChillOut/src/pages/compte-participant/compte-participant.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>ChillOut</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n  <h4 text-center>Profil</h4>\n\n  <div class="avatar">\n      <img src="../../assets/img/avatarTest.png"/>\n  </div>\n\n  <ion-list>\n    <ion-item>\n      <ion-label stacked>Nom</ion-label>\n      <ion-input type="text" value="{{ nom }}" disabled></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-label stacked>Prénom</ion-label>\n      <ion-input type="text" value="{{ prenom }}" disabled></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-label stacked>Email</ion-label>\n      <ion-input type="text" value="{{ email }}" disabled></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-label stacked>Date de naissance</ion-label>\n      <ion-input type="text" value="{{ ddn }}" disabled></ion-input>\n    </ion-item>\n  </ion-list>\n\n\n  <button ion-button color="light" block (click)="modalModifierInfo()">Modifier mes informations</button>\n  <button ion-button color="light" block (click)="modalModifierMdp()">Modifier mes identifiants de connexion</button>\n\n</ion-content>\n\n'/*ion-inline-end:"/melvin/program/app/ChillOut/src/pages/compte-participant/compte-participant.html"*/
+    }),
+    __metadata$4("design:paramtypes", [NavController, ModalController])
+], CompteParticipantPage);
 /*
  *
  * MODAL MODIF INFO
@@ -81271,13 +81271,13 @@ var ModalInfosPage = (function () {
     ModalInfosPage.prototype.annuler = function () {
         this.viewCtrl.dismiss();
     };
-    ModalInfosPage = __decorate$111([
-        Component({template:/*ion-inline-start:"D:\Surya\GitHub\ChillOut\src\pages\compte-participant\modalInfos.html"*/'<ion-header>\n  <ion-toolbar>\n    <ion-title>\n      Informations personnelles\n    </ion-title>\n    <ion-buttons end>\n      <button ion-button (click)="annuler()">\n        <ion-icon name="md-close" showWhen="android,windows,ios"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n    <ion-item>\n      <ion-label stacked>Nom</ion-label>\n      <ion-input type="text" [(ngModel)]="nom"></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-label stacked>Prénom</ion-label>\n      <ion-input type="text" [(ngModel)]="prenom"></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-label stacked>Date de naissance</ion-label>\n      <ion-datetime  displayFormat="DD MMM, YYYY" [(ngModel)]="ddn"></ion-datetime>\n    </ion-item>\n  </ion-list>\n\n  <button ion-button round class="btnchill" (click)="valider()">Sauvegarder</button>\n</ion-content>\n'/*ion-inline-end:"D:\Surya\GitHub\ChillOut\src\pages\compte-participant\modalInfos.html"*/
-        }), 
-        __metadata$5('design:paramtypes', [ModalController, NavParams, ViewController, NavController])
-    ], ModalInfosPage);
     return ModalInfosPage;
 }());
+ModalInfosPage = __decorate$111([
+    Component({template:/*ion-inline-start:"/melvin/program/app/ChillOut/src/pages/compte-participant/modalInfos.html"*/'<ion-header>\n  <ion-toolbar>\n    <ion-title>\n      Informations personnelles\n    </ion-title>\n    <ion-buttons end>\n      <button ion-button (click)="annuler()">\n        <ion-icon name="md-close" showWhen="android,windows,ios"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n    <ion-item>\n      <ion-label stacked>Nom</ion-label>\n      <ion-input type="text" [(ngModel)]="nom"></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-label stacked>Prénom</ion-label>\n      <ion-input type="text" [(ngModel)]="prenom"></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-label stacked>Date de naissance</ion-label>\n      <ion-datetime  displayFormat="DD MMM, YYYY" [(ngModel)]="ddn"></ion-datetime>\n    </ion-item>\n  </ion-list>\n\n  <button ion-button round class="btnchill" (click)="valider()">Sauvegarder</button>\n</ion-content>\n'/*ion-inline-end:"/melvin/program/app/ChillOut/src/pages/compte-participant/modalInfos.html"*/
+    }),
+    __metadata$4("design:paramtypes", [ModalController, NavParams, ViewController, NavController])
+], ModalInfosPage);
 /*
  *
  * MODAL MODIF IDENTIFIANT
@@ -81316,13 +81316,13 @@ var ModalMdpPage = (function () {
     ModalMdpPage.prototype.annuler = function () {
         this.viewCtrl.dismiss();
     };
-    ModalMdpPage = __decorate$111([
-        Component({template:/*ion-inline-start:"D:\Surya\GitHub\ChillOut\src\pages\compte-participant\modalMdp.html"*/'<ion-header>\n  <ion-toolbar>\n    <ion-buttons start>\n      <button ion-button (click)="valider()">\n        <span color="primary" showWhen="ios">Valider</span>\n        <ion-icon name="md-close" showWhen="android,windows"></ion-icon>\n      </button>\n    </ion-buttons>\n    <ion-title>\n      Identifiants\n    </ion-title>\n    <ion-buttons end>\n      <button ion-button (click)="annuler()">\n        <span showWhen="ios">Annuler</span>\n        <ion-icon name="md-close" showWhen="android,windows"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n    <ion-item>\n      <ion-label stacked>Email</ion-label>\n      <ion-input type="text" [(ngModel)]="email"></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-label stacked>Mot de passe</ion-label>\n      <ion-input type="password" [(ngModel)]="password"></ion-input>\n    </ion-item>\n  </ion-list>\n\n  <button ion-button round class="btnchill" (click)="valider()">Sauvegarder</button>\n</ion-content>\n'/*ion-inline-end:"D:\Surya\GitHub\ChillOut\src\pages\compte-participant\modalMdp.html"*/
-        }), 
-        __metadata$5('design:paramtypes', [ModalController, NavParams, ViewController, NavController])
-    ], ModalMdpPage);
     return ModalMdpPage;
 }());
+ModalMdpPage = __decorate$111([
+    Component({template:/*ion-inline-start:"/melvin/program/app/ChillOut/src/pages/compte-participant/modalMdp.html"*/'<ion-header>\n  <ion-toolbar>\n    <ion-buttons start>\n      <button ion-button (click)="valider()">\n        <span color="primary" showWhen="ios">Valider</span>\n        <ion-icon name="md-close" showWhen="android,windows"></ion-icon>\n      </button>\n    </ion-buttons>\n    <ion-title>\n      Identifiants\n    </ion-title>\n    <ion-buttons end>\n      <button ion-button (click)="annuler()">\n        <span showWhen="ios">Annuler</span>\n        <ion-icon name="md-close" showWhen="android,windows"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n    <ion-item>\n      <ion-label stacked>Email</ion-label>\n      <ion-input type="text" [(ngModel)]="email"></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-label stacked>Mot de passe</ion-label>\n      <ion-input type="password" [(ngModel)]="password"></ion-input>\n    </ion-item>\n  </ion-list>\n\n  <button ion-button round class="btnchill" (click)="valider()">Sauvegarder</button>\n</ion-content>\n'/*ion-inline-end:"/melvin/program/app/ChillOut/src/pages/compte-participant/modalMdp.html"*/
+    }),
+    __metadata$4("design:paramtypes", [ModalController, NavParams, ViewController, NavController])
+], ModalMdpPage);
 
 var __decorate$112 = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -81330,7 +81330,7 @@ var __decorate$112 = (undefined && undefined.__decorate) || function (decorators
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata$6 = (undefined && undefined.__metadata) || function (k, v) {
+var __metadata$5 = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 /*
@@ -81356,13 +81356,13 @@ var CompteOrganisateurPage = (function () {
         this.phone = infoOrganizer.user.phone;
         this.website = infoOrganizer.user.website;
     }
-    CompteOrganisateurPage = __decorate$112([
-        Component({template:/*ion-inline-start:"D:\Surya\GitHub\ChillOut\src\pages\compte-organisateur\compte-organisateur.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>ChillOut</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n  <h4 text-center>Mon profile</h4>\n\n  <div class="avatar">\n    <img src="../../assets/img/avatarTest.png"/>\n  </div>\n\n  <hr>\n  <div text-center>\n    <button ion-button icon-left clear (click)="nouvelEvenement()">\n      <ion-icon name="add"></ion-icon>Créer un évènement\n    </button>\n    <button ion-button icon-left clear (click)="mesEvenements()">\n      <ion-icon name="albums"></ion-icon>Mes évènements\n    </button>\n  </div>\n\n  <hr>\n\n  <ion-list>\n    <ion-item>\n      <ion-label stacked>Dénomination sociale</ion-label>\n      <ion-input type="text" value="{{ name }}" disabled></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label stacked>Adresse</ion-label>\n      <ion-input type="text" value="{{ address }}" disabled></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label stacked>E-mail</ion-label>\n      <ion-input type="email" value="{{ email }}" disabled></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label stacked>Téléphone</ion-label>\n      <ion-input type="text" value="{{ phone }}" disabled></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label stacked>Site web</ion-label>\n      <ion-input type="text" value="{{ website }}" disabled></ion-input>\n    </ion-item>\n  </ion-list>\n\n  <button ion-button color="light" block (click)="modalModifierInfo()">Modifier mes informations</button>\n  <button ion-button color="light" block (click)="modalModifierMdp()">Modifier mes identifiants de connexion</button>\n\n</ion-content>\n\n'/*ion-inline-end:"D:\Surya\GitHub\ChillOut\src\pages\compte-organisateur\compte-organisateur.html"*/
-        }), 
-        __metadata$6('design:paramtypes', [NavController, ModalController])
-    ], CompteOrganisateurPage);
     return CompteOrganisateurPage;
 }());
+CompteOrganisateurPage = __decorate$112([
+    Component({template:/*ion-inline-start:"/melvin/program/app/ChillOut/src/pages/compte-organisateur/compte-organisateur.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>ChillOut</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n  <h4 text-center>Mon profil</h4>\n\n  <div class="avatar">\n    <img src="../../assets/img/avatarTest.png"/>\n  </div>\n\n  <hr>\n  <div text-center>\n    <button ion-button icon-left clear (click)="nouvelEvenement()">\n      <ion-icon name="add"></ion-icon>Créer un évènement\n    </button>\n    <button ion-button icon-left clear (click)="mesEvenements()">\n      <ion-icon name="albums"></ion-icon>Mes évènements\n    </button>\n  </div>\n\n  <hr>\n\n  <ion-list>\n    <ion-item>\n      <ion-label stacked>Dénomination sociale</ion-label>\n      <ion-input type="text" value="{{ name }}" disabled></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label stacked>Adresse</ion-label>\n      <ion-input type="text" value="{{ address }}" disabled></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label stacked>E-mail</ion-label>\n      <ion-input type="email" value="{{ email }}" disabled></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label stacked>Téléphone</ion-label>\n      <ion-input type="text" value="{{ phone }}" disabled></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label stacked>Site web</ion-label>\n      <ion-input type="text" value="{{ website }}" disabled></ion-input>\n    </ion-item>\n  </ion-list>\n\n  <button ion-button color="light" block (click)="modalModifierInfo()">Modifier mes informations</button>\n  <button ion-button color="light" block (click)="modalModifierMdp()">Modifier mes identifiants de connexion</button>\n\n</ion-content>\n\n'/*ion-inline-end:"/melvin/program/app/ChillOut/src/pages/compte-organisateur/compte-organisateur.html"*/
+    }),
+    __metadata$5("design:paramtypes", [NavController, ModalController])
+], CompteOrganisateurPage);
 
 var __decorate$114 = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -81370,7 +81370,7 @@ var __decorate$114 = (undefined && undefined.__decorate) || function (decorators
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata$8 = (undefined && undefined.__metadata) || function (k, v) {
+var __metadata$7 = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var EvenementPage = (function () {
@@ -81381,13 +81381,13 @@ var EvenementPage = (function () {
         var newDate = Chillout.facadeLibraryMoment()(dateTime).format("DD MMM YYYY");
         return newDate;
     };
-    EvenementPage = __decorate$114([
-        Component({template:/*ion-inline-start:"D:\Surya\GitHub\ChillOut\src\pages\evenement\evenement.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>{{ event.category_id }}</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content class="bk fontwhite" padding>\n\n  <ion-title><span class="fontwhite">{{ event.title }}</span></ion-title>\n  <ion-title><small class="fontwhite">{{ DateTimeToDate(event.startTime) }} - {{ DateTimeToDate(event.endTime) }}</small></ion-title>\n\n  <img src="../../assets/img/oldCategories/SpectacleBis.jpg"/>\n\n  <p><strong>Prix :</strong> {{ event.price }} €</p>\n\n  <p><strong>Adresse :</strong> {{ event.address }}</p>\n\n  <p><strong>Informations :</strong> {{ event.description }}</p>\n\n</ion-content>\n'/*ion-inline-end:"D:\Surya\GitHub\ChillOut\src\pages\evenement\evenement.html"*/
-        }), 
-        __metadata$8('design:paramtypes', [])
-    ], EvenementPage);
     return EvenementPage;
 }());
+EvenementPage = __decorate$114([
+    Component({template:/*ion-inline-start:"/melvin/program/app/ChillOut/src/pages/evenement/evenement.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>{{ event.category_id }}</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content class="bk fontwhite" padding>\n\n  <ion-title><span class="fontwhite">{{ event.title }}</span></ion-title>\n  <ion-title><small class="fontwhite">{{ DateTimeToDate(event.startTime) }} - {{ DateTimeToDate(event.endTime) }}</small></ion-title>\n\n  <img src="{{ event.image.link }}"/>\n\n  <p><strong>Prix :</strong> {{ event.price }} €</p>\n\n  <p><strong>Adresse :</strong> {{ event.address }}</p>\n\n  <p><strong>Informations :</strong> {{ event.description }}</p>\n\n</ion-content>\n'/*ion-inline-end:"/melvin/program/app/ChillOut/src/pages/evenement/evenement.html"*/
+    }),
+    __metadata$7("design:paramtypes", [])
+], EvenementPage);
 
 var __decorate$113 = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -81395,7 +81395,7 @@ var __decorate$113 = (undefined && undefined.__decorate) || function (decorators
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata$7 = (undefined && undefined.__metadata) || function (k, v) {
+var __metadata$6 = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var AccueilParticipantPage = (function () {
@@ -81430,13 +81430,13 @@ var AccueilParticipantPage = (function () {
             }
         });
     };
-    AccueilParticipantPage = __decorate$113([
-        Component({template:/*ion-inline-start:"D:\Surya\GitHub\ChillOut\src\pages\accueil-participant\accueil-participant.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>ChillOut</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content class="bk" padding>\n  <ion-segment [(ngModel)]="evenement" color="light">\n    <ion-segment-button value="tout" (ionSelect)="allEvents()">\n      Tout\n    </ion-segment-button>\n    <ion-segment-button value="semaine">\n      Cette semaine\n    </ion-segment-button>\n    <ion-segment-button value="mois">\n      Ce mois-ci\n    </ion-segment-button>\n  </ion-segment>\n\n  <div [ngSwitch]="evenement">\n    <ion-list *ngSwitchDefault>\n      <ion-card *ngFor="let event of events" (click)="eventPage(event)" style="background-image: url(\'../../assets/img/categories/gastronomie.jpg\'); background-size:100%;">\n        <ion-card-content>\n          <ion-card-title class="fontwhite">\n            {{ event.title }}\n          </ion-card-title>\n          <p class="fontwhite">{{ DateTimeToDate(event.startTime) }} au {{ DateTimeToDate(event.endTime) }}</p>\n          <p class="fontwhite">{{ DaysLeft(event.startTime) }}</p>\n        </ion-card-content>\n      </ion-card>\n    </ion-list>\n\n    <ion-list *ngSwitchCase="\'semaine\'">\n\n    </ion-list>\n\n    <ion-list *ngSwitchCase="\'mois\'">\n\n    </ion-list>\n  </div>\n\n</ion-content>\n'/*ion-inline-end:"D:\Surya\GitHub\ChillOut\src\pages\accueil-participant\accueil-participant.html"*/
-        }), 
-        __metadata$7('design:paramtypes', [NavController])
-    ], AccueilParticipantPage);
     return AccueilParticipantPage;
 }());
+AccueilParticipantPage = __decorate$113([
+    Component({template:/*ion-inline-start:"/melvin/program/app/ChillOut/src/pages/accueil-participant/accueil-participant.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>ChillOut</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content class="bk" padding>\n  <ion-segment [(ngModel)]="evenement" color="light">\n    <ion-segment-button value="tout" (ionSelect)="allEvents()">\n      Tout\n    </ion-segment-button>\n    <ion-segment-button value="semaine">\n      Cette semaine\n    </ion-segment-button>\n    <ion-segment-button value="mois">\n      Ce mois-ci\n    </ion-segment-button>\n  </ion-segment>\n\n  <div [ngSwitch]="evenement">\n    <ion-list *ngSwitchDefault>\n      <ion-card *ngFor="let event of events" (click)="eventPage(event)" style="background-image: url({{ event.image.link }}); background-size:100%;">\n        <ion-card-content>\n          <ion-card-title class="fontwhite">\n            {{ event.title }}\n          </ion-card-title>\n          <p class="fontwhite">{{ DateTimeToDate(event.startTime) }} au {{ DateTimeToDate(event.endTime) }}</p>\n          <p class="fontwhite">{{ DaysLeft(event.startTime) }}</p>\n        </ion-card-content>\n      </ion-card>\n    </ion-list>\n\n    <ion-list *ngSwitchCase="\'semaine\'">\n\n    </ion-list>\n\n    <ion-list *ngSwitchCase="\'mois\'">\n\n    </ion-list>\n  </div>\n\n</ion-content>\n'/*ion-inline-end:"/melvin/program/app/ChillOut/src/pages/accueil-participant/accueil-participant.html"*/
+    }),
+    __metadata$6("design:paramtypes", [NavController])
+], AccueilParticipantPage);
 
 var __decorate$115 = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -81444,7 +81444,7 @@ var __decorate$115 = (undefined && undefined.__decorate) || function (decorators
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata$9 = (undefined && undefined.__metadata) || function (k, v) {
+var __metadata$8 = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var AccueilOrganisateurPage = (function () {
@@ -81479,15 +81479,37 @@ var AccueilOrganisateurPage = (function () {
             }
         });
     };
-    AccueilOrganisateurPage = __decorate$115([
-        Component({template:/*ion-inline-start:"D:\Surya\GitHub\ChillOut\src\pages\accueil-organisateur\accueil-organisateur.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>ChillOut</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content class="bk" padding>\n  <ion-segment [(ngModel)]="evenement" color="light">\n    <ion-segment-button value="tout" (ionSelect)="allEvents()">\n      Tout\n    </ion-segment-button>\n    <ion-segment-button value="semaine">\n      Cette semaine\n    </ion-segment-button>\n    <ion-segment-button value="mois">\n      Ce mois-ci\n    </ion-segment-button>\n  </ion-segment>\n\n  <div [ngSwitch]="evenement">\n    <ion-list *ngSwitchDefault>\n      <ion-card *ngFor="let event of events" (click)="eventPage(event)" style="background-image: url(\'../../assets/img/categories/gastronomie.jpg\'); background-size:100%;">\n        <ion-card-content>\n          <ion-card-title class="fontwhite">\n            {{ event.title }}\n          </ion-card-title>\n          <p class="fontwhite">{{ DateTimeToDate(event.startTime) }} au {{ DateTimeToDate(event.endTime) }}</p>\n          <p class="fontwhite">{{ DaysLeft(event.startTime) }}</p>\n        </ion-card-content>\n      </ion-card>\n    </ion-list>\n\n    <ion-list *ngSwitchCase="\'semaine\'">\n\n    </ion-list>\n\n    <ion-list *ngSwitchCase="\'mois\'">\n\n    </ion-list>\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"D:\Surya\GitHub\ChillOut\src\pages\accueil-organisateur\accueil-organisateur.html"*/
-        }), 
-        __metadata$9('design:paramtypes', [NavController])
-    ], AccueilOrganisateurPage);
     return AccueilOrganisateurPage;
 }());
+AccueilOrganisateurPage = __decorate$115([
+    Component({template:/*ion-inline-start:"/melvin/program/app/ChillOut/src/pages/accueil-organisateur/accueil-organisateur.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>ChillOut</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content class="bk" padding>\n  <ion-segment [(ngModel)]="evenement" color="light">\n    <ion-segment-button value="tout" (ionSelect)="allEvents()">\n      Tout\n    </ion-segment-button>\n    <ion-segment-button value="semaine">\n      Cette semaine\n    </ion-segment-button>\n    <ion-segment-button value="mois">\n      Ce mois-ci\n    </ion-segment-button>\n  </ion-segment>\n\n  <div [ngSwitch]="evenement" class="ChillBackgroundBlack">\n    <ion-list *ngSwitchDefault class="ChillBackgroundBlack">\n        <ion-card *ngFor="let event of events" (click)="eventPage(event)">\n        <img src="{{ event.image.link }}">\n        <ion-card-content class="ChillBackgroundBlack">\n          <ion-card-title class="fontwhite ChillBackgroundBlack">\n            {{ event.title }}\n          </ion-card-title>\n          <p class="fontwhite">{{ DateTimeToDate(event.startTime) }} au {{ DateTimeToDate(event.endTime) }}</p>\n          <p class="fontwhite">{{ DaysLeft(event.startTime) }}</p>\n        </ion-card-content>\n      </ion-card>\n    </ion-list>\n\n    <ion-list *ngSwitchCase="\'semaine\'">\n\n    </ion-list>\n\n    <ion-list *ngSwitchCase="\'mois\'">\n\n    </ion-list>\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"/melvin/program/app/ChillOut/src/pages/accueil-organisateur/accueil-organisateur.html"*/
+    }),
+    __metadata$8("design:paramtypes", [NavController])
+], AccueilOrganisateurPage);
 
 var __decorate$116 = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata$9 = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var EvenementPersoPage = (function () {
+    function EvenementPersoPage(navCtrl) {
+        this.navCtrl = navCtrl;
+        this.navCtrl = navCtrl;
+    }
+    return EvenementPersoPage;
+}());
+EvenementPersoPage = __decorate$116([
+    Component({template:/*ion-inline-start:"/melvin/program/app/ChillOut/src/pages/evenement-perso/evenement-perso.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>ChillOut</ion-title>\n    <button ion-button>\n      <ion-icon name="power"></ion-icon>\n    </button>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n  <div padding>\n    <ion-segment [(ngModel)]="event">\n      <ion-segment-button value="aVenir">\n        A VENIR\n      </ion-segment-button>\n      <ion-segment-button value="passe">\n        PASSE\n      </ion-segment-button>\n    </ion-segment>\n  </div>\n\n  <div [ngSwitch]="event">\n    <ion-list *ngSwitchCase="\'aVenir\'">\n      <ion-item>\n        <ion-thumbnail item-left>\n          <img src="../assets/img/categories/autre.jpg"/>\n        </ion-thumbnail>\n        <h2>Evenement quelconque</h2>\n        <p>Ceci est une description !!!! Ceci est une description !!!! Ceci est une description !!!! Ceci est une description !!!! Ceci est une description !!!! Ceci est une description !!!!</p>\n       </ion-item>\n    </ion-list>\n\n    <ion-list *ngSwitchCase="\'passe\'">\n      <ion-item>\n        <ion-thumbnail item-left>\n          <img src="../assets/img/categories/concert.jpg"/>\n        </ion-thumbnail>\n        <h2>Concert de Beyonce</h2>\n      </ion-item>\n    </ion-list>\n  </div>\n\n</ion-content>\n'/*ion-inline-end:"/melvin/program/app/ChillOut/src/pages/evenement-perso/evenement-perso.html"*/
+    }),
+    __metadata$9("design:paramtypes", [NavController])
+], EvenementPersoPage);
+
+var __decorate$117 = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
@@ -81496,29 +81518,7 @@ var __decorate$116 = (undefined && undefined.__decorate) || function (decorators
 var __metadata$10 = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var EvenementPersoPage = (function () {
-    function EvenementPersoPage(navCtrl) {
-        this.navCtrl = navCtrl;
-        this.navCtrl = navCtrl;
-    }
-    EvenementPersoPage = __decorate$116([
-        Component({template:/*ion-inline-start:"D:\Surya\GitHub\ChillOut\src\pages\evenement-perso\evenement-perso.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>ChillOut</ion-title>\n    <button ion-button>\n      <ion-icon name="power"></ion-icon>\n    </button>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n  <div padding>\n    <ion-segment [(ngModel)]="event">\n      <ion-segment-button value="aVenir">\n        A VENIR\n      </ion-segment-button>\n      <ion-segment-button value="passe">\n        PASSE\n      </ion-segment-button>\n    </ion-segment>\n  </div>\n\n  <div [ngSwitch]="event">\n    <ion-list *ngSwitchCase="\'aVenir\'">\n      <ion-item>\n        <ion-thumbnail item-left>\n          <img src="../assets/img/categories/autre.jpg"/>\n        </ion-thumbnail>\n        <h2>Evenement quelconque</h2>\n        <p>Ceci est une description !!!! Ceci est une description !!!! Ceci est une description !!!! Ceci est une description !!!! Ceci est une description !!!! Ceci est une description !!!!</p>\n       </ion-item>\n    </ion-list>\n\n    <ion-list *ngSwitchCase="\'passe\'">\n      <ion-item>\n        <ion-thumbnail item-left>\n          <img src="../assets/img/categories/concert.jpg"/>\n        </ion-thumbnail>\n        <h2>Concert de Beyonce</h2>\n      </ion-item>\n    </ion-list>\n  </div>\n\n</ion-content>\n'/*ion-inline-end:"D:\Surya\GitHub\ChillOut\src\pages\evenement-perso\evenement-perso.html"*/
-        }), 
-        __metadata$10('design:paramtypes', [NavController])
-    ], EvenementPersoPage);
-    return EvenementPersoPage;
-}());
-
-var __decorate$117 = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata$11 = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var RecherchePage = (function () {
+var RecherchePage = RecherchePage_1 = (function () {
     function RecherchePage(navCtrl, modalCtrl) {
         this.navCtrl = navCtrl;
         this.modalCtrl = modalCtrl;
@@ -81530,20 +81530,21 @@ var RecherchePage = (function () {
         this.modalCtrl = modalCtrl;
     }
     RecherchePage.prototype.recherche = function () {
-        this.navCtrl.push(RecherchePage);
+        this.navCtrl.push(RecherchePage_1);
     };
     RecherchePage.prototype.profile = function () {
         this.navCtrl.push(CompteParticipantPage);
     };
     RecherchePage.prototype.rechercher = function () {
     };
-    RecherchePage = __decorate$117([
-        Component({template:/*ion-inline-start:"D:\Surya\GitHub\ChillOut\src\pages\recherche\recherche.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>ChillOut</ion-title>\n\n    <button ion-button>\n\n      <ion-icon name="power"></ion-icon>\n\n    </button>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content class="bkrs" padding>\n\n  <ion-searchbar class="srbar fontwhite" (ionInput)="getItems($event)"></ion-searchbar>\n\n\n\n  <ion-list>\n\n    <ion-title>Période</ion-title>\n\n    <ion-item>\n\n      <ion-label stacked>Du</ion-label>\n\n      <ion-datetime displayFormat="DD MMM YYYY" [(ngModel)]="dateDebut"></ion-datetime>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label stacked>Au</ion-label>\n\n      <ion-datetime displayFormat="DD MMM YYYY" [(ngModel)]="dateFin"></ion-datetime>\n\n    </ion-item>\n\n    <ion-title>Plage horaire</ion-title>\n\n    <ion-item>\n\n      <ion-label stacked>De</ion-label>\n\n      <ion-datetime displayFormat="HH:m" [(ngModel)]="horaireDebut"></ion-datetime>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label stacked>A</ion-label>\n\n      <ion-datetime displayFormat="HH:m" [(ngModel)]="horaireFin"></ion-datetime>\n\n    </ion-item>\n\n    <ion-title>Catégorie(s)</ion-title>\n\n    <ion-item>\n\n      <ion-label>Pepperoni</ion-label>\n\n      <ion-checkbox [(ngModel)]="pepperoni"></ion-checkbox>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label>Sausage</ion-label>\n\n      <ion-checkbox [(ngModel)]="sausage"></ion-checkbox>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label>Mushrooms</ion-label>\n\n      <ion-checkbox [(ngModel)]="mushrooms"></ion-checkbox>\n\n    </ion-item>\n\n    <ion-title>Ville(s)</ion-title>\n\n    <ion-searchbar (ionInput)="getVilles($event)"></ion-searchbar>\n\n    <ion-item  *ngFor="let ville of villes">\n\n      {{ ville }}\n\n    </ion-item>\n\n  </ion-list>\n\n\n\n  <button ion-button (click)="rechercher()" block>Rechercher</button>\n\n</ion-content>\n\n\n\n\n\n'/*ion-inline-end:"D:\Surya\GitHub\ChillOut\src\pages\recherche\recherche.html"*/
-        }), 
-        __metadata$11('design:paramtypes', [NavController, ModalController])
-    ], RecherchePage);
     return RecherchePage;
 }());
+RecherchePage = RecherchePage_1 = __decorate$117([
+    Component({template:/*ion-inline-start:"/melvin/program/app/ChillOut/src/pages/recherche/recherche.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>ChillOut</ion-title>\n    <button ion-button>\n      <ion-icon name="power"></ion-icon>\n    </button>\n  </ion-navbar>\n</ion-header>\n\n<ion-content class="bkrs" padding>\n  <ion-searchbar class="srbar fontwhite" (ionInput)="getItems($event)"></ion-searchbar>\n\n  <ion-list>\n    <ion-title>Période</ion-title>\n    <ion-item>\n      <ion-label stacked>Du</ion-label>\n      <ion-datetime displayFormat="DD MMM YYYY" [(ngModel)]="dateDebut"></ion-datetime>\n    </ion-item>\n    <ion-item>\n      <ion-label stacked>Au</ion-label>\n      <ion-datetime displayFormat="DD MMM YYYY" [(ngModel)]="dateFin"></ion-datetime>\n    </ion-item>\n    <ion-title>Plage horaire</ion-title>\n    <ion-item>\n      <ion-label stacked>De</ion-label>\n      <ion-datetime displayFormat="HH:m" [(ngModel)]="horaireDebut"></ion-datetime>\n    </ion-item>\n    <ion-item>\n      <ion-label stacked>A</ion-label>\n      <ion-datetime displayFormat="HH:m" [(ngModel)]="horaireFin"></ion-datetime>\n    </ion-item>\n    <ion-title>Catégorie(s)</ion-title>\n    <ion-item>\n      <ion-label>Pepperoni</ion-label>\n      <ion-checkbox [(ngModel)]="pepperoni"></ion-checkbox>\n    </ion-item>\n    <ion-item>\n      <ion-label>Sausage</ion-label>\n      <ion-checkbox [(ngModel)]="sausage"></ion-checkbox>\n    </ion-item>\n    <ion-item>\n      <ion-label>Mushrooms</ion-label>\n      <ion-checkbox [(ngModel)]="mushrooms"></ion-checkbox>\n    </ion-item>\n    <ion-title>Ville(s)</ion-title>\n    <ion-searchbar (ionInput)="getVilles($event)"></ion-searchbar>\n    <ion-item  *ngFor="let ville of villes">\n      {{ ville }}\n    </ion-item>\n  </ion-list>\n\n  <button ion-button (click)="rechercher()" block>Rechercher</button>\n</ion-content>\n\n\n'/*ion-inline-end:"/melvin/program/app/ChillOut/src/pages/recherche/recherche.html"*/
+    }),
+    __metadata$10("design:paramtypes", [NavController, ModalController])
+], RecherchePage);
+var RecherchePage_1;
 
 var __decorate$118 = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -81551,7 +81552,7 @@ var __decorate$118 = (undefined && undefined.__decorate) || function (decorators
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata$12 = (undefined && undefined.__metadata) || function (k, v) {
+var __metadata$11 = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var DeconnexionPage = (function () {
@@ -81559,13 +81560,13 @@ var DeconnexionPage = (function () {
         Chillout.authDisconnectUser();
         Chillout.navRefresh();
     }
-    DeconnexionPage = __decorate$118([
-        Component({template:/*ion-inline-start:"D:\Surya\GitHub\ChillOut\src\pages\deconnexion\deconnexion.html"*/''/*ion-inline-end:"D:\Surya\GitHub\ChillOut\src\pages\deconnexion\deconnexion.html"*/,
-        }), 
-        __metadata$12('design:paramtypes', [])
-    ], DeconnexionPage);
     return DeconnexionPage;
 }());
+DeconnexionPage = __decorate$118([
+    Component({template:/*ion-inline-start:"/melvin/program/app/ChillOut/src/pages/deconnexion/deconnexion.html"*/''/*ion-inline-end:"/melvin/program/app/ChillOut/src/pages/deconnexion/deconnexion.html"*/,
+    }),
+    __metadata$11("design:paramtypes", [])
+], DeconnexionPage);
 
 var __decorate$1 = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -81573,7 +81574,7 @@ var __decorate$1 = (undefined && undefined.__decorate) || function (decorators, 
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata$1 = (undefined && undefined.__metadata) || function (k, v) {
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var MyApp = (function () {
@@ -81645,17 +81646,18 @@ var MyApp = (function () {
         // navigate to the new page if it is not the current page
         this.nav.setRoot(page.component);
     };
-    __decorate$1([
-        ViewChild(Nav), 
-        __metadata$1('design:type', Nav)
-    ], MyApp.prototype, "nav", void 0);
-    MyApp = __decorate$1([
-        Component({template:/*ion-inline-start:"D:\Surya\GitHub\ChillOut\src\app\app.html"*/'<ion-menu [content]="content">\n\n  <ion-content>\n    <ion-list>\n      <button ion-item *ngFor="let p of pages" (click)="openPage(p)">\n        {{p.title}}\n      </button>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>\n'/*ion-inline-end:"D:\Surya\GitHub\ChillOut\src\app\app.html"*/
-        }), 
-        __metadata$1('design:paramtypes', [Platform, MenuController])
-    ], MyApp);
     return MyApp;
 }());
+__decorate$1([
+    ViewChild(Nav),
+    __metadata("design:type", Nav)
+], MyApp.prototype, "nav", void 0);
+MyApp = __decorate$1([
+    Component({template:/*ion-inline-start:"/melvin/program/app/ChillOut/src/app/app.html"*/'<ion-menu [content]="content">\n\n  <ion-content>\n    <ion-list>\n      <button ion-item *ngFor="let p of pages" (click)="openPage(p)">\n        {{p.title}}\n      </button>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>\n'/*ion-inline-end:"/melvin/program/app/ChillOut/src/app/app.html"*/
+    }),
+    __metadata("design:paramtypes", [Platform,
+        MenuController])
+], MyApp);
 
 var __decorate$119 = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -81663,7 +81665,7 @@ var __decorate$119 = (undefined && undefined.__decorate) || function (decorators
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata$13 = (undefined && undefined.__metadata) || function (k, v) {
+var __metadata$12 = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var CreationEvenementPage = (function () {
@@ -81671,13 +81673,13 @@ var CreationEvenementPage = (function () {
         this.dateDebut = "2016-12-15T13:47";
         this.dateFin = "2016-12-16T19:30";
     }
-    CreationEvenementPage = __decorate$119([
-        Component({template:/*ion-inline-start:"D:\Surya\GitHub\ChillOut\src\pages\creation-evenement\creation-evenement.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Nouvel événement</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n  <ion-item>\n    <ion-input type="text" placeholder="Nom de l\'évènement" stacked></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label>Catégories</ion-label>\n    <ion-select [(ngModel)]="Categories" multiple>\n      <ion-option value="1">Spectacle</ion-option>\n      <ion-option value="2">Cinéma</ion-option>\n      <ion-option value="3">Soirée</ion-option>\n      <ion-option value="4">Théatre</ion-option>\n    </ion-select>\n      <!--<ion-select [(ngModel)]="nomCategories">-->\n      <!--<ion-option *ngFor="categorie of categories" value=" {{ categorie.name }}"> {{ categorie.name }}</ion-option>-->\n    <!--</ion-select>-->\n  </ion-item>\n\n  <ion-item>\n    <ion-input type="text" placeholder="Prix" stacked></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label stacked>Début de l\'évènement</ion-label>\n    <ion-datetime displayFormat="DD MMM YYYY HH:mm" [(ngModel)]="dateDebut"></ion-datetime>\n  </ion-item>\n\n  <ion-item>\n    <ion-label stacked>Fin de l\'évènement</ion-label>\n    <ion-datetime displayFormat="DD MMM YYYY HH:mm" [(ngModel)]="dateFin"></ion-datetime>\n  </ion-item>\n\n  <ion-item>\n    <ion-input type="text" placeholder="Adresse" stacked></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-input type="text" placeholder="Informations supplémentaires" stacked></ion-input>\n  </ion-item>\n\n  <button ion-button>Télécharger une photo</button>\n\n</ion-content>\n'/*ion-inline-end:"D:\Surya\GitHub\ChillOut\src\pages\creation-evenement\creation-evenement.html"*/
-        }), 
-        __metadata$13('design:paramtypes', [])
-    ], CreationEvenementPage);
     return CreationEvenementPage;
 }());
+CreationEvenementPage = __decorate$119([
+    Component({template:/*ion-inline-start:"/melvin/program/app/ChillOut/src/pages/creation-evenement/creation-evenement.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Nouvel événement</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n  <ion-item>\n    <ion-input type="text" placeholder="Nom de l\'évènement" stacked></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label>Catégories</ion-label>\n    <ion-select [(ngModel)]="Categories" multiple>\n      <ion-option value="1">Spectacle</ion-option>\n      <ion-option value="2">Cinéma</ion-option>\n      <ion-option value="3">Soirée</ion-option>\n      <ion-option value="4">Théatre</ion-option>\n    </ion-select>\n      <!--<ion-select [(ngModel)]="nomCategories">-->\n      <!--<ion-option *ngFor="categorie of categories" value=" {{ categorie.name }}"> {{ categorie.name }}</ion-option>-->\n    <!--</ion-select>-->\n  </ion-item>\n\n  <ion-item>\n    <ion-input type="text" placeholder="Prix" stacked></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label stacked>Début de l\'évènement</ion-label>\n    <ion-datetime displayFormat="DD MMM YYYY HH:mm" [(ngModel)]="dateDebut"></ion-datetime>\n  </ion-item>\n\n  <ion-item>\n    <ion-label stacked>Fin de l\'évènement</ion-label>\n    <ion-datetime displayFormat="DD MMM YYYY HH:mm" [(ngModel)]="dateFin"></ion-datetime>\n  </ion-item>\n\n  <ion-item>\n    <ion-input type="text" placeholder="Adresse" stacked></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-input type="text" placeholder="Informations supplémentaires" stacked></ion-input>\n  </ion-item>\n\n  <button ion-button>Télécharger une photo</button>\n\n</ion-content>\n'/*ion-inline-end:"/melvin/program/app/ChillOut/src/pages/creation-evenement/creation-evenement.html"*/
+    }),
+    __metadata$12("design:paramtypes", [])
+], CreationEvenementPage);
 
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -81685,58 +81687,55 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
+// Déclaration de toutes les pages contenues dans l'app
 var AppModule = (function () {
     function AppModule() {
     }
-    AppModule = __decorate([
-        NgModule({
-            declarations: [
-                MyApp,
-                ConnexionPage,
-                DeconnexionPage,
-                InscriptionParticipantPage,
-                InscriptionOrganisateurPage,
-                CompteParticipantPage,
-                ModalInfosPage,
-                ModalMdpPage,
-                CompteOrganisateurPage,
-                AccueilParticipantPage,
-                AccueilOrganisateurPage,
-                RecherchePage,
-                CreationEvenementPage,
-                EvenementPersoPage,
-                EvenementPage
-            ],
-            imports: [
-                IonicModule.forRoot(MyApp)
-            ],
-            bootstrap: [IonicApp],
-            entryComponents: [
-                MyApp,
-                ConnexionPage,
-                DeconnexionPage,
-                InscriptionParticipantPage,
-                InscriptionOrganisateurPage,
-                CompteParticipantPage,
-                ModalInfosPage,
-                ModalMdpPage,
-                CompteOrganisateurPage,
-                AccueilParticipantPage,
-                AccueilOrganisateurPage,
-                RecherchePage,
-                CreationEvenementPage,
-                EvenementPersoPage,
-                EvenementPage
-            ],
-            providers: []
-        }), 
-        __metadata('design:paramtypes', [])
-    ], AppModule);
     return AppModule;
 }());
+AppModule = __decorate([
+    NgModule({
+        declarations: [
+            MyApp,
+            ConnexionPage,
+            DeconnexionPage,
+            InscriptionParticipantPage,
+            InscriptionOrganisateurPage,
+            CompteParticipantPage,
+            ModalInfosPage,
+            ModalMdpPage,
+            CompteOrganisateurPage,
+            AccueilParticipantPage,
+            AccueilOrganisateurPage,
+            RecherchePage,
+            CreationEvenementPage,
+            EvenementPersoPage,
+            EvenementPage
+        ],
+        imports: [
+            IonicModule.forRoot(MyApp)
+        ],
+        bootstrap: [IonicApp],
+        entryComponents: [
+            MyApp,
+            ConnexionPage,
+            DeconnexionPage,
+            InscriptionParticipantPage,
+            InscriptionOrganisateurPage,
+            CompteParticipantPage,
+            ModalInfosPage,
+            ModalMdpPage,
+            CompteOrganisateurPage,
+            AccueilParticipantPage,
+            AccueilOrganisateurPage,
+            RecherchePage,
+            CreationEvenementPage,
+            EvenementPersoPage,
+            EvenementPage
+        ],
+        providers: []
+    })
+], AppModule);
 
 platformBrowserDynamic().bootstrapModule(AppModule);
 

@@ -21190,6 +21190,11 @@ sub {
   border-radius: 6%;
 }
 
+/*  surcharge  */
+.ChillBackgroundBlack {
+  background: #373e48;
+}
+
 .list .item.item-accordion {
   line-height: 38px;
   padding-top: 0;

@@ -22,7 +22,7 @@
 
   <div [ngSwitch]="evenement">
     <ion-list *ngSwitchDefault>
-      <ion-card *ngFor="let event of events" (click)="eventPage(event)" style="background-image: url('../../assets/img/categories/gastronomie.jpg'); background-size:100%;">
+      <ion-card *ngFor="let event of events" (click)="eventPage(event)" style="background-image: url({{ event.image.link }}); background-size:100%;">
         <ion-card-content>
           <ion-card-title class="fontwhite">
             {{ event.title }}

@@ -13,7 +13,7 @@
   <ion-title><span class="fontwhite">{{ event.title }}</span></ion-title>
   <ion-title><small class="fontwhite">{{ DateTimeToDate(event.startTime) }} - {{ DateTimeToDate(event.endTime) }}</small></ion-title>
 
-  <img src="../../assets/img/oldCategories/SpectacleBis.jpg"/>
+  <img src="{{ event.image.link }}"/>
 
   <p><strong>Prix :</strong> {{ event.price }} €</p>
 

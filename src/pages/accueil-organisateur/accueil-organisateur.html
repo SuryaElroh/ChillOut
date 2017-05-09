@@ -20,11 +20,12 @@
     </ion-segment-button>
   </ion-segment>
 
-  <div [ngSwitch]="evenement">
-    <ion-list *ngSwitchDefault>
-      <ion-card *ngFor="let event of events" (click)="eventPage(event)" style="background-image: url('../../assets/img/categories/gastronomie.jpg'); background-size:100%;">
-        <ion-card-content>
-          <ion-card-title class="fontwhite">
+  <div [ngSwitch]="evenement" class="ChillBackgroundBlack">
+    <ion-list *ngSwitchDefault class="ChillBackgroundBlack">
+        <ion-card *ngFor="let event of events" (click)="eventPage(event)">
+        <img src="{{ event.image.link }}">
+        <ion-card-content class="ChillBackgroundBlack">
+          <ion-card-title class="fontwhite ChillBackgroundBlack">
             {{ event.title }}
           </ion-card-title>
           <p class="fontwhite">{{ DateTimeToDate(event.startTime) }} au {{ DateTimeToDate(event.endTime) }}</p>
